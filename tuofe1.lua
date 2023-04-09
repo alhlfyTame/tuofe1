@@ -9,10 +9,7 @@ Redis = require('libs/redis').connect('127.0.0.1', 6379)
 http  = require("socket.http")
 https   = require("ssl.https")
 SshId = io.popen("echo $SSH_CLIENT ︙ awk '{ print $1}'"):read('*a')
-Fx = require './libs/td'
-local tuofe1tt =  require('tdlua') 
-local client = tuofe1tt()
-local tdf = Fx.xnxx()
+luaTele = require 'luatele'
 local FileInformation = io.open("./Information.lua","r")
 if not FileInformation then
 if not Redis:get(SshId.."Info:Redis:Token") then
