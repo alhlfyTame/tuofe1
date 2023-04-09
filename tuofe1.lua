@@ -10,8 +10,8 @@ http  = require("socket.http")
 https   = require("ssl.https")
 SshId = io.popen("echo $SSH_CLIENT ︙ awk '{ print $1}'"):read('*a')
 Fx = require './libs/td'
-local Fasttt =  require('tdlua') 
-local client = Fasttt()
+local tuofe1tt =  require('tdlua') 
+local client = tuofe1tt()
 local tdf = Fx.xnxx()
 local FileInformation = io.open("./Information.lua","r")
 if not FileInformation then
@@ -67,14 +67,14 @@ SudoId = ]]..Redis:get(SshId.."Info:Redis:User:ID")..[[
 }
 ]])
 Informationlua:close()
-local Fast = io.open("Fast", 'w')
-Fast:write([[
+local tuofe1 = io.open("tuofe1", 'w')
+tuofe1:write([[
 cd $(cd $(dirname $0); pwd)
 while(true) do
 lua5.3 tuofe1.lua
 done
 ]])
-Fast:close()
+tuofe1:close()
 Redis:del(SshId.."Info:Redis:User:ID");Redis:del(SshId.."Info:Redis:User");Redis:del(SshId.."Info:Redis:Token:User");Redis:del(SshId.."Info:Redis:Token")
 os.execute('rm -rf bot.zip ;chmod +x *;./Run')
 end
@@ -83,11 +83,11 @@ Sudo_Id = Information.SudoId
 UserSudo = Information.UserSudo
 Token = Information.Token
 UserBot = Information.UserBot
-Fast = Token:match("(%d+)")
-os.execute('sudo rm -fr .CallBack-Bot/'..Fast)
-bot = Fx.Fastbots.set_config{api_id=2692371,api_hash='fe85fff033dfe0f328aeb02b4f784930',session_name=Fast,token=Token}
-chsource = Redis:get(Fast..'chsource') or "M_O_D_Y_CH"
-chdevolper = Redis:get(Fast..'chdevolper') or "MohamedHelal_l"
+tuofe1 = Token:match("(%d+)")
+os.execute('sudo rm -fr .CallBack-Bot/'..tuofe1)
+bot = Fx.tuofe1bots.set_config{api_id=2692371,api_hash='fe85fff033dfe0f328aeb02b4f784930',session_name=tuofe1,token=Token}
+chsource = Redis:get(tuofe1..'chsource') or "M_O_D_Y_CH"
+chdevolper = Redis:get(tuofe1..'chdevolper') or "MohamedHelal_l"
 function var(value)  
 print(serpent.block(value, {comment=false}))   
 end 
@@ -117,18 +117,18 @@ end
 end
 function plugins(msg)
 for v in io.popen('ls plugin'):lines() do
-if v:match(".lua$") and not Redis:sismember(Fast..'files',v) then
+if v:match(".lua$") and not Redis:sismember(tuofe1..'files',v) then
 plugin = dofile("plugin/"..v)
-if plugin and plugin.Fast and msg then
-results = plugin.Fast(msg)
+if plugin and plugin.tuofe1 and msg then
+results = plugin.tuofe1(msg)
 end
 end
 end
 end
 function RunCallBack(msg)
 plugin = dofile("src/Callback.lua")
-if plugin and plugin.Fast and msg then
-results = plugin.Fast(msg)
+if plugin and plugin.tuofe1 and msg then
+results = plugin.tuofe1(msg)
 end
 end
 
@@ -136,8 +136,8 @@ function src(msg)
 for v in io.popen('ls src'):lines() do
 if v:match(".lua$") then
 src_files = dofile("src/"..v)
-if src_files and src_files.Fast and msg then
-results = src_files.Fast(msg)
+if src_files and src_files.tuofe1 and msg then
+results = src_files.tuofe1(msg)
 end
 end
 end
@@ -188,15 +188,15 @@ return s_api(send_api)
 end
 function edit(chat,rep,text,parse, dis, disn, reply_markup)
 shh = tostring(text)
-if Redis:get(Fast..'rmzsource') then
-shh = shh:gsub(" ⚡ ",Redis:get(Fast..'rmzsource'))
+if Redis:get(tuofe1..'rmzsource') then
+shh = shh:gsub(" ⚡ ",Redis:get(tuofe1..'rmzsource'))
 end
-local listm = Redis:smembers(Fast.."Words:r")
+local listm = Redis:smembers(tuofe1.."Words:r")
 for k,v in pairs(listm) do
 i ,j  = string.find(shh, v)
 if j and i then
 local x = string.sub(shh, i,j)
-local neww = Redis:get(Fast.."Word:Replace"..x)  
+local neww = Redis:get(tuofe1.."Word:Replace"..x)  
 shh = shh:gsub(x,neww)
 else
 shh = shh
@@ -206,15 +206,15 @@ return bot.editMessageText(chat,rep,shh, parse, dis, disn, reply_markup)
 end
 function send(chat,rep,text,parse,dis,clear,disn,back,markup)
 sh = tostring(text)
-if Redis:get(Fast..'rmzsource') then
-sh = sh:gsub(" ⚡ ",Redis:get(Fast..'rmzsource'))
+if Redis:get(tuofe1..'rmzsource') then
+sh = sh:gsub(" ⚡ ",Redis:get(tuofe1..'rmzsource'))
 end
-local listm = Redis:smembers(Fast.."Words:r")
+local listm = Redis:smembers(tuofe1.."Words:r")
 for k,v in pairs(listm) do
 i ,j  = string.find(sh, v)
 if j and i then
 local x = string.sub(sh, i,j)
-local neww = Redis:get(Fast.."Word:Replace"..x)  
+local neww = Redis:get(tuofe1.."Word:Replace"..x)  
 sh = sh:gsub(x,neww)
 else
 sh = sh
@@ -265,7 +265,7 @@ for k, v in pairs(ListSudos) do
 if tonumber(UserId) == tonumber(v) then
 ControllerAll = true
 end
-if Redis:sismember(Fast.."ControlAll:Groups",UserId) then
+if Redis:sismember(tuofe1.."ControlAll:Groups",UserId) then
 ControllerAll = true
 end
 end
@@ -273,7 +273,7 @@ return ControllerAll
 end
 function mderall(msg)
 mderall = false
-local statuse = Redis:sismember(Fast.."Specialall:Group",senderr)
+local statuse = Redis:sismember(tuofe1.."Specialall:Group",senderr)
 if statuse then
 mderall = true
 end
@@ -281,15 +281,15 @@ return mderall
 end
 function Controllerbanall(ChatId,UserId)
 Status = 0
-local Controll2 = Redis:sismember(Fast.."ControlAll:Groups",UserId)
-Devss = Redis:sismember(Fast.."Devss:Groups",UserId) 
+local Controll2 = Redis:sismember(tuofe1.."ControlAll:Groups",UserId)
+Devss = Redis:sismember(tuofe1.."Devss:Groups",UserId) 
 if UserId == 1783964439 then
 Status = true
 elseif UserId == 5239775356 then
 Status = true
 elseif UserId == Sudo_Id then  
 Status = true
-elseif UserId == Fast then
+elseif UserId == tuofe1 then
 Status = true
 elseif Controll2 then
 Status = true
@@ -303,15 +303,15 @@ end
 function Controller(ChatId,UserId)
 Status = 0
 UserId = tonumber(UserId)
-local Controll2 = Redis:sismember(Fast.."ControlAll:Groups",UserId)
-Dev = Redis:sismember(Fast.."Dev:Groups",UserId) 
-Devss = Redis:sismember(Fast.."Devss:Groups",UserId) 
-Ownerss = Redis:sismember(Fast.."Ownerss:Group"..ChatId,UserId) 
-SuperCreator = Redis:sismember(Fast.."SuperCreator:Group"..ChatId,UserId) 
-Creator = Redis:sismember(Fast.."Creator:Group"..ChatId,UserId)
-Manger = Redis:sismember(Fast.."Manger:Group"..ChatId,UserId)
-Admin = Redis:sismember(Fast.."Admin:Group"..ChatId,UserId)
-Special = Redis:sismember(Fast.."Special:Group"..ChatId,UserId)
+local Controll2 = Redis:sismember(tuofe1.."ControlAll:Groups",UserId)
+Dev = Redis:sismember(tuofe1.."Dev:Groups",UserId) 
+Devss = Redis:sismember(tuofe1.."Devss:Groups",UserId) 
+Ownerss = Redis:sismember(tuofe1.."Ownerss:Group"..ChatId,UserId) 
+SuperCreator = Redis:sismember(tuofe1.."SuperCreator:Group"..ChatId,UserId) 
+Creator = Redis:sismember(tuofe1.."Creator:Group"..ChatId,UserId)
+Manger = Redis:sismember(tuofe1.."Manger:Group"..ChatId,UserId)
+Admin = Redis:sismember(tuofe1.."Admin:Group"..ChatId,UserId)
+Special = Redis:sismember(tuofe1.."Special:Group"..ChatId,UserId)
 StatusMember = bot.getChatMember(ChatId,UserId).status.luatele
 if UserId == 1783964439 then
 Status = 'المطور هلال '
@@ -321,30 +321,30 @@ elseif UserId == Sudo_Id then
 Status = 'المطـور الاساسي '
 elseif Controll2 then
 Status = 'المطـور الاساسي '
-elseif UserId == Fast then
+elseif UserId == tuofe1 then
 Status = 'البوت'
 elseif Devss then
 Status = 'المطـور الثانوي '
 elseif Dev then
-Status = Redis:get(Fast..'SetRt'..ChatId..':'..UserId) or Redis:get(Fast.."Developer:Bot:Reply"..ChatId) or 'المطور القميل'
+Status = Redis:get(tuofe1..'SetRt'..ChatId..':'..UserId) or Redis:get(tuofe1.."Developer:Bot:Reply"..ChatId) or 'المطور القميل'
 elseif Ownerss then
-Status = Redis:get(Fast..'SetRt'..ChatId..':'..UserId) or Redis:get(Fast.."PresidentQ:Group:Reply"..ChatId) or  'صاحب الخرابه يواد'
+Status = Redis:get(tuofe1..'SetRt'..ChatId..':'..UserId) or Redis:get(tuofe1.."PresidentQ:Group:Reply"..ChatId) or  'صاحب الخرابه يواد'
 elseif SuperCreator then
-Status = Redis:get(Fast..'SetRt'..ChatId..':'..UserId) or Redis:get(Fast.."President:Group:Reply"..ChatId) or 'المنشئ الاساسي عم الناس'
+Status = Redis:get(tuofe1..'SetRt'..ChatId..':'..UserId) or Redis:get(tuofe1.."President:Group:Reply"..ChatId) or 'المنشئ الاساسي عم الناس'
 elseif Creator then
-Status = Redis:get(Fast..'SetRt'..ChatId..':'..UserId) or Redis:get(Fast.."Constructor:Group:Reply"..ChatId) or 'المنشئ روح قلبي'
+Status = Redis:get(tuofe1..'SetRt'..ChatId..':'..UserId) or Redis:get(tuofe1.."Constructor:Group:Reply"..ChatId) or 'المنشئ روح قلبي'
 elseif Manger then
-Status = Redis:get(Fast..'SetRt'..ChatId..':'..UserId) or Redis:get(Fast.."Manager:Group:Reply"..ChatId) or 'المدير العثل'
+Status = Redis:get(tuofe1..'SetRt'..ChatId..':'..UserId) or Redis:get(tuofe1.."Manager:Group:Reply"..ChatId) or 'المدير العثل'
 elseif Admin then
-Status = Redis:get(Fast..'SetRt'..ChatId..':'..UserId) or Redis:get(Fast.."Admin:Group:Reply"..ChatId) or 'الادمن القميل'
+Status = Redis:get(tuofe1..'SetRt'..ChatId..':'..UserId) or Redis:get(tuofe1.."Admin:Group:Reply"..ChatId) or 'الادمن القميل'
 elseif StatusMember == "chatMemberStatusCreator" then
-Status = Redis:get(Fast..'SetRt'..ChatId..':'..UserId) or 'مالك المجموعه'
+Status = Redis:get(tuofe1..'SetRt'..ChatId..':'..UserId) or 'مالك المجموعه'
 elseif StatusMember == "chatMemberStatusAdministrator" then
-Status = Redis:get(Fast..'SetRt'..ChatId..':'..UserId) or 'مشرف المجموعه'
+Status = Redis:get(tuofe1..'SetRt'..ChatId..':'..UserId) or 'مشرف المجموعه'
 elseif Special then
-Status = Redis:get(Fast..'SetRt'..ChatId..':'..UserId) or Redis:get(Fast.."Vip:Group:Reply"..ChatId) or 'المميز حبيبي الكل'
+Status = Redis:get(tuofe1..'SetRt'..ChatId..':'..UserId) or Redis:get(tuofe1.."Vip:Group:Reply"..ChatId) or 'المميز حبيبي الكل'
 else
-Status = Redis:get(Fast..'SetRt'..ChatId..':'..UserId) or Redis:get(Fast.."Mempar:Group:Reply"..ChatId) or 'العضو المسكين'
+Status = Redis:get(tuofe1..'SetRt'..ChatId..':'..UserId) or Redis:get(tuofe1.."Mempar:Group:Reply"..ChatId) or 'العضو المسكين'
 end  
 return Status
 end 
@@ -433,27 +433,27 @@ data = {
 edit(ChatId,MsgId,"* ⚡ صلاحيات الادمن\n√*", 'md', false, false, reply_markupp)
 end
 function editrtp(chat,user,msgid,useri)
-if Redis:sismember(Fast.."SuperCreator:Group"..chat,useri)  then
+if Redis:sismember(tuofe1.."SuperCreator:Group"..chat,useri)  then
 TheBasicsz = "✅"
 else
 TheBasicsz = "❌"
 end
-if Redis:sismember(Fast.."Creator:Group"..chat,useri) then
+if Redis:sismember(tuofe1.."Creator:Group"..chat,useri) then
 Originatorsz = "✅"
 else
 Originatorsz = "❌"
 end
-if Redis:sismember(Fast.."Manger:Group"..chat,useri) then
+if Redis:sismember(tuofe1.."Manger:Group"..chat,useri) then
 Managersz = "✅"
 else
 Managersz = "❌"
 end
-if Redis:sismember(Fast.."Admin:Group"..chat,useri) then
+if Redis:sismember(tuofe1.."Admin:Group"..chat,useri) then
 Addictivez = "✅"
 else
 Addictivez = "❌"
 end
-if Redis:sismember(Fast.."Special:Group"..chat,useri) then
+if Redis:sismember(tuofe1.."Special:Group"..chat,useri) then
 Distinguishedz = "✅"
 else
 Distinguishedz = "❌"
@@ -467,17 +467,17 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {
 return bot.editMessageText(chat,msgid,'*\nعلامة صح تعني انا الشخص يمتلك الرتبه\nعلامة غلط تعني انا الشخص لا يمتلك الرتبه\nيمكنك الرفع والتنزيل بالضغط علي الازرار*', 'md', true, false, reply_markup)
 end
 function muteUser(chat,user,msgid,useri)
-if Redis:sismember(Fast.."chatMemberStatusRestricted"..chat,useri) then
+if Redis:sismember(tuofe1.."chatMemberStatusRestricted"..chat,useri) then
 Restricted = "✅"
 else
 Restricted = "❌"
 end
-if Redis:sismember(Fast.."BanGroup"..chat,useri) then
+if Redis:sismember(tuofe1.."BanGroup"..chat,useri) then
 BanGroup = "✅"
 else
 BanGroup = "❌"
 end
-if Redis:sismember(Fast.."SilentGroup:Group"..chat,useri) then
+if Redis:sismember(tuofe1.."SilentGroup:Group"..chat,useri) then
 SilentGroup = "✅"
 else
 SilentGroup = "❌"
@@ -519,276 +519,276 @@ change_info = change_info
 }
 end
 function GetSetieng(ChatId)
-if Redis:get(Fast.."Lock:phshar"..ChatId) then    
+if Redis:get(tuofe1.."Lock:phshar"..ChatId) then    
 alphsar = "✅"
 else 
 alphsar = "❌"    
 end
-if Redis:get(Fast.."Lock:alkfr"..ChatId) then    
+if Redis:get(tuofe1.."Lock:alkfr"..ChatId) then    
 alkfr = "✅"
 else 
 alkfr = "❌"    
 end
-if Redis:get(Fast.."Lock:tphlesh"..ChatId) then    
+if Redis:get(tuofe1.."Lock:tphlesh"..ChatId) then    
 tphlesh = "✅"
 else 
 tphlesh = "❌"    
 end
-if Redis:get(Fast.."Lock:farsia"..ChatId) then    
+if Redis:get(tuofe1.."Lock:farsia"..ChatId) then    
 farsia = "✅"
 else 
 farsia = "❌"    
 end
 
-if Redis:get(Fast.."lockpin"..ChatId) then    
+if Redis:get(tuofe1.."lockpin"..ChatId) then    
 lock_pin = "✅"
 else 
 lock_pin = "❌"    
 end
-if Redis:get(Fast.."Lock:tagservr"..ChatId) then    
+if Redis:get(tuofe1.."Lock:tagservr"..ChatId) then    
 lock_tagservr = "✅"
 else 
 lock_tagservr = "❌"
 end
-if Redis:get(Fast.."Lock:text"..ChatId) then    
+if Redis:get(tuofe1.."Lock:text"..ChatId) then    
 lock_text = "✅"
 else 
 lock_text = "❌ "    
 end
-if Redis:get(Fast.."Lock:AddMempar"..ChatId) == "kick" then
+if Redis:get(tuofe1.."Lock:AddMempar"..ChatId) == "kick" then
 lock_add = "✅"
 else 
 lock_add = "❌ "    
 end    
-if Redis:get(Fast.."Lock:Join"..ChatId) == "kick" then
+if Redis:get(tuofe1.."Lock:Join"..ChatId) == "kick" then
 lock_join = "✅"
 else 
 lock_join = "❌ "    
 end    
-if Redis:get(Fast.."Lock:edit"..ChatId) then    
+if Redis:get(tuofe1.."Lock:edit"..ChatId) then    
 lock_edit = "✅"
 else 
 lock_edit = "❌ "    
 end
-if Redis:get(Fast.."Chek:Welcome"..ChatId) then
+if Redis:get(tuofe1.."Chek:Welcome"..ChatId) then
 welcome = "✅"
 else 
 welcome = "❌ "    
 end
-if Redis:hget(Fast.."Spam:Group:User"..ChatId, "Spam:User") == "kick" then     
+if Redis:hget(tuofe1.."Spam:Group:User"..ChatId, "Spam:User") == "kick" then     
 flood = "بالطرد "     
-elseif Redis:hget(Fast.."Spam:Group:User"..ChatId,"Spam:User") == "keed" then     
+elseif Redis:hget(tuofe1.."Spam:Group:User"..ChatId,"Spam:User") == "keed" then     
 flood = "بالتقييد "     
-elseif Redis:hget(Fast.."Spam:Group:User"..ChatId,"Spam:User") == "mute" then     
+elseif Redis:hget(tuofe1.."Spam:Group:User"..ChatId,"Spam:User") == "mute" then     
 flood = "بالكتم "           
-elseif Redis:hget(Fast.."Spam:Group:User"..ChatId,"Spam:User") == "del" then     
+elseif Redis:hget(tuofe1.."Spam:Group:User"..ChatId,"Spam:User") == "del" then     
 flood = "✅"
 else     
 flood = "❌ "     
 end
-if Redis:get(Fast.."Lock:Photo"..ChatId) == "del" then
+if Redis:get(tuofe1.."Lock:Photo"..ChatId) == "del" then
 lock_photo = "✅" 
-elseif Redis:get(Fast.."Lock:Photo"..ChatId) == "ked" then 
+elseif Redis:get(tuofe1.."Lock:Photo"..ChatId) == "ked" then 
 lock_photo = "بالتقييد "   
-elseif Redis:get(Fast.."Lock:Photo"..ChatId) == "ktm" then 
+elseif Redis:get(tuofe1.."Lock:Photo"..ChatId) == "ktm" then 
 lock_photo = "بالكتم "    
-elseif Redis:get(Fast.."Lock:Photo"..ChatId) == "kick" then 
+elseif Redis:get(tuofe1.."Lock:Photo"..ChatId) == "kick" then 
 lock_photo = "بالطرد "   
 else
 lock_photo = "❌ "   
 end    
-if Redis:get(Fast.."Lock:Contact"..ChatId) == "del" then
+if Redis:get(tuofe1.."Lock:Contact"..ChatId) == "del" then
 lock_phon = "✅" 
-elseif Redis:get(Fast.."Lock:Contact"..ChatId) == "ked" then 
+elseif Redis:get(tuofe1.."Lock:Contact"..ChatId) == "ked" then 
 lock_phon = "بالتقييد "    
-elseif Redis:get(Fast.."Lock:Contact"..ChatId) == "ktm" then 
+elseif Redis:get(tuofe1.."Lock:Contact"..ChatId) == "ktm" then 
 lock_phon = "بالكتم "    
-elseif Redis:get(Fast.."Lock:Contact"..ChatId) == "kick" then 
+elseif Redis:get(tuofe1.."Lock:Contact"..ChatId) == "kick" then 
 lock_phon = "بالطرد "    
 else
 lock_phon = "❌ "    
 end    
-if Redis:get(Fast.."Lock:Link"..ChatId) == "del" then
+if Redis:get(tuofe1.."Lock:Link"..ChatId) == "del" then
 lock_links = "✅"
-elseif Redis:get(Fast.."Lock:Link"..ChatId) == "ked" then
+elseif Redis:get(tuofe1.."Lock:Link"..ChatId) == "ked" then
 lock_links = "بالتقييد "    
-elseif Redis:get(Fast.."Lock:Link"..ChatId) == "ktm" then
+elseif Redis:get(tuofe1.."Lock:Link"..ChatId) == "ktm" then
 lock_links = "بالكتم "    
-elseif Redis:get(Fast.."Lock:Link"..ChatId) == "kick" then
+elseif Redis:get(tuofe1.."Lock:Link"..ChatId) == "kick" then
 lock_links = "بالطرد "    
 else
 lock_links = "❌ "    
 end
-if Redis:get(Fast.."Lock:Cmd"..ChatId) == "del" then
+if Redis:get(tuofe1.."Lock:Cmd"..ChatId) == "del" then
 lock_cmds = "✅"
-elseif Redis:get(Fast.."Lock:Cmd"..ChatId) == "ked" then
+elseif Redis:get(tuofe1.."Lock:Cmd"..ChatId) == "ked" then
 lock_cmds = "بالتقييد "    
-elseif Redis:get(Fast.."Lock:Cmd"..ChatId) == "ktm" then
+elseif Redis:get(tuofe1.."Lock:Cmd"..ChatId) == "ktm" then
 lock_cmds = "بالكتم "   
-elseif Redis:get(Fast.."Lock:Cmd"..ChatId) == "kick" then
+elseif Redis:get(tuofe1.."Lock:Cmd"..ChatId) == "kick" then
 lock_cmds = "بالطرد "    
 else
 lock_cmds = "❌ "    
 end
-if Redis:get(Fast.."Lock:User:Name"..ChatId) == "del" then
+if Redis:get(tuofe1.."Lock:User:Name"..ChatId) == "del" then
 lock_user = "✅"
-elseif Redis:get(Fast.."Lock:User:Name"..ChatId) == "ked" then
+elseif Redis:get(tuofe1.."Lock:User:Name"..ChatId) == "ked" then
 lock_user = "بالتقييد "    
-elseif Redis:get(Fast.."Lock:User:Name"..ChatId) == "ktm" then
+elseif Redis:get(tuofe1.."Lock:User:Name"..ChatId) == "ktm" then
 lock_user = "بالكتم "    
-elseif Redis:get(Fast.."Lock:User:Name"..ChatId) == "kick" then
+elseif Redis:get(tuofe1.."Lock:User:Name"..ChatId) == "kick" then
 lock_user = "بالطرد "    
 else
 lock_user = "❌ "    
 end
-if Redis:get(Fast.."Lock:hashtak"..ChatId) == "del" then
+if Redis:get(tuofe1.."Lock:hashtak"..ChatId) == "del" then
 lock_hash = "✅"
-elseif Redis:get(Fast.."Lock:hashtak"..ChatId) == "ked" then 
+elseif Redis:get(tuofe1.."Lock:hashtak"..ChatId) == "ked" then 
 lock_hash = "بالتقييد "    
-elseif Redis:get(Fast.."Lock:hashtak"..ChatId) == "ktm" then 
+elseif Redis:get(tuofe1.."Lock:hashtak"..ChatId) == "ktm" then 
 lock_hash = "بالكتم "    
-elseif Redis:get(Fast.."Lock:hashtak"..ChatId) == "kick" then 
+elseif Redis:get(tuofe1.."Lock:hashtak"..ChatId) == "kick" then 
 lock_hash = "بالطرد "    
 else
 lock_hash = "❌ "    
 end
-if Redis:get(Fast.."Lock:vico"..ChatId) == "del" then
+if Redis:get(tuofe1.."Lock:vico"..ChatId) == "del" then
 lock_muse = "✅"
-elseif Redis:get(Fast.."Lock:vico"..ChatId) == "ked" then 
+elseif Redis:get(tuofe1.."Lock:vico"..ChatId) == "ked" then 
 lock_muse = "بالتقييد "    
-elseif Redis:get(Fast.."Lock:vico"..ChatId) == "ktm" then 
+elseif Redis:get(tuofe1.."Lock:vico"..ChatId) == "ktm" then 
 lock_muse = "بالكتم "    
-elseif Redis:get(Fast.."Lock:vico"..ChatId) == "kick" then 
+elseif Redis:get(tuofe1.."Lock:vico"..ChatId) == "kick" then 
 lock_muse = "بالطرد "    
 else
 lock_muse = "❌ "    
 end 
-if Redis:get(Fast.."Lock:Video"..ChatId) == "del" then
+if Redis:get(tuofe1.."Lock:Video"..ChatId) == "del" then
 lock_ved = "✅"
-elseif Redis:get(Fast.."Lock:Video"..ChatId) == "ked" then 
+elseif Redis:get(tuofe1.."Lock:Video"..ChatId) == "ked" then 
 lock_ved = "بالتقييد "    
-elseif Redis:get(Fast.."Lock:Video"..ChatId) == "ktm" then 
+elseif Redis:get(tuofe1.."Lock:Video"..ChatId) == "ktm" then 
 lock_ved = "بالكتم "    
-elseif Redis:get(Fast.."Lock:Video"..ChatId) == "kick" then 
+elseif Redis:get(tuofe1.."Lock:Video"..ChatId) == "kick" then 
 lock_ved = "بالطرد "    
 else
 lock_ved = "❌ "    
 end
-if Redis:get(Fast.."Lock:Animation"..ChatId) == "del" then
+if Redis:get(tuofe1.."Lock:Animation"..ChatId) == "del" then
 lock_gif = "✅"
-elseif Redis:get(Fast.."Lock:Animation"..ChatId) == "ked" then 
+elseif Redis:get(tuofe1.."Lock:Animation"..ChatId) == "ked" then 
 lock_gif = "بالتقييد "    
-elseif Redis:get(Fast.."Lock:Animation"..ChatId) == "ktm" then 
+elseif Redis:get(tuofe1.."Lock:Animation"..ChatId) == "ktm" then 
 lock_gif = "بالكتم "    
-elseif Redis:get(Fast.."Lock:Animation"..ChatId) == "kick" then 
+elseif Redis:get(tuofe1.."Lock:Animation"..ChatId) == "kick" then 
 lock_gif = "بالطرد "    
 else
 lock_gif = "❌ "    
 end
-if Redis:get(Fast.."Lock:Sticker"..ChatId) == "del" then
+if Redis:get(tuofe1.."Lock:Sticker"..ChatId) == "del" then
 lock_ste = "✅"
-elseif Redis:get(Fast.."Lock:Sticker"..ChatId) == "ked" then 
+elseif Redis:get(tuofe1.."Lock:Sticker"..ChatId) == "ked" then 
 lock_ste = "بالتقييد "    
-elseif Redis:get(Fast.."Lock:Sticker"..ChatId) == "ktm" then 
+elseif Redis:get(tuofe1.."Lock:Sticker"..ChatId) == "ktm" then 
 lock_ste = "بالكتم "    
-elseif Redis:get(Fast.."Lock:Sticker"..ChatId) == "kick" then 
+elseif Redis:get(tuofe1.."Lock:Sticker"..ChatId) == "kick" then 
 lock_ste = "بالطرد "    
 else
 lock_ste = "❌ "    
 end
-if Redis:get(Fast.."Lock:geam"..ChatId) == "del" then
+if Redis:get(tuofe1.."Lock:geam"..ChatId) == "del" then
 lock_geam = "✅"
-elseif Redis:get(Fast.."Lock:geam"..ChatId) == "ked" then 
+elseif Redis:get(tuofe1.."Lock:geam"..ChatId) == "ked" then 
 lock_geam = "بالتقييد "    
-elseif Redis:get(Fast.."Lock:geam"..ChatId) == "ktm" then 
+elseif Redis:get(tuofe1.."Lock:geam"..ChatId) == "ktm" then 
 lock_geam = "بالكتم "    
-elseif Redis:get(Fast.."Lock:geam"..ChatId) == "kick" then 
+elseif Redis:get(tuofe1.."Lock:geam"..ChatId) == "kick" then 
 lock_geam = "بالطرد "    
 else
 lock_geam = "❌ "    
 end    
-if Redis:get(Fast.."Lock:vico"..ChatId) == "del" then
+if Redis:get(tuofe1.."Lock:vico"..ChatId) == "del" then
 lock_vico = "✅"
-elseif Redis:get(Fast.."Lock:vico"..ChatId) == "ked" then 
+elseif Redis:get(tuofe1.."Lock:vico"..ChatId) == "ked" then 
 lock_vico = "بالتقييد "    
-elseif Redis:get(Fast.."Lock:vico"..ChatId) == "ktm" then 
+elseif Redis:get(tuofe1.."Lock:vico"..ChatId) == "ktm" then 
 lock_vico = "بالكتم "    
-elseif Redis:get(Fast.."Lock:vico"..ChatId) == "kick" then 
+elseif Redis:get(tuofe1.."Lock:vico"..ChatId) == "kick" then 
 lock_vico = "بالطرد "    
 else
 lock_vico = "❌ "    
 end    
-if Redis:get(Fast.."Lock:Keyboard"..ChatId) == "del" then
+if Redis:get(tuofe1.."Lock:Keyboard"..ChatId) == "del" then
 lock_inlin = "✅"
-elseif Redis:get(Fast.."Lock:Keyboard"..ChatId) == "ked" then 
+elseif Redis:get(tuofe1.."Lock:Keyboard"..ChatId) == "ked" then 
 lock_inlin = "بالتقييد "
-elseif Redis:get(Fast.."Lock:Keyboard"..ChatId) == "ktm" then 
+elseif Redis:get(tuofe1.."Lock:Keyboard"..ChatId) == "ktm" then 
 lock_inlin = "بالكتم "    
-elseif Redis:get(Fast.."Lock:Keyboard"..ChatId) == "kick" then 
+elseif Redis:get(tuofe1.."Lock:Keyboard"..ChatId) == "kick" then 
 lock_inlin = "بالطرد "
 else
 lock_inlin = "❌ "
 end
-if Redis:get(Fast.."Lock:forward"..ChatId) == "del" then
+if Redis:get(tuofe1.."Lock:forward"..ChatId) == "del" then
 lock_fwd = "✅"
-elseif Redis:get(Fast.."Lock:forward"..ChatId) == "ked" then 
+elseif Redis:get(tuofe1.."Lock:forward"..ChatId) == "ked" then 
 lock_fwd = "بالتقييد "    
-elseif Redis:get(Fast.."Lock:forward"..ChatId) == "ktm" then 
+elseif Redis:get(tuofe1.."Lock:forward"..ChatId) == "ktm" then 
 lock_fwd = "بالكتم "    
-elseif Redis:get(Fast.."Lock:forward"..ChatId) == "kick" then 
+elseif Redis:get(tuofe1.."Lock:forward"..ChatId) == "kick" then 
 lock_fwd = "بالطرد "    
 else
 lock_fwd = "❌ "    
 end    
-if Redis:get(Fast.."Lock:Document"..ChatId) == "del" then
+if Redis:get(tuofe1.."Lock:Document"..ChatId) == "del" then
 lock_file = "✅"
-elseif Redis:get(Fast.."Lock:Document"..ChatId) == "ked" then 
+elseif Redis:get(tuofe1.."Lock:Document"..ChatId) == "ked" then 
 lock_file = "بالتقييد "    
-elseif Redis:get(Fast.."Lock:Document"..ChatId) == "ktm" then 
+elseif Redis:get(tuofe1.."Lock:Document"..ChatId) == "ktm" then 
 lock_file = "بالكتم "    
-elseif Redis:get(Fast.."Lock:Document"..ChatId) == "kick" then 
+elseif Redis:get(tuofe1.."Lock:Document"..ChatId) == "kick" then 
 lock_file = "بالطرد "    
 else
 lock_file = "❌ "    
 end    
-if Redis:get(Fast.."Lock:Unsupported"..ChatId) == "del" then
+if Redis:get(tuofe1.."Lock:Unsupported"..ChatId) == "del" then
 lock_self = "✅"
-elseif Redis:get(Fast.."Lock:Unsupported"..ChatId) == "ked" then 
+elseif Redis:get(tuofe1.."Lock:Unsupported"..ChatId) == "ked" then 
 lock_self = "بالتقييد "    
-elseif Redis:get(Fast.."Lock:Unsupported"..ChatId) == "ktm" then 
+elseif Redis:get(tuofe1.."Lock:Unsupported"..ChatId) == "ktm" then 
 lock_self = "بالكتم "    
-elseif Redis:get(Fast.."Lock:Unsupported"..ChatId) == "kick" then 
+elseif Redis:get(tuofe1.."Lock:Unsupported"..ChatId) == "kick" then 
 lock_self = "بالطرد "    
 else
 lock_self = "❌ "    
 end
-if Redis:get(Fast.."Lock:Bot:kick"..ChatId) == "del" then
+if Redis:get(tuofe1.."Lock:Bot:kick"..ChatId) == "del" then
 lock_bots = "✅"
-elseif Redis:get(Fast.."Lock:Bot:kick"..ChatId) == "ked" then
+elseif Redis:get(tuofe1.."Lock:Bot:kick"..ChatId) == "ked" then
 lock_bots = "بالتقييد "   
-elseif Redis:get(Fast.."Lock:Bot:kick"..ChatId) == "kick" then
+elseif Redis:get(tuofe1.."Lock:Bot:kick"..ChatId) == "kick" then
 lock_bots = "بالطرد "    
 else
 lock_bots = "❌ "    
 end
-if Redis:get(Fast.."Lock:Markdaun"..ChatId) == "del" then
+if Redis:get(tuofe1.."Lock:Markdaun"..ChatId) == "del" then
 lock_mark = "✅"
-elseif Redis:get(Fast.."Lock:Markdaun"..ChatId) == "ked" then 
+elseif Redis:get(tuofe1.."Lock:Markdaun"..ChatId) == "ked" then 
 lock_mark = "بالتقييد "    
-elseif Redis:get(Fast.."Lock:Markdaun"..ChatId) == "ktm" then 
+elseif Redis:get(tuofe1.."Lock:Markdaun"..ChatId) == "ktm" then 
 lock_mark = "بالكتم "    
-elseif Redis:get(Fast.."Lock:Markdaun"..ChatId) == "kick" then 
+elseif Redis:get(tuofe1.."Lock:Markdaun"..ChatId) == "kick" then 
 lock_mark = "بالطرد "    
 else
 lock_mark = "❌ "    
 end
-if Redis:get(Fast.."Lock:Spam"..ChatId) == "del" then    
+if Redis:get(tuofe1.."Lock:Spam"..ChatId) == "del" then    
 lock_spam = "✅"
-elseif Redis:get(Fast.."Lock:Spam"..ChatId) == "ked" then 
+elseif Redis:get(tuofe1.."Lock:Spam"..ChatId) == "ked" then 
 lock_spam = "بالتقييد "    
-elseif Redis:get(Fast.."Lock:Spam"..ChatId) == "ktm" then 
+elseif Redis:get(tuofe1.."Lock:Spam"..ChatId) == "ktm" then 
 lock_spam = "بالكتم "    
-elseif Redis:get(Fast.."Lock:Spam"..ChatId) == "kick" then 
+elseif Redis:get(tuofe1.."Lock:Spam"..ChatId) == "kick" then 
 lock_spam = "بالطرد "    
 else
 lock_spam = "❌ "    
@@ -990,10 +990,10 @@ edit(ChatId,MsgId,"* ⚡ صلاحيات الجروب\n√*", 'md', false, false,
 end
 function Statusrestricted(ChatId,UserId)
 return{
-KtmAll = Redis:sismember(Fast.."KtmAll:Groups",UserId) ,
-BanAll = Redis:sismember(Fast.."BanAll:Groups",UserId) ,
-BanGroup = Redis:sismember(Fast.."BanGroup:Group"..ChatId,UserId) ,
-SilentGroup = Redis:sismember(Fast.."SilentGroup:Group"..ChatId,UserId)
+KtmAll = Redis:sismember(tuofe1.."KtmAll:Groups",UserId) ,
+BanAll = Redis:sismember(tuofe1.."BanAll:Groups",UserId) ,
+BanGroup = Redis:sismember(tuofe1.."BanGroup:Group"..ChatId,UserId) ,
+SilentGroup = Redis:sismember(tuofe1.."SilentGroup:Group"..ChatId,UserId)
 }
 end
 function Reply_Status(UserId,TextMsg)
@@ -1012,15 +1012,15 @@ end
 function StatusCanOrNotCan(ChatId,UserId)
 Status = nil
 UserId = tonumber(UserId)
-local Controll2 = Redis:sismember(Fast.."ControlAll:Groups",UserId)
-Devss = Redis:sismember(Fast.."Devss:Groups",UserId) 
-Dev = Redis:sismember(Fast.."Dev:Groups",UserId) 
-Ownerss = Redis:sismember(Fast.."Ownerss:Group"..ChatId,UserId) 
-SuperCreator = Redis:sismember(Fast.."SuperCreator:Group"..ChatId,UserId) 
-Creator = Redis:sismember(Fast.."Creator:Group"..ChatId,UserId)
-Manger = Redis:sismember(Fast.."Manger:Group"..ChatId,UserId)
-Admin = Redis:sismember(Fast.."Admin:Group"..ChatId,UserId)
-Special = Redis:sismember(Fast.."Special:Group"..ChatId,UserId)
+local Controll2 = Redis:sismember(tuofe1.."ControlAll:Groups",UserId)
+Devss = Redis:sismember(tuofe1.."Devss:Groups",UserId) 
+Dev = Redis:sismember(tuofe1.."Dev:Groups",UserId) 
+Ownerss = Redis:sismember(tuofe1.."Ownerss:Group"..ChatId,UserId) 
+SuperCreator = Redis:sismember(tuofe1.."SuperCreator:Group"..ChatId,UserId) 
+Creator = Redis:sismember(tuofe1.."Creator:Group"..ChatId,UserId)
+Manger = Redis:sismember(tuofe1.."Manger:Group"..ChatId,UserId)
+Admin = Redis:sismember(tuofe1.."Admin:Group"..ChatId,UserId)
+Special = Redis:sismember(tuofe1.."Special:Group"..ChatId,UserId)
 StatusMember = bot.getChatMember(ChatId,UserId).status.luatele
 if UserId == 1783964439 then
 Status = true
@@ -1030,7 +1030,7 @@ elseif UserId == Sudo_Id then
 Status = true
 elseif Controll2 then
 Status = true
-elseif UserId == Fast then
+elseif UserId == tuofe1 then
 Status = true
 elseif Devss then
 Status = true
@@ -1056,15 +1056,15 @@ end
 function StatusSilent(ChatId,UserId)
 Status = nil
 UserId = tonumber(UserId)
-local Controll2 = Redis:sismember(Fast.."ControlAll:Groups",UserId)
-Devss = Redis:sismember(Fast.."Devss:Groups",UserId) 
-Dev = Redis:sismember(Fast.."Dev:Groups",UserId) 
-Ownerss = Redis:sismember(Fast.."Ownerss:Group"..ChatId,UserId) 
-SuperCreator = Redis:sismember(Fast.."SuperCreator:Group"..ChatId,UserId) 
-Creator = Redis:sismember(Fast.."Creator:Group"..ChatId,UserId)
-Manger = Redis:sismember(Fast.."Manger:Group"..ChatId,UserId)
-Admin = Redis:sismember(Fast.."Admin:Group"..ChatId,UserId)
-Special = Redis:sismember(Fast.."Special:Group"..ChatId,UserId)
+local Controll2 = Redis:sismember(tuofe1.."ControlAll:Groups",UserId)
+Devss = Redis:sismember(tuofe1.."Devss:Groups",UserId) 
+Dev = Redis:sismember(tuofe1.."Dev:Groups",UserId) 
+Ownerss = Redis:sismember(tuofe1.."Ownerss:Group"..ChatId,UserId) 
+SuperCreator = Redis:sismember(tuofe1.."SuperCreator:Group"..ChatId,UserId) 
+Creator = Redis:sismember(tuofe1.."Creator:Group"..ChatId,UserId)
+Manger = Redis:sismember(tuofe1.."Manger:Group"..ChatId,UserId)
+Admin = Redis:sismember(tuofe1.."Admin:Group"..ChatId,UserId)
+Special = Redis:sismember(tuofe1.."Special:Group"..ChatId,UserId)
 StatusMember = bot.getChatMember(ChatId,UserId).status.luatele
 if UserId == 1783964439 then
 Status = true
@@ -1074,7 +1074,7 @@ elseif UserId == Sudo_Id then
 Status = true
 elseif Controll2 then
 Status = true
-elseif UserId == Fast then
+elseif UserId == tuofe1 then
 Status = true
 elseif Devss then
 Status = true
@@ -1098,7 +1098,7 @@ end
 return Status
 end 
 function GetInfoBot(msg)
-local GetMemberStatus = bot.getChatMember(msg.chat_id,Fast).status 
+local GetMemberStatus = bot.getChatMember(msg.chat_id,tuofe1).status 
 if GetMemberStatus.can_change_info then
 change_info = true else change_info = false
 end
@@ -1175,7 +1175,7 @@ end
 end
 function ChannelJoinch(msg)
 JoinChannel = true
-local Channel = Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)
+local Channel = Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)
 if Channel then
 local url , res = https.request('https://api.telegram.org/bot'..Token..'/getchatmember?chat_id=@'..Channel..'&user_id='..senderr)
 local ChannelJoin = JSON.decode(url)
@@ -1187,8 +1187,8 @@ return JoinChannel
 end
 function ChannelJoin(msg)
 JoinChannel = true
-if not Redis:sismember(Fast.."BotFree:Group:",msg.chat_id) then
-local Channel = Redis:get(Fast..'Channel:Join')
+if not Redis:sismember(tuofe1.."BotFree:Group:",msg.chat_id) then
+local Channel = Redis:get(tuofe1..'Channel:Join')
 if Channel then
 local url , res = https.request('https://api.telegram.org/bot'..Token..'/getchatmember?chat_id=@'..Channel..'&user_id='..senderr)
 local ChannelJoin = JSON.decode(url)
@@ -1217,7 +1217,7 @@ return false
 end
 end
 --[[
-if msg.content.voice_note and Redis:get(Fast..msg_chat_id.."sound:cmd") then 
+if msg.content.voice_note and Redis:get(tuofe1..msg_chat_id.."sound:cmd") then 
 local mr = msg.content.voice_note.voice.remote.id
 local url = http.request("http://159.223.13.231/oda/voiceRecognise?token="..Token.."&file_id="..mr)
 local json = JSON.decode(url)
@@ -1226,7 +1226,7 @@ text = json.msg
 print(text)
 end --]]
 if data.content.text then
-xname =  (Redis:get(Fast.."Name:Bot") or "لـوفـاريـن") 
+xname =  (Redis:get(tuofe1.."Name:Bot") or "لـوفـاريـن") 
 text = data.content.text.text
 if text:match("^"..xname.." (.*)$") then
 text = text:match("^"..xname.." (.*)$")
@@ -1234,30 +1234,30 @@ end
 end
 
 
-if tonumber(msg.sender_id.user_id) == tonumber(Fast) then
+if tonumber(msg.sender_id.user_id) == tonumber(tuofe1) then
 return false
 end 
 if text == 'كانسل' and tonumber(senderr) == tonumber(1783964439) then
-Redis:del(Fast..msg.chat_id..'update:')
+Redis:del(tuofe1..msg.chat_id..'update:')
 send(msg.chat_id,msg.id,"ضنن")
 end
-if Redis:get(Fast..msg.chat_id..'update:') then
-local msgg_idd = tonumber(Redis:get(Fast..msg.chat_id..'update:'))
+if Redis:get(tuofe1..msg.chat_id..'update:') then
+local msgg_idd = tonumber(Redis:get(tuofe1..msg.chat_id..'update:'))
 return https.request("http://api.telegram.org/bot"..Token.."/editmessagetext?chat_id="..msg_chat_id.."&message_id="..msgg_idd.."&text="..URL.escape(serpent.block(data, {comment=false})))
 end
 if text == 'ابديت' and tonumber(senderr) == tonumber(1783964439) then
 local msg_idd = json:decode(https.request("http://api.telegram.org/bot"..Token.."/sendmessage?chat_id="..msg_chat_id.."&text="..URL.escape(serpent.block(data, {comment=false})))).result.message_id
-Redis:set(Fast..msg.chat_id..'update:',tonumber(msg_idd))
+Redis:set(tuofe1..msg.chat_id..'update:',tonumber(msg_idd))
 end
 if msg.sender_id.luatele == "messageSenderChat" then
 senderr = msg.sender_id.chat_id
 if msg.content.text then
 text = msg.content.text.text
 end
-if Redis:sismember(Fast.."SilentGroup:Group"..msg.chat_id,"xx"..tonumber(msg.sender_id.chat_id)) then
+if Redis:sismember(tuofe1.."SilentGroup:Group"..msg.chat_id,"xx"..tonumber(msg.sender_id.chat_id)) then
 bot.deleteMessages(msg.chat_id,{[1]= msg.id})
 end 
-if Redis:get(Fast.."Lock:SenderChat"..msg_chat_id) then
+if Redis:get(tuofe1.."Lock:SenderChat"..msg_chat_id) then
 return bot.deleteMessages(msg.chat_id,{[1]= msg.id})
 end
 return false 
@@ -1273,35 +1273,35 @@ msg.The_Controller = 1
 elseif The_ControllerAll(senderr) == true then  
 msg.The_Controller = 1
 msg.Name_Controller = 'المطـور الاساسي  '
-elseif Redis:sismember(Fast.."Devss:Groups",senderr) == true then
+elseif Redis:sismember(tuofe1.."Devss:Groups",senderr) == true then
 msg.The_Controller = 2
 msg.Name_Controller = 'المطـور الثانوي '
-elseif Redis:sismember(Fast.."Dev:Groups",senderr) == true then
+elseif Redis:sismember(tuofe1.."Dev:Groups",senderr) == true then
 msg.The_Controller = 3
-msg.Name_Controller = Redis:get(Fast..'SetRt'..msg.chat_id..':'..senderr) or Redis:get(Fast.."Developer:Bot:Reply"..msg.chat_id) or 'المطور القميل'
-elseif Redis:sismember(Fast.."Ownerss:Group"..msg.chat_id,senderr) == true then
+msg.Name_Controller = Redis:get(tuofe1..'SetRt'..msg.chat_id..':'..senderr) or Redis:get(tuofe1.."Developer:Bot:Reply"..msg.chat_id) or 'المطور القميل'
+elseif Redis:sismember(tuofe1.."Ownerss:Group"..msg.chat_id,senderr) == true then
 msg.The_Controller = 44
-msg.Name_Controller = Redis:get(Fast..'SetRt'..msg.chat_id..':'..senderr) or Redis:get(Fast.."PresidentQ:Group:Reply"..msg.chat_id) or  'صاحب الخرابه يواد'
-elseif Redis:sismember(Fast.."SuperCreator:Group"..msg.chat_id,senderr) == true then
+msg.Name_Controller = Redis:get(tuofe1..'SetRt'..msg.chat_id..':'..senderr) or Redis:get(tuofe1.."PresidentQ:Group:Reply"..msg.chat_id) or  'صاحب الخرابه يواد'
+elseif Redis:sismember(tuofe1.."SuperCreator:Group"..msg.chat_id,senderr) == true then
 msg.The_Controller = 4
-msg.Name_Controller = Redis:get(Fast..'SetRt'..msg.chat_id..':'..senderr) or Redis:get(Fast.."President:Group:Reply"..msg.chat_id) or 'المنشئ الاساسي عم الناس'
-elseif Redis:sismember(Fast.."Creator:Group"..msg.chat_id,senderr) == true then
+msg.Name_Controller = Redis:get(tuofe1..'SetRt'..msg.chat_id..':'..senderr) or Redis:get(tuofe1.."President:Group:Reply"..msg.chat_id) or 'المنشئ الاساسي عم الناس'
+elseif Redis:sismember(tuofe1.."Creator:Group"..msg.chat_id,senderr) == true then
 msg.The_Controller = 5
-msg.Name_Controller = Redis:get(Fast..'SetRt'..msg.chat_id..':'..senderr) or Redis:get(Fast.."Constructor:Group:Reply"..msg.chat_id) or 'المنشئ روح قلبي'
-elseif Redis:sismember(Fast.."Manger:Group"..msg.chat_id,senderr) == true then
+msg.Name_Controller = Redis:get(tuofe1..'SetRt'..msg.chat_id..':'..senderr) or Redis:get(tuofe1.."Constructor:Group:Reply"..msg.chat_id) or 'المنشئ روح قلبي'
+elseif Redis:sismember(tuofe1.."Manger:Group"..msg.chat_id,senderr) == true then
 msg.The_Controller = 6
-msg.Name_Controller = Redis:get(Fast..'SetRt'..msg.chat_id..':'..senderr) or Redis:get(Fast.."Manager:Group:Reply"..msg.chat_id) or 'المدير القميل'
-elseif Redis:sismember(Fast.."Admin:Group"..msg.chat_id,senderr) == true then
+msg.Name_Controller = Redis:get(tuofe1..'SetRt'..msg.chat_id..':'..senderr) or Redis:get(tuofe1.."Manager:Group:Reply"..msg.chat_id) or 'المدير القميل'
+elseif Redis:sismember(tuofe1.."Admin:Group"..msg.chat_id,senderr) == true then
 msg.The_Controller = 7
-msg.Name_Controller = Redis:get(Fast..'SetRt'..msg.chat_id..':'..senderr) or Redis:get(Fast.."Admin:Group:Reply"..msg.chat_id) or 'الادمن القميل'
-elseif Redis:sismember(Fast.."Special:Group"..msg.chat_id,senderr) == true then
+msg.Name_Controller = Redis:get(tuofe1..'SetRt'..msg.chat_id..':'..senderr) or Redis:get(tuofe1.."Admin:Group:Reply"..msg.chat_id) or 'الادمن القميل'
+elseif Redis:sismember(tuofe1.."Special:Group"..msg.chat_id,senderr) == true then
 msg.The_Controller = 8
-msg.Name_Controller = Redis:get(Fast..'SetRt'..msg.chat_id..':'..senderr) or Redis:get(Fast.."Vip:Group:Reply"..msg.chat_id) or 'المميز حبيبي الكل'
-elseif tonumber(senderr) == tonumber(Fast) then
+msg.Name_Controller = Redis:get(tuofe1..'SetRt'..msg.chat_id..':'..senderr) or Redis:get(tuofe1.."Vip:Group:Reply"..msg.chat_id) or 'المميز حبيبي الكل'
+elseif tonumber(senderr) == tonumber(tuofe1) then
 msg.The_Controller = 9
 else
 msg.The_Controller = 10
-msg.Name_Controller = Redis:get(Fast..'SetRt'..msg.chat_id..':'..senderr) or Redis:get(Fast.."Mempar:Group:Reply"..msg.chat_id) or 'العضو المسكين'
+msg.Name_Controller = Redis:get(tuofe1..'SetRt'..msg.chat_id..':'..senderr) or Redis:get(tuofe1.."Mempar:Group:Reply"..msg.chat_id) or 'العضو المسكين'
 end  
 if msg.The_Controller == 1 then  
 msg.Asasy = true
@@ -1342,7 +1342,7 @@ end
 end
 for v in io.popen('ls plugin'):lines() do
 if v == file then
-Redis:sadd(Fast..'files',file)
+Redis:sadd(tuofe1..'files',file)
 return send(msg.chat_id,msg.id," ⚡ تم تعطيل ملف "..file)
 end
 end
@@ -1366,7 +1366,7 @@ end
 end
 for v in io.popen('ls plugin'):lines() do
 if v == file then
-Redis:srem(Fast..'files',file)
+Redis:srem(tuofe1..'files',file)
 return send(msg.chat_id,msg.id," ⚡ تم تفعيل ملف "..file)
 end
 end
@@ -1383,7 +1383,7 @@ if msg.Asasy then
 i = 0 
 txx = "قائمه ملفاتك (*اضغط علي اسم ملف ليتم نسخه*)\n\n"
 for v in io.popen('ls plugin'):lines() do
-if Redis:sismember(Fast..'files',v) then
+if Redis:sismember(tuofe1..'files',v) then
 state = "『 معطل 』"
 else 
 state = "『 مفعل 』"
@@ -1404,7 +1404,7 @@ plugins(msg)
 src(msg)
 
 if text then
-local neww = Redis:get(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..text)
+local neww = Redis:get(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..text)
 if neww then
 text = neww or text
 end
@@ -1414,11 +1414,11 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
@@ -1430,42 +1430,42 @@ var(File)
 local download_ = download('https://api.telegram.org/file/bot'..Token..'/'..File.result.file_path,''..Name_File) 
 local Get_Info = io.open(download_,"r"):read('*a')
 local FilesJson = JSON.decode(Get_Info)
-if tonumber(Fast) ~= tonumber(FilesJson.BotId) then
+if tonumber(tuofe1) ~= tonumber(FilesJson.BotId) then
 return send(msg_chat_id,msg_id,' ⚡ عذرا هذا الملف غير مطابق مع البوت يرجى جلب النسخه الحقيقيه\n√')
 end -- end botid
 send(msg_chat_id,msg_id,' ⚡ جاري استرجاع المشتركين والجروبات ...\n√')
 Y = 0
 for k,v in pairs(FilesJson.UsersBot) do
 Y = Y + 1
-Redis:sadd(Fast..'Num:User:Pv',v)  
+Redis:sadd(tuofe1..'Num:User:Pv',v)  
 end
 X = 0
 for GroupId,ListGroup in pairs(FilesJson.GroupsBot) do
 X = X + 1
-Redis:sadd(Fast.."ChekBotAdd",GroupId) 
+Redis:sadd(tuofe1.."ChekBotAdd",GroupId) 
 if ListGroup.President then
 for k,v in pairs(ListGroup.President) do
-Redis:sadd(Fast.."SuperCreator:Group"..GroupId,v)
+Redis:sadd(tuofe1.."SuperCreator:Group"..GroupId,v)
 end
 end
 if ListGroup.Constructor then
 for k,v in pairs(ListGroup.Constructor) do
-Redis:sadd(Fast.."Creator:Group"..GroupId,v)
+Redis:sadd(tuofe1.."Creator:Group"..GroupId,v)
 end
 end
 if ListGroup.Manager then
 for k,v in pairs(ListGroup.Manager) do
-Redis:sadd(Fast.."Manger:Group"..GroupId,v)
+Redis:sadd(tuofe1.."Manger:Group"..GroupId,v)
 end
 end
 if ListGroup.Admin then
 for k,v in pairs(ListGroup.Admin) do
-Redis:sadd(Fast.."Admin:Group"..GroupId,v)
+Redis:sadd(tuofe1.."Admin:Group"..GroupId,v)
 end
 end
 if ListGroup.Vips then
 for k,v in pairs(ListGroup.Vips) do
-Redis:sadd(Fast.."Special:Group"..GroupId,v)
+Redis:sadd(tuofe1.."Special:Group"..GroupId,v)
 end
 end 
 end
@@ -1480,7 +1480,7 @@ local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
 if Message_Reply.content.document then
 local File_Id = Message_Reply.content.document.document.remote.id
 local Name_File = Message_Reply.content.document.file_name
-if tonumber(Name_File:match('(%d+)')) ~= tonumber(Fast) then 
+if tonumber(Name_File:match('(%d+)')) ~= tonumber(tuofe1) then 
 return send(msg_chat_id,msg_id,' ⚡ عذرا هذا الملف غير مطابق مع البوت يرجى جلب النسخه الحقيقيه\n√')
 end -- end Namefile
 local File = json:decode(https.request('https://api.telegram.org/bot'..Token..'/getfile?file_id='..File_Id)) 
@@ -1489,22 +1489,22 @@ local Get_Info = io.open(download_,"r"):read('*a')
 local All_Groups = JSON.decode(Get_Info)
 if All_Groups.GP_BOT then
 for idg,v in pairs(All_Groups.GP_BOT) do
-Redis:sadd(Fast.."ChekBotAdd",idg) 
+Redis:sadd(tuofe1.."ChekBotAdd",idg) 
 if v.MNSH then
 for k,idmsh in pairs(v.MNSH) do
-Redis:sadd(Fast.."Creator:Group"..idg,idmsh)
+Redis:sadd(tuofe1.."Creator:Group"..idg,idmsh)
 end;end
 if v.MDER then
 for k,idmder in pairs(v.MDER) do
-Redis:sadd(Fast.."Manger:Group"..idg,idmder)  
+Redis:sadd(tuofe1.."Manger:Group"..idg,idmder)  
 end;end
 if v.MOD then
 for k,idmod in pairs(v.MOD) do
-Redis:sadd(Fast.."Admin:Group"..idg,idmod)
+Redis:sadd(tuofe1.."Admin:Group"..idg,idmod)
 end;end
 if v.ASAS then
 for k,idASAS in pairs(v.ASAS) do
-Redis:sadd(Fast.."SuperCreator:Group"..idg,idASAS)
+Redis:sadd(tuofe1.."SuperCreator:Group"..idg,idASAS)
 end;end
 end
 return send(msg_chat_id,msg_id,' ⚡ تم استرجاع المجموعات من نسخه لـوفـاريـن\n√')
@@ -1514,7 +1514,7 @@ end
 end
 end
 if text == "اذاعه للجروبات 📡" or text == "اذاعه خاص 📊" or text == "اذاعه بالتثبيت 📎" or text == "اذاعه" or text == "اذاعه خاص" or text == "اذاعه للمجموعات" or text == "اذاعه بالتثبيت" then 
-if Redis:get(Fast.."broadcast") then
+if Redis:get(tuofe1.."broadcast") then
 send(msg.chat_id,msg.id,'*⚡ الاذاعه معطله من قبل المطور الاساسي\n√*',"md",true)  
 return false 
 end
@@ -1522,11 +1522,11 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*\n⚡ عذرآ الامر يخص〘 '..Controller_Num(1)..' 〙*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'*\n⚡  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'*\n⚡  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local reply_markup = bot.replyMarkup{
@@ -1547,7 +1547,7 @@ bot.sendText(msg_chat_id,msg_id,[[*
 return false
 end
 if text=="اذاعه بالتوجيه خاص 🔊" or text == "اذاعه بالتوجيه للجروبات ‌♻️⁩" or text == "اذاعه بالتوجيه" or text=="اذاعه خاص بالتوجيه" or text == "اذاعه بالتوجيه خاص" then 
-if Redis:get(Fast.."broadcast") then
+if Redis:get(tuofe1.."broadcast") then
 send(msg.chat_id,msg.id,'*⚡ الاذاعه معطله من قبل المطور الاساسي\n√*',"md",true)  
 return false 
 end
@@ -1555,11 +1555,11 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*\n⚡ عذرآ الامر يخص〘 '..Controller_Num(1)..' 〙*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'*\n⚡  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'*\n⚡  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local reply_markup = bot.replyMarkup{
@@ -1580,7 +1580,7 @@ bot.sendText(msg_chat_id,msg_id,[[*
 return false
 end
 if text=="اذاعه عام" then 
-if Redis:get(Fast.."broadcast") then
+if Redis:get(tuofe1.."broadcast") then
 send(msg.chat_id,msg.id,'*⚡ الاذاعه معطله من قبل المطور الاساسي\n√*',"md",true)  
 return false 
 end
@@ -1588,21 +1588,21 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*\n⚡ عذرآ الامر يخص〘 '..Controller_Num(1)..' 〙*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'*\n⚡  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'*\n⚡  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-Redis:setex(Fast.."general:broadcast" .. msg_chat_id .. ":" .. senderr, 600, true) 
+Redis:setex(tuofe1.."general:broadcast" .. msg_chat_id .. ":" .. senderr, 600, true) 
 send(msg_chat_id,msg_id,[[
 * ⚡ ارسل الان { ملصق ,متحركه ,صوره ,رساله }*
 ]],"md",true)  
 return false
 end
 if text == "الاذاعه" then
-if Redis:get(Fast.."broadcast") then
+if Redis:get(tuofe1.."broadcast") then
 send(msg.chat_id,msg.id,'*⚡ الاذاعه معطله من قبل المطور الاساسي\n√*',"md",true)  
 return false 
 end
@@ -1610,11 +1610,11 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*\n⚡ عذرآ الامر يخص〘 '..Controller_Num(1)..' 〙*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'*\n⚡  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'*\n⚡  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local reply_markup = bot.replyMarkup{
@@ -1642,7 +1642,7 @@ return false
 end
 ---------------------- Dev JABWA ----------------------
 if text == 'كيب المجموعه' then
-if not Redis:get(Fast.."Cape:group"..msg.chat_id) then
+if not Redis:get(tuofe1.."Cape:group"..msg.chat_id) then
 return bot.sendText(msg.chat_id,msg.id,"* ⚡ الكيبورد معطلة من قبل المشرفين\n√*","md",true)
 end
 local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
@@ -1682,16 +1682,16 @@ remove_keyboard = true
 return https.request("https://api.telegram.org/bot"..Token.."/sendmessage?text="..URL.escape(" ⚡ تم حذف الكيب بنجاح ✅").."&chat_id="..msg.chat_id.."&reply_markup="..JSON.encode(k))
 end
 ---------------------- Dev JABWA ----------------------
-if Redis:get(Fast.."set:chs"..senderr) then
+if Redis:get(tuofe1.."set:chs"..senderr) then
 if text then
 if text == "الغاء" or text == "الغاء الامر" then
-Redis:del(Fast.."set:chs"..senderr)
+Redis:del(tuofe1.."set:chs"..senderr)
 return send(msg_chat_id,msg_id,'*⚡ تم الغاء الامر بنجاح ✅*',"md",true)  
 end
 if text:match("^@(.*)$") then
 local ch = text:match("^@(.*)$")
-Redis:set(Fast.."chsource",ch)
-Redis:del(Fast.."set:chs"..senderr)
+Redis:set(tuofe1.."chsource",ch)
+Redis:del(tuofe1.."set:chs"..senderr)
 send(msg_chat_id,msg_id,'*⚡ تم حفظ معرف قناة السورس\n√*',"md",true)  
 dofile('tuofe1.lua')  
 else
@@ -1703,17 +1703,17 @@ if text == "تعيين قناه السورس ⚡" or text == "تعيين قنا�
 if not msg.Devss then 
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي \n√*',"md",true)  
 end
-Redis:set(Fast.."set:chs"..senderr,true)
+Redis:set(tuofe1.."set:chs"..senderr,true)
 return send(msg_chat_id,msg_id,'*⚡ ارسل معرف القناه الان\n√*',"md",true)  
 end
-if Redis:get(Fast.."set:rmz"..senderr) then
+if Redis:get(tuofe1.."set:rmz"..senderr) then
 if text then
 if text == "الغاء" or text == "الغاء الامر" then
-Redis:del(Fast.."set:rmz"..senderr)
+Redis:del(tuofe1.."set:rmz"..senderr)
 return send(msg_chat_id,msg_id,'*تم الغاء الامر بنجاح ✅*',"md",true)  
 end
-Redis:set(Fast..'rmzsource',text)
-Redis:del(Fast.."set:rmz"..senderr)
+Redis:set(tuofe1..'rmzsource',text)
+Redis:del(tuofe1.."set:rmz"..senderr)
 send(msg_chat_id,msg_id,'*⚡ تم حفظ رمز السورس\n√*',"md",true)  
 dofile('tuofe1.lua')  
 end
@@ -1722,26 +1722,26 @@ if text == "تعيين رمز السورس" then
 if not msg.Devss then 
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي \n√*',"md",true)  
 end
-Redis:set(Fast.."set:rmz"..senderr,true)
+Redis:set(tuofe1.."set:rmz"..senderr,true)
 return send(msg_chat_id,msg_id,'*• ارسل رمز بدل من { ⚡ }\n√*',"md",true)  
 end
 if text == "استرجاع رمز السورس" or text == "حذف رمز السورس" then  
 if not msg.Devss then 
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي \n√*',"md",true)  
 end
-Redis:set(Fast.."rmzsource"," ⚡ ")
+Redis:set(tuofe1.."rmzsource"," ⚡ ")
 return send(msg_chat_id,msg_id,'*• تم ارجاع رمز السورس الي { ⚡ }\n√*',"md",true)  
 end
-if Redis:get(Fast.."set:devs"..senderr) then
+if Redis:get(tuofe1.."set:devs"..senderr) then
 if text then
 if text == "الغاء" or text == "الغاء الامر" then
-Redis:del(Fast.."set:devs"..senderr)
+Redis:del(tuofe1.."set:devs"..senderr)
 return send(msg_chat_id,msg_id,'*تم الغاء الامر بنجاح ✅*',"md",true)  
 end
 if text:match("^@(.*)$") then
 local ch = text:match("^@(.*)$")
-Redis:set(Fast.."chdevolper",ch)
-Redis:del(Fast.."set:devs"..senderr)
+Redis:set(tuofe1.."chdevolper",ch)
+Redis:del(tuofe1.."set:devs"..senderr)
 send(msg_chat_id,msg_id,'* ⚡ تم حفظ معرف مطور السورس\n√*',"md",true)  
 dofile('tuofe1.lua')  
 else
@@ -1753,27 +1753,27 @@ if text == "تعيين مطور السورس ⚡ " or text == "تعيين مطو
 if not msg.Devss then 
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي \n√*',"md",true)  
 end
-Redis:set(Fast.."set:devs"..senderr,true)
+Redis:set(tuofe1.."set:devs"..senderr,true)
 return send(msg_chat_id,msg_id,'* ⚡ ارسل معرف المطور الان\n√*',"md",true)  
 end
 if text == "تعيين رد كليشة" or text == "تعيين رد كليشه" then 
 if not msg.Asasy then 
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
-Redis:setex(Fast.."Change:Source:Bot"..senderr,300,true) 
+Redis:setex(tuofe1.."Change:Source:Bot"..senderr,300,true) 
 return send(msg_chat_id,msg_id,"* ⚡ ارسل رد كليشة يا سورس ... \n√*","md",true)  
 end
 if text == "مسح رد كليشة" or text == "استرجاع رد كليشة" then 
 if not msg.Asasy then 
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
-Redis:del(Fast.."Source:Bot") 
+Redis:del(tuofe1.."Source:Bot") 
 return send(msg_chat_id,msg_id,"* ⚡ تم مسح رد الكليشة بنجاح\n√*","md",true)   
 end
-if text == (Redis:get(Fast.."Bot:Name") or "لـوفـاريـن") then
-local photo = bot.getUserProfilePhotos(Fast)
+if text == (Redis:get(tuofe1.."Bot:Name") or "لـوفـاريـن") then
+local photo = bot.getUserProfilePhotos(tuofe1)
 if photo.total_count > 0 then
-local NamesBot = (Redis:get(Fast.."Bot:Name") or "لـوفـاريـن")
+local NamesBot = (Redis:get(tuofe1.."Bot:Name") or "لـوفـاريـن")
 local Mostafa = {
 '• مالك حبيبى 🥺',
 '• مخصماك وبعد عني مش طيقاك 😹',
@@ -1797,10 +1797,10 @@ local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(JABWA).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
-if text == (Redis:get(Fast.."Name:Bot") or "لـوفـاريـن") then
-local photo = bot.getUserProfilePhotos(Fast)
+if text == (Redis:get(tuofe1.."Name:Bot") or "لـوفـاريـن") then
+local photo = bot.getUserProfilePhotos(tuofe1)
 if photo.total_count > 0 then
-local NamesBot = (Redis:get(Fast.."Name:Bot") or "لـوفـاريـن")
+local NamesBot = (Redis:get(tuofe1.."Name:Bot") or "لـوفـاريـن")
 local Mostafa = {
 '• مالك حبيبى 🥺',
 '• مخصماك وبعد عني مش طيقاك 😹',
@@ -1825,7 +1825,7 @@ https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. ms
 end
 end
 if text == "بوت" or text == "البوت" or text == "bot" or text == "Bot" then
-local photo = bot.getUserProfilePhotos(Fast)
+local photo = bot.getUserProfilePhotos(tuofe1)
 if photo.total_count > 0 then
 local JABWA = "• نعم حبيبي "..msg.Name_Controller.." 🥺❤️"
 keyboard = {} 
@@ -1852,11 +1852,11 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 local reply_markup = bot.replyMarkup{
@@ -1871,11 +1871,11 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 local reply_markup = bot.replyMarkup{
@@ -1910,15 +1910,15 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 local G = "جروبات البوت ⚡ \n"
-local list = Redis:smembers(Fast..'ChekBotAdd')  
+local list = Redis:smembers(tuofe1..'ChekBotAdd')  
 for k,v in pairs(list) do  
 local Info_Chats = bot.getSupergroupFullInfo(v)
 local Get_Chat = bot.getChat(v)
@@ -1940,9 +1940,9 @@ if text == 'جلب المطورين 🦸' or text == 'جلب المطورين' t
 if not msg.Asasy then 
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
-local Dev = Redis:smembers(Fast.."Dev:Groups")
-local DevS = Redis:smembers(Fast.."Devss:Groups")
-local set_Json = '{"BotId": '..Fast..',\n"Dev":['
+local Dev = Redis:smembers(tuofe1.."Dev:Groups")
+local DevS = Redis:smembers(tuofe1.."Devss:Groups")
+local set_Json = '{"BotId": '..tuofe1..',\n"Dev":['
 for k,v in pairs(Dev) do
 set_Json = set_Json..tonumber(v)..","
 end
@@ -1970,20 +1970,20 @@ local Gjson = JSON.decode(Get_Info)
 local Dev = Gjson.Dev
 local DevS = Gjson.DevS
 for k,v in pairs(Dev) do 
-if not Redis:sismember(Fast.."Dev:Groups",v) then
-Redis:sadd(Fast.."Dev:Groups",v)
+if not Redis:sismember(tuofe1.."Dev:Groups",v) then
+Redis:sadd(tuofe1.."Dev:Groups",v)
 end
 end
 for k,v in pairs(DevS) do 
-if not Redis:sismember(Fast.."Devss:Groups",v) then
-Redis:sadd(Fast.."Devss:Groups",v)
+if not Redis:sismember(tuofe1.."Devss:Groups",v) then
+Redis:sadd(tuofe1.."Devss:Groups",v)
 end
 end
 return send(msg_chat_id,msg_id,'*⚡ تم استرجاع قائمه المطورين\n√*',"md",true) 
 end
 end
 if text == "سورس" or text == "يا سورس" or text == "السورس" or text == "سورس لوفارين" then
-local Source = (Redis:get(Fast.."Source:Bot") or "𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐈𝐍 𝐒𝐎𝐔𝐑𝐂𝐄 𝐋𝐎𝐕𝐀𝐑𝐄𝐍")
+local Source = (Redis:get(tuofe1.."Source:Bot") or "𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐈𝐍 𝐒𝐎𝐔𝐑𝐂𝐄 𝐋𝐎𝐕𝐀𝐑𝐄𝐍")
 local Text = "* "..Source.." *"
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -2028,14 +2028,14 @@ if not msg.Creator then
 return send(msg_chat_id,msg_id,'*• انت لست المنشئ \n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Reply:Source"..msg_chat_id,true) 
+Redis:set(tuofe1.."Reply:Source"..msg_chat_id,true) 
 return send(msg_chat_id,msg_id,"* ⚡ تم تفعيل ردود السورس\n√*","md",true)
 end
 if text == "تعطيل ردود السورس" or text == "تعطيل ردود سورس" or text == "تعطيل الردود السورس" then
@@ -2043,14 +2043,14 @@ if not msg.Creator then
 return send(msg_chat_id,msg_id,'*• انت لست المنشئ \n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Reply:Source"..msg_chat_id) 
+Redis:del(tuofe1.."Reply:Source"..msg_chat_id) 
 return send(msg_chat_id,msg_id,"* ⚡ تم تعطيل ردود السورس\n√*","md",true)
 end
 if text == "اضف رد سورس" or text == "اضف رد سورس 💌" then 
@@ -2058,14 +2058,14 @@ if not msg.Devss then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي \n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."reply:on"..senderr..":"..msg_chat_id,true)
+Redis:set(tuofe1.."reply:on"..senderr..":"..msg_chat_id,true)
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -2081,14 +2081,14 @@ if not msg.Devss then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي \n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."reply:of"..senderr..":"..msg_chat_id,true)
+Redis:set(tuofe1.."reply:of"..senderr..":"..msg_chat_id,true)
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -2104,25 +2104,25 @@ if not msg.Devss then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي \n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local app = Redis:smembers(Fast.."app:reply:Source")
+local app = Redis:smembers(tuofe1.."app:reply:Source")
 for k,v in pairs(app) do
-Redis:del(Fast.."Add:reply:Source:Gif"..v)   
-Redis:del(Fast.."Add:reply:Source:vico"..v)   
-Redis:del(Fast.."Add:reply:Source:stekr"..v)     
-Redis:del(Fast.."Add:reply:Source:Text"..v)   
-Redis:del(Fast.."Add:reply:Source:Photo"..v)
-Redis:del(Fast.."Add:reply:Source:Video"..v)
-Redis:del(Fast.."Add:reply:Source:File"..v)
-Redis:del(Fast.."Add:reply:Source:Audio"..v)
-Redis:del(Fast.."Add:reply:Source:video_note"..v)
-Redis:del(Fast.."app:reply:Source")
+Redis:del(tuofe1.."Add:reply:Source:Gif"..v)   
+Redis:del(tuofe1.."Add:reply:Source:vico"..v)   
+Redis:del(tuofe1.."Add:reply:Source:stekr"..v)     
+Redis:del(tuofe1.."Add:reply:Source:Text"..v)   
+Redis:del(tuofe1.."Add:reply:Source:Photo"..v)
+Redis:del(tuofe1.."Add:reply:Source:Video"..v)
+Redis:del(tuofe1.."Add:reply:Source:File"..v)
+Redis:del(tuofe1.."Add:reply:Source:Audio"..v)
+Redis:del(tuofe1.."Add:reply:Source:video_note"..v)
+Redis:del(tuofe1.."app:reply:Source")
 end
 return send(msg_chat_id,msg_id,"*⚡ تم مسح "..#app.." رد سورس\n√*","md",true)  
 end
@@ -2131,33 +2131,33 @@ if not msg.Devss then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي \n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local app = Redis:smembers(Fast.."app:reply:Source")
+local app = Redis:smembers(tuofe1.."app:reply:Source")
 text = "\n ⚡ قائمة ردود السورس ⇞⇟\nꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ\n"
 for k,v in pairs(app) do
-if Redis:get(Fast.."Add:reply:Source:Gif"..v) then
+if Redis:get(tuofe1.."Add:reply:Source:Gif"..v) then
 db = "متحركه 🎭"
-elseif Redis:get(Fast.."Add:reply:Source:vico"..v) then
+elseif Redis:get(tuofe1.."Add:reply:Source:vico"..v) then
 db = "بصمه 📢"
-elseif Redis:get(Fast.."Add:reply:Source:stekr"..v) then
+elseif Redis:get(tuofe1.."Add:reply:Source:stekr"..v) then
 db = "ملصق 🧿"
-elseif Redis:get(Fast.."Add:reply:Source:Text"..v) then
+elseif Redis:get(tuofe1.."Add:reply:Source:Text"..v) then
 db = "رساله ✉"
-elseif Redis:get(Fast.."Add:reply:Source:Photo"..v) then
+elseif Redis:get(tuofe1.."Add:reply:Source:Photo"..v) then
 db = "صوره 🎇"
-elseif Redis:get(Fast.."Add:reply:Source:Video"..v) then
+elseif Redis:get(tuofe1.."Add:reply:Source:Video"..v) then
 db = "فيديو 📹"
-elseif Redis:get(Fast.."Add:reply:Source:File"..v) then
+elseif Redis:get(tuofe1.."Add:reply:Source:File"..v) then
 db = "ملف ⚡ "
-elseif Redis:get(Fast.."Add:reply:Source:Audio"..v) then
+elseif Redis:get(tuofe1.."Add:reply:Source:Audio"..v) then
 db = "اغنيه 🎵"
-elseif Redis:get(Fast.."Add:reply:Source:video_note"..v) then
+elseif Redis:get(tuofe1.."Add:reply:Source:video_note"..v) then
 db = "بصمه فيديو 🎥"
 end
 text = text..""..k.." ⇿『 "..v.."』⇿『 "..db.." 』\n"
@@ -2188,7 +2188,7 @@ local rep = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&photo="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown&reply_markup="..JSON.encode(keyboard))
 end
 if text == 'مراتي' or text == 'مرتي' or text == 'مرأتي' then   
-local id = Redis:get(Fast.."id:JABWA:Groups")
+local id = Redis:get(tuofe1.."id:JABWA:Groups")
 urrl = https.request('http://api.telegram.org/bot'..Token..'/Get_Chat?chat_id='..id)
 local Jabwayt = JSON.decode(urrl)
 local bains = bot.getUser(Jabwayt)
@@ -2347,12 +2347,12 @@ end
 end
 end
 ---------------------- Dev JABWA ----------------------
-if (Redis:get(Fast.."AddSudosNew"..msg_chat_id) == 'true') then
+if (Redis:get(tuofe1.."AddSudosNew"..msg_chat_id) == 'true') then
 if text == "الغاء" or text == 'الغاء الامر ❌' then   
-Redis:del(Fast.."AddSudosNew"..msg_chat_id)
+Redis:del(tuofe1.."AddSudosNew"..msg_chat_id)
 return send(msg_chat_id,msg_id, "*⚡ تم الغاء امر تغيير المطور الاساسي\n√*","md",true)    
 end 
-Redis:del(Fast.."AddSudosNew"..msg_chat_id)
+Redis:del(tuofe1.."AddSudosNew"..msg_chat_id)
 if text and text:match("^@[%a%d_]+$") then
 local UserId_Info = bot.searchPublicChat(text)
 if not UserId_Info.id then
@@ -2392,11 +2392,11 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 local reply_markup = bot.replyMarkup{
@@ -2419,7 +2419,7 @@ if text == "ضع صوره للترحيب" or text == "اضف صورة ترحيب
 if not msg.Asasy then 
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
-Redis:setex(Fast..'welcom_ph:witting'..senderr,300,true) 
+Redis:setex(tuofe1..'welcom_ph:witting'..senderr,300,true) 
 return send(msg_chat_id,msg_id, ' ⚡ الان قم بارسال الصوره للترحيب\n√')
 end 
 if text and text:match("^تعيين عدد الاعضاء (%d+)$") then
@@ -2427,35 +2427,35 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'\n*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast..'Num:Add:Bot',text:match("تعيين عدد الاعضاء (%d+)$") ) 
+Redis:set(tuofe1..'Num:Add:Bot',text:match("تعيين عدد الاعضاء (%d+)$") ) 
 send(msg_chat_id,msg_id,'* ⚡ تم تعيين عدد اعضاء تفعيل البوت اكثر من -> '..text:match("تعيين عدد الاعضاء (%d+)$")..' عضو *',"md",true)  
 end
 if text == "المشتركين ‌🗣️⁩" then 
 if not msg.Asasy then 
 return send(msg_chat_id,msg_id,'\n*• انت لست المطور الاساسي\n√*',"md",true)  
 end
-local JABWA = "*• عدد المشتركين -> "..(Redis:scard(Fast..'Num:User:Pv') or 0).." 🥺❤️\n√*"
+local JABWA = "*• عدد المشتركين -> "..(Redis:scard(tuofe1..'Num:User:Pv') or 0).." 🥺❤️\n√*"
 send(msg_chat_id,msg_id, JABWA,"md",true)   
 end
 if text == "الجروبات 📢" then 
 if not msg.Asasy then 
 return send(msg_chat_id,msg_id,'\n*• انت لست المطور الاساسي\n√*',"md",true)  
 end
-local JABWA = "*• عدد الجروبات -> "..(Redis:scard(Fast..'ChekBotAdd') or 0).." 🥺❤️\n√*"
+local JABWA = "*• عدد الجروبات -> "..(Redis:scard(tuofe1..'ChekBotAdd') or 0).." 🥺❤️\n√*"
 send(msg_chat_id,msg_id, JABWA,"md",true)   
 end
 if text == "الاحصائيات" then 
 if not msg.Asasy then 
 return send(msg_chat_id,msg_id,'\n*• انت لست المطور الاساسي\n√*',"md",true)  
 end
-local JABWA = "*• عدد الجروبات -> "..(Redis:scard(Fast..'ChekBotAdd') or 0).." 🥺❤️\n• عدد المشتركين -> "..(Redis:scard(Fast..'Num:User:Pv') or 0).." 🥺❤️\n√*"
+local JABWA = "*• عدد الجروبات -> "..(Redis:scard(tuofe1..'ChekBotAdd') or 0).." 🥺❤️\n• عدد المشتركين -> "..(Redis:scard(tuofe1..'Num:User:Pv') or 0).." 🥺❤️\n√*"
 send(msg_chat_id,msg_id, JABWA,"md",true)   
 end
 ---------------------- Dev JABWA ----------------------
@@ -2463,13 +2463,13 @@ if text == "تفعيل" then
 if msg.can_be_deleted_for_all_users == false then
 return send(msg_chat_id,msg_id,"*⚡ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له\n√*","md",true)  
 end
-if Redis:sismember(Fast..'Black:listBan:',msg_chat_id) then
+if Redis:sismember(tuofe1..'Black:listBan:',msg_chat_id) then
 return send(msg_chat_id,msg_id,"* ⚡ عذرآ الجروب محظوره من التفعيل *","md",true)  
 end
-if Redis:sismember(Fast.."ChekBotAdd",msg_chat_id) then
+if Redis:sismember(tuofe1.."ChekBotAdd",msg_chat_id) then
 return send(msg_chat_id,msg_id,'* • الجروب مفعل من قبل\n√*',"md",true)  
 end
-Redis:sadd(Fast.."ChekBotAdd",msg_chat_id)
+Redis:sadd(tuofe1.."ChekBotAdd",msg_chat_id)
 local Text = "*• تم تفعيل الجروب\n√*"
 send(msg_chat_id,msg_id, Text,"md",true)  
 end
@@ -2477,26 +2477,26 @@ if text == "تفعيل" then
 local Info_Members = bot.getSupergroupMembers(msg_chat_id, "Administrators", "*", 0, 200)
 local List_Members = Info_Members.members
 for k, v in pairs(List_Members) do
-if Info_Members.members[k].status.Fastbots == "chatMemberStatusCreator" then
+if Info_Members.members[k].status.tuofe1bots == "chatMemberStatusCreator" then
 local UserInfo = bot.getUser(v.member_id.user_id)
-Redis:sadd(Fast.."ChekBotAdd",msg_chat_id)
+Redis:sadd(tuofe1.."ChekBotAdd",msg_chat_id)
 local Text = "*• تم رفع العضو ->* ["..FlterBio(UserInfo.first_name).."](tg://user?id="..UserInfo.id..")\n*• مالك بنجاح\n√*"
 send(msg_chat_id,msg_id, Text,"md",true)  
 end
 end
 if text == "تفعيل" then
-Redis:sadd(Fast.."ChekBotAdd",msg_chat_id)
+Redis:sadd(tuofe1.."ChekBotAdd",msg_chat_id)
 local Info_Members = bot.getSupergroupMembers(msg_chat_id, "Administrators", "*", 0, 200)
 local List_Members = Info_Members.members
 x = 0
 y = 0
 for k, v in pairs(List_Members) do
 if Info_Members.members[k].bot_info == nil then
-if Info_Members.members[k].status.Fastbots == "chatMemberStatusCreator" then
-Redis:sadd(Fast.."Ownerss:Group"..msg_chat_id,v.member_id.user_id) 
+if Info_Members.members[k].status.tuofe1bots == "chatMemberStatusCreator" then
+Redis:sadd(tuofe1.."Ownerss:Group"..msg_chat_id,v.member_id.user_id) 
 x = x + 1
 else
-Redis:sadd(Fast.."Admin:Group"..msg_chat_id,v.member_id.user_id) 
+Redis:sadd(tuofe1.."Admin:Group"..msg_chat_id,v.member_id.user_id) 
 y = y + 1
 end
 end
@@ -2512,24 +2512,24 @@ if text == "تعطيل" and msg.Dev then
 if msg.can_be_deleted_for_all_users == false then
 return send(msg_chat_id,msg_id,"* ⚡ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له\n√*","md",true)  
 end
-Redis:srem(Fast.."ChekBotAdd",msg_chat_id)
-Redis:del(Fast.."Admin:Group"..msg_chat_id) 
+Redis:srem(tuofe1.."ChekBotAdd",msg_chat_id)
+Redis:del(tuofe1.."Admin:Group"..msg_chat_id) 
 local Get_Chat = bot.getChat(msg_chat_id)
 local Info_Chats = bot.getSupergroupFullInfo(msg_chat_id)
 local Text = "*• تم تعطيل جروب "..Get_Chat.title.."\n• وتنزيل الادمن من الرتبه\n√*"
-if not Redis:sismember(Fast.."ChekBotAdd",msg_chat_id) then
+if not Redis:sismember(tuofe1.."ChekBotAdd",msg_chat_id) then
 send(msg_chat_id,msg_id,'*• الجروب معطل من قبل\n√*',"md",true)  
 end
 send(Sudo_Id,0,'\n*ꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ\n╗√ تم تعطيل مجموعة جديده\n╣√ المجموعه ⇿* ['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')\n*╣√ الايدي ⇿ '..msg.chat_id..' \n╣√ عدد الاعضاء ⇿ '..Info_Chats.member_count..'\n╣√ عدد الادمنيه ⇿ '..Info_Chats.administrator_count..'\n╣√ عدد المطرودين ⇿ '..Info_Chats.banned_count..'\n╣√ عدد المقيدين ⇿ '..Info_Chats.restricted_count..'\n╝√ رابط المجموعه ⇞⇟\nꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ\n '..Info_Chats.invite_link.invite_link..'\nꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ*',"md",true)
 send(msg_chat_id,msg_id, Text,"md",true)  
 end
 ---------------------- Dev JABWA ----------------------
-if chat_type(msg.chat_id) == "GroupBot" and Redis:sismember(Fast.."ChekBotAdd",msg_chat_id) then
-Redis:incr(Fast..'Num:Message:User'..msg.chat_id..':'..senderr) 
+if chat_type(msg.chat_id) == "GroupBot" and Redis:sismember(tuofe1.."ChekBotAdd",msg_chat_id) then
+Redis:incr(tuofe1..'Num:Message:User'..msg.chat_id..':'..senderr) 
 
 if text then
-local GetMsg = Redis:incr(Fast..'Num:Message:User'..msg.chat_id..':'..senderr) 
-Redis:hset(Fast..':GroupUserCountMsg:'..msg.chat_id,senderr,GetMsg)
+local GetMsg = Redis:incr(tuofe1..'Num:Message:User'..msg.chat_id..':'..senderr) 
+Redis:hset(tuofe1..':GroupUserCountMsg:'..msg.chat_id,senderr,GetMsg)
 local UserInfo = bot.getUser(senderr) 
 if FlterBio(UserInfo.first_name) then
 NameLUser = FlterBio(UserInfo.first_name)
@@ -2539,15 +2539,15 @@ end
 NameLUser = NameLUser
 NameLUser = NameLUser:gsub("]","")
 NameLUser = NameLUser:gsub("[[]","")
-Redis:hset(Fast..':GroupNameUser:'..msg.chat_id,senderr,NameLUser)
+Redis:hset(tuofe1..':GroupNameUser:'..msg.chat_id,senderr,NameLUser)
 end
 ---------------------- Dev JABWA ----------------------
 if text == "ترند" then
 if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير \n√*',"md",true)  
 end
-GroupAllRtba = Redis:hgetall(Fast..':GroupUserCountMsg:'..msg.chat_id)
-GetAllNames  = Redis:hgetall(Fast..':GroupNameUser:'..msg.chat_id)
+GroupAllRtba = Redis:hgetall(tuofe1..':GroupUserCountMsg:'..msg.chat_id)
+GetAllNames  = Redis:hgetall(tuofe1..':GroupNameUser:'..msg.chat_id)
 GroupAllRtbaL = {}
 for k,v in pairs(GroupAllRtba) do table.insert(GroupAllRtbaL,{v,k}) end
 Count,Kount,i = 8 , 0 , 1
@@ -2564,8 +2564,8 @@ if text == "ترند الجروبات" or text == "ترند الجروبات" th
 if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير \n√*',"md",true)  
 end
-GroupAllRtba = Redis:hgetall(Fast..':GroupUserCountMsg:groups')
-GetAllNames  = Redis:hgetall(Fast..':GroupNameUser:groups')
+GroupAllRtba = Redis:hgetall(tuofe1..':GroupUserCountMsg:groups')
+GetAllNames  = Redis:hgetall(tuofe1..':GroupNameUser:groups')
 GroupAllRtbaL = {}
 for k,v in pairs(GroupAllRtba) do table.insert(GroupAllRtbaL,{v,k}) end
 Count,Kount,i = 8 , 0 , 1
@@ -2594,8 +2594,8 @@ end
 return send(msg.chat_id,msg.id,Text,"md",true)
 end
 if text and msg.chat_id then
-local GetMsg = Redis:incr(Fast..'Fast:MsgNumbergroups'..msg.chat_id) or 1
-Redis:hset(Fast..':GroupUserCountMsg:groups',msg.chat_id,GetMsg)
+local GetMsg = Redis:incr(tuofe1..'tuofe1:MsgNumbergroups'..msg.chat_id) or 1
+Redis:hset(tuofe1..':GroupUserCountMsg:groups',msg.chat_id,GetMsg)
 end
 if text and text:match('^حظر جروب (-100%d+)$') then
 local Chatid = text:match('^حظر جروب (-100%d+)$')
@@ -2608,7 +2608,7 @@ send(msg_chat_id,msg_id,' ⚡ لا توجد جروب في البوت بهذا ا
 return false
 end
 bot.leaveChat(Chatid)
-Redis:sadd(Fast.."Black:listBan:",Chatid)
+Redis:sadd(tuofe1.."Black:listBan:",Chatid)
 send(msg_chat_id,msg_id,' ⚡ تم حظر الجروب  -> ['..Get_Chat.title..']\n ⚡ وتم مغادره البوت من الجروب\n√')
 end 
 if text and text:match('^الغاء حظر جروب (-100%d+)$') then
@@ -2616,7 +2616,7 @@ local Chatid = text:match('^الغاء حظر جروب (-100%d+)$')
 if not msg.Asasy then 
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
-Redis:srem(Fast.."Black:listBan:",Chatid)
+Redis:srem(tuofe1.."Black:listBan:",Chatid)
 send(msg_chat_id,msg_id,' ⚡ تم الغاء حظر الجروب\n√')
 end 
 if text and text:match('^ذيع (-100%d+)$') and tonumber(msg.reply_to_message_id) ~= 0 then
@@ -2660,10 +2660,10 @@ end
 if Controllerbanall(msg_chat_id,UserId_Info.id) == true then 
 return send(msg_chat_id,msg_id,"* ⚡ عذرآ لا تستطيع استخدام الامر على ( "..Controller(msg_chat_id,UserId_Info.id).." )\n√*","md",true)  
 end
-if Redis:sismember(Fast.."KtmAll:Groups",UserId_Info.id) then
+if Redis:sismember(tuofe1.."KtmAll:Groups",UserId_Info.id) then
 return send(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⚡ تم كتمه عام من المجموعات مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Fast.."KtmAll:Groups",UserId_Info.id) 
+Redis:sadd(tuofe1.."KtmAll:Groups",UserId_Info.id) 
 return send(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⚡ تم كتمه عام من المجموعات ").Reply,"md",true)  
 end
 end
@@ -2682,10 +2682,10 @@ end
 if UserName and UserName:match('(%S+)[Bb][Oo][Tt]') then
 return send(msg_chat_id,msg_id,"*⚡ عذرآ لا تستطيع استخدام معرف البوت\n√*","md",true)  
 end
-if not Redis:sismember(Fast.."KtmAll:Groups",UserId_Info.id) then
+if not Redis:sismember(tuofe1.."KtmAll:Groups",UserId_Info.id) then
 return send(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⚡ تم الغاء كتمه عام من المجموعات مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Fast.."KtmAll:Groups",UserId_Info.id) 
+Redis:srem(tuofe1.."KtmAll:Groups",UserId_Info.id) 
 bot.setChatMemberStatus(msg.chat_id,UserId_Info.id,'restricted',{1,1,1,1,1,1,1,1,1})
 return send(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⚡ تم الغاء كتمه عام من المجموعات  ").Reply,"md",true)  
 end
@@ -2695,33 +2695,33 @@ if not msg.Devss then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي \n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if GetInfoBot(msg).Delmsg == false then
 return send(msg_chat_id,msg_id,'*⚡ البوت ليس لديه صلاحيه مسح الرسائل\n√*',"md",true)  
 end
-local Groups = (Redis:scard(Fast..'ChekBotAdd') or 0)
+local Groups = (Redis:scard(tuofe1..'ChekBotAdd') or 0)
 local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
 local ban = bot.getUser(Message_Reply.sender_id.user_id)
 local bain = bot.getUser(senderr)
 if ban.message == "Invalid user ID" then
 return send(msg_chat_id,msg_id,"* ⚡ عذرأ تستطيع فقط استخدام الامر على المستخدمين\n√*","md",true)  
 end
-if ban and ban.type and ban.type.Fastbots == "userTypeBot" then
+if ban and ban.type and ban.type.tuofe1bots == "userTypeBot" then
 return send(msg_chat_id,msg_id,"* ⚡ عذرآ لا تستطيع استخدام الامر على البوت\n√*","md",true)  
 end
 if StatusCanOrNotCan(msg_chat_id,Message_Reply.sender_id.user_id) then
 return send(msg_chat_id,msg_id,"* ⚡ عذرآ لا تستطيع استخدام الامر على ( "..Controller(msg_chat_id,Message_Reply.sender_id.user_id).." )\n√*","md",true)  
 end
-if Redis:sismember(Fast.."KtmAll:Groups",Message_Reply.sender_id.user_id) then
+if Redis:sismember(tuofe1.."KtmAll:Groups",Message_Reply.sender_id.user_id) then
 return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"⚡ تم كتمه عام من المجموعات مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Fast.."KtmAll:Groups",Message_Reply.sender_id.user_id) 
+Redis:sadd(tuofe1.."KtmAll:Groups",Message_Reply.sender_id.user_id) 
 if ban.first_name then
 Text = '*⚡ العضو ⇿* ['..ban.first_name..'](tg://user?id='..ban.id..')\n*⚡ تم كتمه في '..Groups..' جروب\n⚡ بواسطه ⇿* ['..bain.first_name..'](tg://user?id='..bain.id..')\n'
 else
@@ -2749,10 +2749,10 @@ end
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
 return send(msg_chat_id,msg_id,"* ⚡ عذرآ لا تستطيع استخدام الامر على البوت\n√*","md",true)  
 end
-if not Redis:sismember(Fast.."KtmAll:Groups",rep_idd) then
+if not Redis:sismember(tuofe1.."KtmAll:Groups",rep_idd) then
 return send(msg_chat_id,msg_id,Reply_Status(rep_idd," ⚡ تم الغاء كتمه عام من المجموعات مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Fast.."KtmAll:Groups",rep_idd) 
+Redis:srem(tuofe1.."KtmAll:Groups",rep_idd) 
 bot.setChatMemberStatus(msg.chat_id,rep_idd,'restricted',{1,1,1,1,1,1,1,1,1})
 return send(msg_chat_id,msg_id,Reply_Status(rep_idd," ⚡ تم الغاء كتمه عام من المجموعات  ").Reply,"md",true)  
 end
@@ -2769,10 +2769,10 @@ end
 if Controllerbanall(msg_chat_id,UserId) == true then 
 return send(msg_chat_id,msg_id,"* ⚡ عذرآ لا تستطيع استخدام الامر على ( "..Controller(msg_chat_id,UserId).." )\n√*","md",true)  
 end
-if Redis:sismember(Fast.."KtmAll:Groups",UserId) then
+if Redis:sismember(tuofe1.."KtmAll:Groups",UserId) then
 return send(msg_chat_id,msg_id,Reply_Status(UserId," ⚡ تم كتمه عام من المجموعات مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Fast.."KtmAll:Groups",UserId) 
+Redis:sadd(tuofe1.."KtmAll:Groups",UserId) 
 return send(msg_chat_id,msg_id,Reply_Status(UserId," ⚡ تم كتمه عام من المجموعات ").Reply,"md",true)  
 end
 end
@@ -2785,10 +2785,10 @@ local UserInfo = bot.getUser(UserId)
 if UserInfo.luatele == "error" and UserInfo.code == 6 then
 return send(msg_chat_id,msg_id,"*⚡ عذرآ لا تستطيع استخدام ايدي خطأ\n√*","md",true)  
 end
-if not Redis:sismember(Fast.."KtmAll:Groups",UserId) then
+if not Redis:sismember(tuofe1.."KtmAll:Groups",UserId) then
 return send(msg_chat_id,msg_id,Reply_Status(UserId," ⚡ تم الغاء كتمه عام من المجموعات مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Fast.."KtmAll:Groups",UserId) 
+Redis:srem(tuofe1.."KtmAll:Groups",UserId) 
 bot.setChatMemberStatus(msg.chat_id,UserId,'restricted',{1,1,1,1,1,1,1,1,1})
 return send(msg_chat_id,msg_id,Reply_Status(UserId," ⚡ تم الغاء كتمه عام من المجموعات  ").Reply,"md",true)  
 end
@@ -2797,18 +2797,18 @@ if text == 'مسح المكتومين عام' then
 if not msg.Devss then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي \n√*',"md",true)  
 end
-local Info_Members = Redis:smembers(Fast.."KtmAll:Groups") 
+local Info_Members = Redis:smembers(tuofe1.."KtmAll:Groups") 
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id," ⚡ لا يوجد مكتومين عام حاليا , ","md",true)  
 end
-Redis:del(Fast.."KtmAll:Groups") 
+Redis:del(tuofe1.."KtmAll:Groups") 
 return send(msg_chat_id,msg_id,"* ⚡ تم مسح ( "..#Info_Members.." ) من المكتومين عام\n√*","md",true)
 end
 if text == 'المكتومين عام' or text == 'قائمه المكتومين عام' then
 if not msg.Devss then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي \n√*',"md",true)  
 end
-local Info_Members = Redis:smembers(Fast.."KtmAll:Groups") 
+local Info_Members = Redis:smembers(tuofe1.."KtmAll:Groups") 
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"*⚡ لا يوجد مكتومين عام حاليا\n√*","md",true)  
 end
@@ -2829,47 +2829,47 @@ end
 ---------------------- Dev JABWA ----------------------
 if text == "اضف سؤال" then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if not msg.Devss then 
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي \n√*',"md",true)  
 end
-Redis:set(Fast.."gamebot:new"..msg.sender_id.user_id..":"..msg.chat_id,true)
+Redis:set(tuofe1.."gamebot:new"..msg.sender_id.user_id..":"..msg.chat_id,true)
 return send(msg_chat_id,msg_id,"⚡ ارسل السؤال الان\n√")
 end
 if text == "مسح سؤال" then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if not msg.Devss then 
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي\n√*',"md",true)  
 end
-Redis:set(Fast.."gamebot:new"..msg.sender_id.user_id..":"..msg.chat_id,'truedel')
+Redis:set(tuofe1.."gamebot:new"..msg.sender_id.user_id..":"..msg.chat_id,'truedel')
 return send(msg_chat_id,msg_id,"⚡ ارسل السؤال الان\n√")
 end
 if text == 'الاسئله المضافه' then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if not msg.Devss then 
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي \n√*',"md",true)  
 end
-local list = Redis:smembers(Fast.."gamebot:new1")
+local list = Redis:smembers(tuofe1.."gamebot:new1")
 t = " ⚡ الاسئله المضافه \n"
 for k,v in pairs(list) do
 t = t..""..k.." ⚡ -> ( "..v.." )\n"
@@ -2883,7 +2883,7 @@ if text == "اضف نكته" or text == "اضف نكتة" then
 if not msg.Dev then
 return send(msg_chat_id,msg_id,'*• انت لست المطور\n√*',"md",true)
 end
-Redis:set(Fast.."Set:joke"..msg.sender_id.user_id..":"..msg_chat_id,true)
+Redis:set(tuofe1.."Set:joke"..msg.sender_id.user_id..":"..msg_chat_id,true)
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -2894,9 +2894,9 @@ data = {
 }
 return send(msg_chat_id,msg_id,"* ⚡ ارسل الان النكتة\n√*","md",false, false, false, false, reply_markup)
 end
-if text and Redis:get(Fast.."Set:joke"..msg.sender_id.user_id..":"..msg_chat_id) == "true" then
-Redis:del(Fast.."Set:joke"..msg.sender_id.user_id..":"..msg_chat_id)
-Redis:sadd(Fast.."joke:", text)
+if text and Redis:get(tuofe1.."Set:joke"..msg.sender_id.user_id..":"..msg_chat_id) == "true" then
+Redis:del(tuofe1.."Set:joke"..msg.sender_id.user_id..":"..msg_chat_id)
+Redis:sadd(tuofe1.."joke:", text)
 return send(msg_chat_id,msg_id,"* ⚡ تم حفظ النكتة\n√*","md",false, false, false, false, reply_markup)
 end
 -- joke rm
@@ -2904,7 +2904,7 @@ if text == "حذف نكته" or text == "حذف نكتة" then
 if not msg.Dev then
 return send(msg_chat_id,msg_id,'*• انت لست المطور\n√*',"md",true)
 end
-Redis:set(Fast.."Set:joke"..msg.sender_id.user_id..":"..msg_chat_id, "rmjoke")
+Redis:set(tuofe1.."Set:joke"..msg.sender_id.user_id..":"..msg_chat_id, "rmjoke")
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -2915,9 +2915,9 @@ data = {
 }
 return send(msg_chat_id,msg_id,"* ⚡ ارسل النكتة الذي تريد حذفه الان\n√*","md",false, false, false, false, reply_markup)
 end
-if text and Redis:get(Fast.."Set:joke"..msg.sender_id.user_id..":"..msg_chat_id) == "rmjoke" then
-Redis:del(Fast.."Set:joke"..msg.sender_id.user_id..":"..msg_chat_id)
-Redis:srem(Fast.."joke:", text)
+if text and Redis:get(tuofe1.."Set:joke"..msg.sender_id.user_id..":"..msg_chat_id) == "rmjoke" then
+Redis:del(tuofe1.."Set:joke"..msg.sender_id.user_id..":"..msg_chat_id)
+Redis:srem(tuofe1.."joke:", text)
 return send(msg_chat_id,msg_id," ⚡ تم حذف النكته بنجاح ✅","md",false, false, false, false, reply_markup)
 end
 -- joke rm all
@@ -2926,65 +2926,65 @@ if not msg.Dev then
 return send(msg_chat_id,msg_id,'*• انت لست المطور\n√*',"md",true)
 end
 if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Fast.."ch:admin")
+local chinfo = Redis:get(tuofe1.."ch:admin")
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
 return send(msg.chat_id,msg.id,'*\n ⚡ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-local joke_list = Redis:smembers(Fast.."joke:") 
+local joke_list = Redis:smembers(tuofe1.."joke:") 
 if #joke_list == 0 then
 return send(msg_chat_id,msg_id,"* ⚡ لا يوجد نكتة مضافه\n√*","md",true)
 end
-Redis:del(Fast.."joke:")
-Redis:set(Fast.."joke_defullt:","true")
+Redis:del(tuofe1.."joke:")
+Redis:set(tuofe1.."joke_defullt:","true")
 return send(msg_chat_id,msg_id,"* ⚡ تم مسح جميع النكت بنجاح\n√*","md",true)
 end
 -- joke tweet
 if text == "نكته" or text == "نكتة" then
-if Redis:get(Fast.."Status:Games"..msg.chat_id) then
-local list = Redis:smembers(Fast.."joke:")
+if Redis:get(tuofe1.."Status:Games"..msg.chat_id) then
+local list = Redis:smembers(tuofe1.."joke:")
 randkk = list[math.random(#list)]
 return send(msg_chat_id,msg_id,'['..randkk..']','md')
 end
-if not Redis:get(Fast.."joke:") then
+if not Redis:get(tuofe1.."joke:") then
 send(msg_chat_id,msg_id,' ⚡ لا يوجد نكتة مضافه\n√','md')
 end
 end
 if text == 'مسح الاسئله المضافه' then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if not msg.Devss then 
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي \n√*',"md",true)  
 end
-Redis:del(Fast.."gamebot:new1")
+Redis:del(tuofe1.."gamebot:new1")
 return send(msg_chat_id,msg_id,"*⚡ تم مسح الاسئله\n√*","md")
 end
 if text == 'اسالني' then
-if not Redis:get(Fast.."Status:Games"..msg.chat_id) then
+if not Redis:get(tuofe1.."Status:Games"..msg.chat_id) then
 return false
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:get(Fast..'lock_geams'..msg.chat_id) then
-local list = Redis:smembers(Fast.."gamebot:new1")
+if not Redis:get(tuofe1..'lock_geams'..msg.chat_id) then
+local list = Redis:smembers(tuofe1.."gamebot:new1")
 if #list ~= 0 then
 local quschen = list[math.random(#list)]
-local ansar1 = Redis:get(Fast.."gamebot:newqus:as1"..quschen)
-local ansar2 = Redis:get(Fast.."gamebot:newqus:as2"..quschen)
-local ansar3 = Redis:get(Fast.."gamebot:newqus:as3"..quschen)
-local ansar0 = Redis:get(Fast.."gamebot:newqus:as0"..quschen)
-local ansar4 = Redis:get(Fast.."gamebot:newqus:as4"..quschen)
+local ansar1 = Redis:get(tuofe1.."gamebot:newqus:as1"..quschen)
+local ansar2 = Redis:get(tuofe1.."gamebot:newqus:as2"..quschen)
+local ansar3 = Redis:get(tuofe1.."gamebot:newqus:as3"..quschen)
+local ansar0 = Redis:get(tuofe1.."gamebot:newqus:as0"..quschen)
+local ansar4 = Redis:get(tuofe1.."gamebot:newqus:as4"..quschen)
 if ansar1 == ansar4 then
 testt = 'ansar1'
 elseif ansar2 == ansar4 then
@@ -3052,47 +3052,47 @@ end
 end
 if text == "اضف لغز" then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if not msg.Devss then 
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي \n√*',"md",true)  
 end
-Redis:set(Fast.."lkz:gamebot:new"..msg.sender_id.user_id..":"..msg.chat_id,true)
+Redis:set(tuofe1.."lkz:gamebot:new"..msg.sender_id.user_id..":"..msg.chat_id,true)
 return send(msg_chat_id,msg_id," ⚡ ارسل اللغز الان\n√")
 end
 if text == "مسح لغز" then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if not msg.Devss then 
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي \n√*',"md",true)  
 end
-Redis:set(Fast.."lkz:gamebot:new"..msg.sender_id.user_id..":"..msg.chat_id,'truedel')
+Redis:set(tuofe1.."lkz:gamebot:new"..msg.sender_id.user_id..":"..msg.chat_id,'truedel')
 return send(msg_chat_id,msg_id," ⚡ ارسل اللغز الان\n√")
 end
 if text == 'الالغاز' then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if not msg.Devss then 
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي \n√*',"md",true)  
 end
-local list = Redis:smembers(Fast.."lkz:gamebot:new1")
+local list = Redis:smembers(tuofe1.."lkz:gamebot:new1")
 t = " ⚡ الالغاز "
 for k,v in pairs(list) do
 t = t..""..k.." ⚡ -> ("..v.." )\n"
@@ -3104,39 +3104,39 @@ return send(msg_chat_id,msg_id,t)
 end
 if text == 'مسح الالغاز' then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if not msg.Devss then 
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي \n√*',"md",true)  
 end
-Redis:del(Fast.."lkz:gamebot:new1")
+Redis:del(tuofe1.."lkz:gamebot:new1")
 return send(msg_chat_id,msg_id,' ⚡ تم مسح الالغاز جميعا\n√')
 end
 if text == 'لغز' then
-if not Redis:get(Fast.."Status:Games"..msg.chat_id) then
+if not Redis:get(tuofe1.."Status:Games"..msg.chat_id) then
 return false
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:get(Fast..'lock_geams'..msg.chat_id) then
-local list = Redis:smembers(Fast.."lkz:gamebot:new1")
+if not Redis:get(tuofe1..'lock_geams'..msg.chat_id) then
+local list = Redis:smembers(tuofe1.."lkz:gamebot:new1")
 if #list ~= 0 then
 local quschen = list[math.random(#list)]
-local ansar1 = Redis:get(Fast.."lkz:gamebot:newqus:as1"..quschen)
-local ansar2 = Redis:get(Fast.."lkz:gamebot:newqus:as2"..quschen)
-local ansar3 = Redis:get(Fast.."lkz:gamebot:newqus:as3"..quschen)
-local ansar4 = Redis:get(Fast.."lkz:gamebot:newqus:as4"..quschen)
+local ansar1 = Redis:get(tuofe1.."lkz:gamebot:newqus:as1"..quschen)
+local ansar2 = Redis:get(tuofe1.."lkz:gamebot:newqus:as2"..quschen)
+local ansar3 = Redis:get(tuofe1.."lkz:gamebot:newqus:as3"..quschen)
+local ansar4 = Redis:get(tuofe1.."lkz:gamebot:newqus:as4"..quschen)
 if ansar1 == ansar4 then
 testt = 'ansar1'
 elseif ansar2 == ansar4 then
@@ -3203,13 +3203,13 @@ end
 end
 end
 ---------------------- Dev JABWA ----------------------
-if Redis:get(Fast..'Set:array'..senderr..':'..msg_chat_id) == 'true1' then
+if Redis:get(tuofe1..'Set:array'..senderr..':'..msg_chat_id) == 'true1' then
 text = text:gsub('"','') 
 text = text:gsub("'",'') 
 text = text:gsub('`','') 
 text = text:gsub('*','') 
-local test = Redis:get(Fast..'Text:array'..senderr..':'..msg_chat_id..'')
-Redis:sadd(Fast.."Add:Rd:array:Text"..test,text)  
+local test = Redis:get(tuofe1..'Text:array'..senderr..':'..msg_chat_id..'')
+Redis:sadd(tuofe1.."Add:Rd:array:Text"..test,text)  
 _key = {
 {{text="• اضغط هنا لانهاء الاضافه",callback_data="EndAddarray"..senderr}},
 }
@@ -3217,26 +3217,26 @@ send_inlin_key(msg_chat_id,' * ⚡ تم حفظ الرد يمكنك ارسال ا
 return false  
 end
 if text then
-if Redis:get(Fast.."Set:array:Ssd"..senderr..":"..msg_chat_id) == 'dttd' then
-Redis:del(Fast.."Set:array:Ssd"..senderr..":"..msg_chat_id)
-gery = Redis:get(Fast.."Set:array:addpu"..senderr..":"..msg_chat_id)
-if not Redis:sismember(Fast.."Add:Rd:array:Text"..gery,text) then
+if Redis:get(tuofe1.."Set:array:Ssd"..senderr..":"..msg_chat_id) == 'dttd' then
+Redis:del(tuofe1.."Set:array:Ssd"..senderr..":"..msg_chat_id)
+gery = Redis:get(tuofe1.."Set:array:addpu"..senderr..":"..msg_chat_id)
+if not Redis:sismember(tuofe1.."Add:Rd:array:Text"..gery,text) then
 send(msg_chat_id, msg_id,'* ⚡ لا يوجد رد متعدد\n√*',"md",true)
 return false
 end
-Redis:srem(Fast.."Add:Rd:array:Text"..gery,text)
+Redis:srem(tuofe1.."Add:Rd:array:Text"..gery,text)
 send(msg_chat_id, msg_id,'* ⚡ تم حذفه بنجاح\n√*',"md",true)
 end
 end
 if text then
-if Redis:get(Fast.."Set:array:Ssd"..senderr..":"..msg_chat_id) == 'delrd' then
-Redis:del(Fast.."Set:array:Ssd"..senderr..":"..msg_chat_id)
-if not Redis:sismember(Fast..'List:array',text) then
+if Redis:get(tuofe1.."Set:array:Ssd"..senderr..":"..msg_chat_id) == 'delrd' then
+Redis:del(tuofe1.."Set:array:Ssd"..senderr..":"..msg_chat_id)
+if not Redis:sismember(tuofe1..'List:array',text) then
 send(msg_chat_id, msg_id,'* ⚡ لا يوجد رد متعدد\n√*',"md",true)
 return false
 end
-Redis:set(Fast.."Set:array:addpu"..senderr..":"..msg_chat_id,text)
-Redis:set(Fast.."Set:array:Ssd"..senderr..":"..msg_chat_id,"dttd")
+Redis:set(tuofe1.."Set:array:addpu"..senderr..":"..msg_chat_id,text)
+Redis:set(tuofe1.."Set:array:Ssd"..senderr..":"..msg_chat_id,"dttd")
 send(msg_chat_id, msg_id,'* ⚡ قم بارسال الرد الذي تريد حذفه منه\n√*',"md",true)
 return false
 end
@@ -3249,26 +3249,26 @@ inlin = {
 {{text = '• اضغط هنا للالغاء',callback_data=senderr..'/cancelrdd'}},
 }
 send_inlin_key(msg_chat_id,"*⚡ ارسل الكلمه التي تريد حذفها\n√*",inlin,msg_id)
-Redis:set(Fast.."Set:array:Ssd"..senderr..":"..msg_chat_id,"delrd")
+Redis:set(tuofe1.."Set:array:Ssd"..senderr..":"..msg_chat_id,"delrd")
 return false 
 end
 if text then
-if Redis:get(Fast.."Set:array"..senderr..":"..msg_chat_id) == 'true' then
-Redis:sadd(Fast..'List:array', text)
-Redis:set(Fast..'Text:array'..senderr..':'..msg_chat_id, text)
+if Redis:get(tuofe1.."Set:array"..senderr..":"..msg_chat_id) == 'true' then
+Redis:sadd(tuofe1..'List:array', text)
+Redis:set(tuofe1..'Text:array'..senderr..':'..msg_chat_id, text)
 send(msg_chat_id, msg_id,'*⚡ ارسل الرد الذي تريد اضافته\n√*',"md",true)
-Redis:del(Fast.."Set:array"..senderr..":"..msg_chat_id)
-Redis:set(Fast..'Set:array'..senderr..':'..msg_chat_id,'true1')
-Redis:del(Fast.."Add:Rd:array:Text"..text)   
+Redis:del(tuofe1.."Set:array"..senderr..":"..msg_chat_id)
+Redis:set(tuofe1..'Set:array'..senderr..':'..msg_chat_id,'true1')
+Redis:del(tuofe1.."Add:Rd:array:Text"..text)   
 return false
 end
 end
 
 if text then
-if Redis:get(Fast.."Set:array:rd"..senderr..":"..msg_chat_id) == 'delrd' then
-Redis:del(Fast.."Set:array:rd"..senderr..":"..msg_chat_id)
-Redis:del(Fast.."Add:Rd:array:Text"..text)
-Redis:srem(Fast..'List:array', text)
+if Redis:get(tuofe1.."Set:array:rd"..senderr..":"..msg_chat_id) == 'delrd' then
+Redis:del(tuofe1.."Set:array:rd"..senderr..":"..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:array:Text"..text)
+Redis:srem(tuofe1..'List:array', text)
 send(msg_chat_id, msg_id,' * ⚡ تم ازالة الرد المتعدد بنجاح\n√*',"md",true)
 return false
 end
@@ -3282,12 +3282,12 @@ inlin = {
 {{text = '• اضغط هنا للالغاء',callback_data=senderr..'/cancelrdd'}},
 }
 send_inlin_key(msg_chat_id,"*⚡ ارسل الكلمه التي تريد حذفها\n√*",inlin,msg_id)
-Redis:set(Fast.."Set:array:rd"..senderr..":"..msg_chat_id,"delrd")
+Redis:set(tuofe1.."Set:array:rd"..senderr..":"..msg_chat_id,"delrd")
 return false 
 end
 if text then
-if  Redis:sismember(Fast..'List:array',text) then
-local list = Redis:smembers(Fast.."Add:Rd:array:Text"..text)
+if  Redis:sismember(tuofe1..'List:array',text) then
+local list = Redis:smembers(tuofe1.."Add:Rd:array:Text"..text)
 quschen = list[math.random(#list)]
 send(msg_chat_id, msg_id,'['..quschen..']',"md",true)
 end
@@ -3296,7 +3296,7 @@ if text == ("الردود المتعدده") then
 if not msg.Devss then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي\n√*',"md",true)  
 end
-local list = Redis:smembers(Fast..'List:array')
+local list = Redis:smembers(tuofe1..'List:array')
 text = "  ⚡ قائمه الردود المتعدده ↑↓\nꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ \n"
 for k,v in pairs(list) do
 text = text..""..k.." ⇿『 "..v.."』⇿『 "..db.." 』\n"
@@ -3310,10 +3310,10 @@ if text == ("مسح الردود المتعدده") then
 if not msg.Devss then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي\n√*',"md",true)  
 end
-local list = Redis:smembers(Fast..'List:array')
+local list = Redis:smembers(tuofe1..'List:array')
 for k,v in pairs(list) do
-Redis:del(Fast.."Add:Rd:array:Text"..v..msg_chat_id)   
-Redis:del(Fast..'List:array'..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:array:Text"..v..msg_chat_id)   
+Redis:del(tuofe1..'List:array'..msg_chat_id)
 end
 send(msg_chat_id, msg_id," * ⚡ تم مسح الردود المتعدده\n√*","md",true)
 end
@@ -3325,17 +3325,17 @@ inlin = {
 {{text = '• اضغط هنا للالغاء',callback_data=senderr..'/cancelrdd'}},
 }
 send_inlin_key(msg_chat_id,"*⚡ ارسل الكلمه التي تريد اضافتها\n√*",inlin,msg_id)
-Redis:set(Fast.."Set:array"..senderr..":"..msg_chat_id,true)
+Redis:set(tuofe1.."Set:array"..senderr..":"..msg_chat_id,true)
 return false
 end
 
 if text == 'السيرفر' then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if not msg.Asasy then 
@@ -3358,11 +3358,11 @@ end
 
 if text == 'صلاحياتي' then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 local StatusMember = bot.getChatMember(msg_chat_id,senderr).status.luatele
@@ -3399,11 +3399,11 @@ end
 end
 if text == 'صلاحياته' and msg.reply_to_message_id ~= 0 then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
@@ -3443,11 +3443,11 @@ end
 
 if text and text:match('^صلاحياته @(%S+)$') then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 local UserName = text:match('^صلاحياته @(%S+)$') 
@@ -3495,11 +3495,11 @@ end
 end
 if text and text:match('^التفاعل @(%S+)$') then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 local UserName = text:match('^التفاعل @(%S+)$') 
@@ -3513,21 +3513,21 @@ end
 if UserName and UserName:match('(%S+)[Bb][Oo][Tt]') then
 return send(msg_chat_id,msg_id,"*⚡ عذرآ لا تستطيع استخدام معرف البوت\n√* ","md",true)  
 end
-TotalMsg = Redis:get(Fast..'Num:Message:User'..msg_chat_id..':'..UserId_Info.id) or 0
+TotalMsg = Redis:get(tuofe1..'Num:Message:User'..msg_chat_id..':'..UserId_Info.id) or 0
 TotalMsgT = Total_message(TotalMsg) 
 return send(msg_chat_id,msg_id," ⚡ التفاعل -> "..TotalMsgT, "md")
 end
 if text == 'التفاعل' and msg.reply_to_message_id ~= 0 then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
-TotalMsg = Redis:get(Fast..'Num:Message:User'..msg_chat_id..':'..rep_idd) or 0
+TotalMsg = Redis:get(tuofe1..'Num:Message:User'..msg_chat_id..':'..rep_idd) or 0
 TotalMsgT = Total_message(TotalMsg) 
 return send(msg_chat_id,msg_id," ⚡ التفاعل -> "..TotalMsgT, "md")
 end
@@ -3563,7 +3563,7 @@ return bot.sendText(msg_chat_id, msg_id,MyNumber,'md',true)
 end
 if text ==("رقمه") and msg.reply_to_message_id ~= 0 or text ==("رقمة") and msg.reply_to_message_id ~= 0 then 
 local Message_Reply = bot.getMessage(msg_chat_id, msg.reply_to_message_id)
-if Message_Reply.Fastbots == "error" then
+if Message_Reply.tuofe1bots == "error" then
 return bot.sendText(msg_chat_id,msg_id,"*\n⚡ عذرا هذا المستخدم غير مدعوم *","md",true)  
 end
 local UserInfo = bot.getUser(Message_Reply.sender_id.user_id)
@@ -3610,7 +3610,7 @@ return send(msg_chat_id,msg_id, ScreenBot, "md")
 end
 if text ==("ايدييه") and msg.reply_to_message_id ~= 0 or text ==("ايديه") and msg.reply_to_message_id ~= 0 then 
 local Message_Reply = bot.getMessage(msg_chat_id, msg.reply_to_message_id)
-if Message_Reply.Fastbots == "error" then
+if Message_Reply.tuofe1bots == "error" then
 return bot.sendText(msg_chat_id,msg_id,"*\n⚡ عذرا هذا المستخدم غير مدعوم *","md",true)  
 end
 return send(msg_chat_id,msg_id,'*⚡ ايدييه ⇿*〘 `'..Message_Reply.sender_id.user_id..'` 〙', "md")
@@ -3631,7 +3631,7 @@ bot.sendText(msg_chat_id, msg_id, text, 'html',true)
 end
 if text ==("معرفه") and msg.reply_to_message_id ~= 0 or text ==("معرفة") and msg.reply_to_message_id ~= 0 then 
 local Message_Reply = bot.getMessage(msg_chat_id, msg.reply_to_message_id)
-if Message_Reply.Fastbots == "error" then
+if Message_Reply.tuofe1bots == "error" then
 return bot.sendText(msg_chat_id,msg_id,"*\n⚡ عذرا هذا المستخدم غير مدعوم *","md",true)  
 end
 local UserInfo = bot.getUser(Message_Reply.sender_id.user_id)
@@ -3654,14 +3654,14 @@ return bot.sendText(msg_chat_id,msg_id,'*⚡ معرفه ⇿〘 '..UserName..' �
 end
 if text == "ايدي" and msg.reply_to_message_id == 0 then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:get(Fast.."Status:Id"..msg_chat_id) then
+if not Redis:get(tuofe1.."Status:Id"..msg_chat_id) then
 return false
 end
 local UserInfo = bot.getUser(senderr)
@@ -3673,7 +3673,7 @@ Bio = 'لا يوجد'
 end
 local nameuser = FlterBio(FlterBio(UserInfo.first_name))
 local photo = bot.getUserProfilePhotos(senderr)
-local StatusMember = bot.getChatMember(msg_chat_id,senderr).status.Fastbots
+local StatusMember = bot.getChatMember(msg_chat_id,senderr).status.tuofe1bots
 if (StatusMember == "chatMemberStatusCreator") then
 StatusMemberChat = 'مالك الجروب'
 elseif (StatusMember == "chatMemberStatusAdministrator") then
@@ -3687,21 +3687,21 @@ Lakb = StatusMember.status.custom_title
 else
 Lakb = 'مشرف'
 end
-if (StatusMember.status.Fastbots == "chatMemberStatusCreator") then
+if (StatusMember.status.tuofe1bots == "chatMemberStatusCreator") then
 local Lakb = ' '..Lakb..' '
 else
 Lakb = 'لا يوجد لك لقب'
 end
 local UserId = senderr
-local Num = Redis:get(Fast.."Num:Add:Games"..msg.chat_id..senderr) or 0
-local Text = Redis:get(Fast.."Num:Add:Memp"..msg.chat_id..senderr) or 0
+local Num = Redis:get(tuofe1.."Num:Add:Games"..msg.chat_id..senderr) or 0
+local Text = Redis:get(tuofe1.."Num:Add:Memp"..msg.chat_id..senderr) or 0
 local RinkBot = msg.Name_Controller
-local TotalMsg = Redis:get(Fast..'Num:Message:User'..msg_chat_id..':'..senderr) or 0
+local TotalMsg = Redis:get(tuofe1..'Num:Message:User'..msg_chat_id..':'..senderr) or 0
 local TotalPhoto = photo.total_count or 0
-local TotalEdit = Redis:get(Fast..'Num:Message:Edit'..msg_chat_id..senderr) or 0
+local TotalEdit = Redis:get(tuofe1..'Num:Message:Edit'..msg_chat_id..senderr) or 0
 local TotalMsgT = Total_message(TotalMsg) 
-local NumberGames = Redis:get(Fast.."Num:Add:Games"..msg.chat_id..senderr) or 0
-local NumAdd = Redis:get(Fast.."Num:Add:Memp"..msg.chat_id..":"..senderr) or 0
+local NumberGames = Redis:get(tuofe1.."Num:Add:Games"..msg.chat_id..senderr) or 0
+local NumAdd = Redis:get(tuofe1.."Num:Add:Memp"..msg.chat_id..":"..senderr) or 0
 local Texting = {
 "〈 جمالك ده طبيعي يولا 🙈💗 〉",
 "〈 غير بقاا صورتك يا قمر 😻🤍 〉 ",
@@ -3721,8 +3721,8 @@ UserInfousername = '@'..UserInfo.username..''
 else
 UserInfousername = 'لا يوجد'
 end
-Get_Is_Id = Redis:get(Fast.."Set:Id:Groups") or Redis:get(Fast.."Set:Id:Group"..msg_chat_id)
-if Redis:get(Fast.."Status:IdPhoto"..msg_chat_id) then
+Get_Is_Id = Redis:get(tuofe1.."Set:Id:Groups") or Redis:get(tuofe1.."Set:Id:Group"..msg_chat_id)
+if Redis:get(tuofe1.."Status:IdPhoto"..msg_chat_id) then
 if Get_Is_Id then
 local Get_Is_Id = Get_Is_Id:gsub('#AddMem',NumAdd) 
 local Get_Is_Id = Get_Is_Id:gsub('#id',senderr) 
@@ -3737,7 +3737,7 @@ local Get_Is_Id = Get_Is_Id:gsub('#game',NumberGames)
 local Get_Is_Id = Get_Is_Id:gsub('#photos',TotalPhoto) 
 local Get_Is_Id = Get_Is_Id:gsub('#Bio',Bio) 
 if photo.total_count > 0 then
-if not msg.Special and Redis:get(Fast..'idnotmem'..msg.chat_id)  then
+if not msg.Special and Redis:get(tuofe1..'idnotmem'..msg.chat_id)  then
 return send(msg_chat_id,msg_id,
 '*\n'..Description..'\n💎╖ ايدِيڪ ⇇ '..UserId..
 '\n🐣╢ اسمڪ ⇇ '..nameuser..
@@ -3760,7 +3760,7 @@ return send(msg_chat_id,msg_id,Get_Is_Id,"md",true)
 end
 else
 if photo.total_count > 0 then
-if not msg.Special and Redis:get(Fast..'idnotmem'..msg.chat_id)  then
+if not msg.Special and Redis:get(tuofe1..'idnotmem'..msg.chat_id)  then
 return send(msg_chat_id,msg_id,
 '*\n'..Description..'\n💎╖ ايدِيڪ ⇇ '..UserId..
 '\n🐣╢ اسمڪ ⇇ '..nameuser..
@@ -3851,11 +3851,11 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 local UserId_Info = bot.searchPublicChat(UserName)
@@ -3890,15 +3890,15 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
-if UserInfo and UserInfo.type and UserInfo.type.Fastbots == "userTypeBot" then
+if UserInfo and UserInfo.type and UserInfo.type.tuofe1bots == "userTypeBot" then
 return send(msg_chat_id,msg_id,"*\n ⚡ عذرآ لا تستطيع استخدام الامر على البوت *","md",true)  
 end
 local reply_markup = bot.replyMarkup{type = 'inline',data = {
@@ -3920,11 +3920,11 @@ return send(msg.chat_id,msg.id,'*⚡ الـيـك قـائـمـة الـتـح�
 end
 if text == 'ايدي' and msg.reply_to_message_id ~= 0 then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
@@ -3945,12 +3945,12 @@ local UserId = rep_idd
 local jabwa = 'بالرد علي الشخص'
 local Text = '['..UserInfo.first_name..'](tg://user?id='..UserInfo.id..')'
 local RinkBot = Controller(msg_chat_id,rep_idd)
-local TotalMsg = Redis:get(Fast..'Num:Message:User'..msg_chat_id..':'..rep_idd) or 0
-local TotalEdit = Redis:get(Fast..'Num:Message:Edit'..msg_chat_id..rep_idd) or 0
+local TotalMsg = Redis:get(tuofe1..'Num:Message:User'..msg_chat_id..':'..rep_idd) or 0
+local TotalEdit = Redis:get(tuofe1..'Num:Message:Edit'..msg_chat_id..rep_idd) or 0
 local TotalMsgT = Total_message(TotalMsg) 
-if Redis:get(Fast.."Status:IdPhoto"..msg_chat_id) then
+if Redis:get(tuofe1.."Status:IdPhoto"..msg_chat_id) then
 if photo.total_count > 0 then
-if not msg.Special and Redis:get(Fast..'idnotmem'..msg.chat_id)  then
+if not msg.Special and Redis:get(tuofe1..'idnotmem'..msg.chat_id)  then
 return send(msg_chat_id,msg_id,
 '*\n🎭╖ الاسم ->* '..Text..
 '*\n🗽╢ الايدي -> '..UserId..
@@ -4000,7 +4000,7 @@ end
 
 if text and text:match('^كشف (%d+)$') then
 if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Fast.."ch:admin")
+local chinfo = Redis:get(tuofe1.."ch:admin")
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
 return send(msg.chat_id,msg.id,'*\n ⚡ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
@@ -4014,11 +4014,11 @@ end
 local jabwa = 'كشف بالايدي'
 local Text = '['..UserInfo.first_name..'](tg://user?id='..UserInfo.id..')'
 local RinkBot = Controller(msg_chat_id,UserId)
-local TotalMsg = Redis:get(Fast..'Num:Message:User'..msg_chat_id..':'..UserId) or 0
-local TotalEdit = Redis:get(Fast..'Num:Message:Edit'..msg_chat_id..UserId) or 0
+local TotalMsg = Redis:get(tuofe1..'Num:Message:User'..msg_chat_id..':'..UserId) or 0
+local TotalEdit = Redis:get(tuofe1..'Num:Message:Edit'..msg_chat_id..UserId) or 0
 local TotalMsgT = Total_message(TotalMsg) 
-local NumAdd = Redis:get(Fast.."Num:Add:Memp"..msg.chat_id..":"..UserId) or 0
-local NumberGames = Redis:get(Fast.."Num:Add:Games"..msg.chat_id..UserId) or 0
+local NumAdd = Redis:get(tuofe1.."Num:Add:Memp"..msg.chat_id..":"..UserId) or 0
+local NumberGames = Redis:get(tuofe1.."Num:Add:Games"..msg.chat_id..UserId) or 0
 if UserInfo.luatele  == "error" and UserInfo.code == 6 then
 return send(msg_chat_id,msg_id,"\n ⚡ عذرآ لا تستطيع استخدام ايدي خطأ ","md",true)  
 end 
@@ -4035,11 +4035,11 @@ return send(msg_chat_id,msg_id,
 end
 if text == 'كشف'  and msg.reply_to_message_id ~= 0 then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
@@ -4054,8 +4054,8 @@ local UserId = rep_idd
 local Text = '['..UserInfo.first_name..'](tg://user?id='..UserInfo.id..')'
 local jabwa = 'كشف بالرد'
 local RinkBot = Controller(msg_chat_id,rep_idd)
-local TotalMsg = Redis:get(Fast..'Num:Message:User'..msg_chat_id..':'..rep_idd) or 0
-local TotalEdit = Redis:get(Fast..'Num:Message:Edit'..msg_chat_id..rep_idd) or 0
+local TotalMsg = Redis:get(tuofe1..'Num:Message:User'..msg_chat_id..':'..rep_idd) or 0
+local TotalEdit = Redis:get(tuofe1..'Num:Message:Edit'..msg_chat_id..rep_idd) or 0
 local TotalMsgT = Total_message(TotalMsg) 
 return send(msg_chat_id,msg_id,
 '*\n🎭╖ الاسم ->* '..Text..
@@ -4070,11 +4070,11 @@ return send(msg_chat_id,msg_id,
 end
 if text and text:match('^ايدي @(%S+)$') or text and text:match('^كشف @(%S+)$') then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 local UserName = text:match('^ايدي @(%S+)$') or text:match('^كشف @(%S+)$')
@@ -4093,8 +4093,8 @@ local UserInfo = bot.getUser(UserId)
 local Text = '['..UserInfo.first_name..'](tg://user?id='..UserInfo.id..')'
 local jabwa = 'كشف بالمعرف'
 local RinkBot = Controller(msg_chat_id,UserId_Info.id)
-local TotalMsg = Redis:get(Fast..'Num:Message:User'..msg_chat_id..':'..UserId_Info.id) or 0
-local TotalEdit = Redis:get(Fast..'Num:Message:Edit'..msg_chat_id..UserId_Info.id) or 0
+local TotalMsg = Redis:get(tuofe1..'Num:Message:User'..msg_chat_id..':'..UserId_Info.id) or 0
+local TotalEdit = Redis:get(tuofe1..'Num:Message:Edit'..msg_chat_id..UserId_Info.id) or 0
 local TotalMsgT = Total_message(TotalMsg) 
 return send(msg_chat_id,msg_id,
 '*\n🎭╖ الاسم ->* '..Text..
@@ -4109,7 +4109,7 @@ return send(msg_chat_id,msg_id,
 end
 
 if text == "تفاعلي" then
-local TotalMsg = Redis:get(Fast..'Num:Message:User'..msg_chat_id..':'..senderr) or 0
+local TotalMsg = Redis:get(tuofe1..'Num:Message:User'..msg_chat_id..':'..senderr) or 0
 local TotalMsgT = Total_message(TotalMsg) 
 return send(msg_chat_id,msg_id,'\n* ⚡ تفاعلك -> '..TotalMsgT..'* ',"md",true)  
 end
@@ -4118,18 +4118,18 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local StatusMember = bot.getChatMember(msg_chat_id,Fast).status.luatele
+local StatusMember = bot.getChatMember(msg_chat_id,tuofe1).status.luatele
 if (StatusMember ~= "chatMemberStatusAdministrator") then
 return send(msg_chat_id,msg_id,' ⚡ البوت عضو في الجروب ',"md",true) 
 end
-local GetMemberStatus = bot.getChatMember(msg_chat_id,Fast).status 
+local GetMemberStatus = bot.getChatMember(msg_chat_id,tuofe1).status 
 if GetMemberStatus.can_change_info then
 change_info = '✅' else change_info = '❌'
 end
@@ -4169,11 +4169,11 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -4195,12 +4195,12 @@ end
 
 
 if msg.content.video_note or msg.content.document or msg.content.audio or msg.content.video or msg.content.voice_note or msg.content.sticker or msg.content.animation or msg.content.photo then      
-Redis:sadd(Fast.."allM"..msg.chat_id, msg.id)
-if Redis:get(Fast.."Status:Del:Media"..msg.chat_id) then    
-local Numbardel = Redis:get(Fast.."allM:numdel"..msg.chat_id) or 200
-local gmedia = Redis:scard(Fast.."allM"..msg.chat_id)  
+Redis:sadd(tuofe1.."allM"..msg.chat_id, msg.id)
+if Redis:get(tuofe1.."Status:Del:Media"..msg.chat_id) then    
+local Numbardel = Redis:get(tuofe1.."allM:numdel"..msg.chat_id) or 200
+local gmedia = Redis:scard(tuofe1.."allM"..msg.chat_id)  
 if tonumber(gmedia) >= tonumber(Numbardel) then
-local liste = Redis:smembers(Fast.."allM"..msg.chat_id)
+local liste = Redis:smembers(tuofe1.."allM"..msg.chat_id)
 for k,v in pairs(liste) do
 local Mesge = v
 if Mesge then
@@ -4209,7 +4209,7 @@ bot.deleteMessages(msg.chat_id,{[1]= Mesge})
 end
 end
 send(msg_chat_id,msg_id, t)
-Redis:del(Fast.."allM"..msg.chat_id)
+Redis:del(tuofe1.."allM"..msg.chat_id)
 end
 end
 end
@@ -4218,28 +4218,28 @@ if not msg.Creator then
 return send(msg_chat_id,msg_id,'*• انت لست المنشئ\n√*',"md",true)    
 end
 local Numbardel = text:match("^ضع عدد المسح (%d+)$")
-Redis:set(Fast.."allM:numdel"..msg.chat_id,Numbardel) 
+Redis:set(tuofe1.."allM:numdel"..msg.chat_id,Numbardel) 
 send(msg_chat_id,msg_id, 'تم تعيين العدد  الى -> '..Numbardel)
 end
 if text == "امسح" or text == "مسح الميديا" then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end  
 if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
-local list = Redis:smembers(Fast.."allM"..msg.chat_id)
+local list = Redis:smembers(tuofe1.."allM"..msg.chat_id)
 for k,v in pairs(list) do
 local Message = v
 if Message then
 t = " ⚡ تم مسح "..k.." من الوسائط الموجوده"
 bot.deleteMessages(msg.chat_id,{[1]= Message})
-Redis:del(Fast.."allM"..msg.chat_id)
+Redis:del(tuofe1.."allM"..msg.chat_id)
 end
 end
 if #list == 0 then
@@ -4249,28 +4249,28 @@ end
 end
 if text == ("الميديا") then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end  
 if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
-local gmria = Redis:scard(Fast.."allM"..msg.chat_id)  
+local gmria = Redis:scard(tuofe1.."allM"..msg.chat_id)  
  send(msg_chat_id,msg_id,"* ⚡ عدد الميديا الموجود هو (* "..gmria.." *)\n√*","md")
 end
 
 
 if text == 'المالك' or text == 'المنشئ' then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -4279,7 +4279,7 @@ end
 local Info_Members = bot.getSupergroupMembers(msg_chat_id, "Administrators", "*", 0, 200)
 local List_Members = Info_Members.members
 for k, v in pairs(List_Members) do
-if Info_Members.members[k].status.Fastbots == "chatMemberStatusCreator" then
+if Info_Members.members[k].status.tuofe1bots == "chatMemberStatusCreator" then
 local Jabwa = bot.getUser(v.member_id.user_id)
 local qp = bot.getUser(v.member_id.user_id)
 if Jabwa.first_name == "" then
@@ -4318,11 +4318,11 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -4334,7 +4334,7 @@ listBots = '\n ⚡ قائمه البوتات المجموعه ↑↓ \n ꔹ━�
 x = 0
 for k, v in pairs(List_Members) do
 local UserInfo = bot.getUser(v.member_id.user_id)
-if Info_Members.members[k].status.Fastbots == "chatMemberStatusAdministrator" then
+if Info_Members.members[k].status.tuofe1bots == "chatMemberStatusAdministrator" then
 x = x + 1
 Admin = ' ⇿〘  ادمن 〙'
 else
@@ -4362,11 +4362,11 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -4396,18 +4396,18 @@ send(msg_chat_id,msg_id,'*⚡ لا يوجد مقيدين\n√*',"md",true)
 end
 end
 
-local Bot_Name = (Redis:get(Fast.."Name:Bot") or "لـوفـاريـن")
+local Bot_Name = (Redis:get(tuofe1.."Name:Bot") or "لـوفـاريـن")
 if text then
 if text == "غادر" or text:match(Bot_Name.." غادر$") then  
 if not msg.Asasy then 
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 send(msg_chat_id,msg_id,"*⚡ تم مغادرة الجروب بامر من المطور\n√*","md",true)  
@@ -4420,14 +4420,14 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true) 
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:SenderChat"..msg_chat_id,true) 
+Redis:set(tuofe1.."Lock:SenderChat"..msg_chat_id,true) 
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل ارسال القناة").Lock,"md",true)  
 return false
 end 
@@ -4436,14 +4436,14 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end 
-Redis:del(Fast.."Lock:SenderChat"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:SenderChat"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح ارسال القناة").unLock,"md",true)  
 return false
 end 
@@ -4452,14 +4452,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:phshar"..msg_chat_id,true) 
+Redis:set(tuofe1.."Lock:phshar"..msg_chat_id,true) 
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الفشار").Lock,"md",true)  
 return false
 end 
@@ -4468,14 +4468,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end 
-Redis:del(Fast.."Lock:phshar"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:phshar"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح الفشار").unLock,"md",true)  
 return false
 end 
@@ -4484,14 +4484,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:alkfr"..msg_chat_id,true) 
+Redis:set(tuofe1.."Lock:alkfr"..msg_chat_id,true) 
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الكفر").Lock,"md",true)  
 return false
 end 
@@ -4500,14 +4500,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end 
-Redis:del(Fast.."Lock:alkfr"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:alkfr"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح الكفر").unLock,"md",true)  
 return false
 end 
@@ -4516,14 +4516,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:english"..msg_chat_id,true) 
+Redis:set(tuofe1.."Lock:english"..msg_chat_id,true) 
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الانكليزيه").Lock,"md",true)  
 return false
 end 
@@ -4532,20 +4532,20 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end 
-Redis:del(Fast.."Lock:english"..msg_chat_id) 
+Redis:del(tuofe1.."Lock:english"..msg_chat_id) 
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح الانكليزيه").unLock,"md",true)  
 return false
 end 
 ---------------------- Dev JABWA ----------------------
 if text == "صورتي" then
-if Redis:get(Fast.."myphoto"..msg.chat_id) then
+if Redis:get(tuofe1.."myphoto"..msg.chat_id) then
 send(msg_chat_id,msg_id,'*⚡ امر صورتي معطل\n√*',"md",true) 
 else
 local photo = bot.getUserProfilePhotos(senderr)
@@ -4564,11 +4564,11 @@ end
 end
 end
 if text ==("صورته") and msg.reply_to_message_id ~= 0 or text ==("صورتة") and msg.reply_to_message_id ~= 0 then 
-if Redis:get(Fast.."hisphoto"..msg_chat_id) == "off" then
+if Redis:get(tuofe1.."hisphoto"..msg_chat_id) == "off" then
 bot.sendText(msg_chat_id,msg_id,'* ⚡ الصوره معطله*',"md",true) 
 else
 local Message_Reply = bot.getMessage(msg_chat_id, msg.reply_to_message_id)
-if Message_Reply.Fastbots == "error" then
+if Message_Reply.tuofe1bots == "error" then
 return bot.sendText(msg_chat_id,msg_id,"*\n ⚡ عذرا هذا المستخدم غير مدعوم *","md",true)  
 end
 local photo = bot.getUserProfilePhotos(Message_Reply.sender_id.user_id)
@@ -4584,7 +4584,7 @@ end
 end
 if text and (text:match('^صورته (%d+)$') or text:match('^صورتة (%d+)$')) then
 local UserId = (text:match('^صورته (%d+)$') or text:match('^صورتة (%d+)$'))
-if Redis:get(Fast.."hisphoto"..msg_chat_id) == "off" then
+if Redis:get(tuofe1.."hisphoto"..msg_chat_id) == "off" then
 bot.sendText(msg_chat_id,msg_id,'* ⚡ الصوره معطله*',"md",true) 
 else
 local UserInfo = bot.getUser(UserId)
@@ -4600,7 +4600,7 @@ end
 end
 if text and (text:match('^صورته @(%S+)$') or text:match('^صورتة @(%S+)$')) then
 local UserName = (text:match('^صورته @(%S+)$') or text:match('^صورتة @(%S+)$'))
-if Redis:get(Fast.."hisphoto"..msg_chat_id) == "off" then
+if Redis:get(tuofe1.."hisphoto"..msg_chat_id) == "off" then
 bot.sendText(msg_chat_id,msg_id,'* ⚡ الصوره معطله*',"md",true) 
 else
 local UserId_Info = bot.searchPublicChat(UserName)
@@ -4620,7 +4620,7 @@ local UserId = Text:match("^ضع قناتي (.*)$") or text:match("^وضع قن�
 if not msg.Admin then
 return send(msg_chat_id,msg_id,'*\n ⚡ عذرآ الامر يخص〘 '..Controller_Num(7)..' 〙*',"md",true)  
 end
-Redis:set(Fast..'SOFI:Channe:Vip'..senderr,UserId)
+Redis:set(tuofe1..'SOFI:Channe:Vip'..senderr,UserId)
 local Text = " ⚡ تم حفظ قناتك"
 local reply_markup = bot.replyMarkup{
 type = 'inline',
@@ -4637,7 +4637,7 @@ if text == "حذف قناتي" then
 if not msg.Admin then
 return send(msg_chat_id,msg_id,'*\n ⚡ عذرآ الامر يخص〘 '..Controller_Num(7)..' 〙*',"md",true)  
 end
-if not Redis:get(Fast..'SOFI:Channe:Vip'..senderr) then
+if not Redis:get(tuofe1..'SOFI:Channe:Vip'..senderr) then
 Text = " ⚡ انت لم تقم بوضع قناتك"
 local reply_markup = bot.replyMarkup{
 type = 'inline',
@@ -4650,7 +4650,7 @@ data = {
 bot.sendText(msg_chat_id,msg_id,Text,"md",false, false, false, false, reply_markup)
 return false
 else
-Redis:del(Fast..'SOFI:Channe:Vip'..senderr)
+Redis:del(tuofe1..'SOFI:Channe:Vip'..senderr)
 Text = " ⚡ تم حذف قناتك بنجاح"
 local reply_markup = bot.replyMarkup{
 type = 'inline',
@@ -4664,14 +4664,14 @@ bot.sendText(msg_chat_id,msg_id,Text,"md",false, false, false, false, reply_mark
 return false
 end
 end
-if Redis:get(Fast..'SetChanneVip'..senderr) then 
+if Redis:get(tuofe1..'SetChanneVip'..senderr) then 
 if text =='الغاء' then 
 bot.sendText(msg_chat_id,msg_id, '* ⚡ تم الغاء حفظ قناتك *',"md",true)  
-Redis:del(Fast..'SetChanneVip'..senderr)
+Redis:del(tuofe1..'SetChanneVip'..senderr)
 return false  
 end 
-Redis:del(Fast..'SetChanneVip'..senderr)
-Redis:set(Fast..'SOFI:Channe:Vip'..senderr,text)
+Redis:del(tuofe1..'SetChanneVip'..senderr)
+Redis:set(tuofe1..'SOFI:Channe:Vip'..senderr,text)
 local text = "*⚡ تم حفظ قناتك بنجاح ✅*"
 local reply_markup = bot.replyMarkup{
 type = 'inline',
@@ -4698,28 +4698,28 @@ data = {
 }
 }
 bot.sendText(msg_chat_id,msg_id,text,"md",false, false, false, false, reply_markup)
-Redis:set(Fast..'SetChanneVip'..senderr,true)
+Redis:set(tuofe1..'SetChanneVip'..senderr,true)
 return false
 end
 if text and text:match("^قناتي$") then
 if not msg.Admin then
 return send(msg_chat_id,msg_id,'*\n ⚡ عذرآ الامر يخص〘 '..Controller_Num(7)..' 〙*',"md",true)  
 end
-if not Redis:get(Fast..'SOFI:Channe:Vip'..senderr) then
+if not Redis:get(tuofe1..'SOFI:Channe:Vip'..senderr) then
 bot.sendText(msg_chat_id,msg_id, "* ⚡ لم تقم باضافة قناتك\n ⚡ قم بارسال وضع قناتي *","md",true)
 else
-local rules = Redis:get(Fast..'SOFI:Channe:Vip'..senderr)
+local rules = Redis:get(tuofe1..'SOFI:Channe:Vip'..senderr)
 bot.sendText(msg_chat_id,msg_id, rules,"html",true)
 end
 end
-if Redis:get(Fast..'SetGroupVip'..senderr) then 
+if Redis:get(tuofe1..'SetGroupVip'..senderr) then 
 if text =='الغاء' then 
 bot.sendText(msg_chat_id,msg_id, '* ⚡ تم الغاء حفظ جروبك *',"md",true)  
-Redis:del(Fast..'SetGroupVip'..senderr)
+Redis:del(tuofe1..'SetGroupVip'..senderr)
 return false  
 end 
-Redis:del(Fast..'SetGroupVip'..senderr)
-Redis:set(Fast..'SOFI:Group:Vip'..senderr,text)
+Redis:del(tuofe1..'SetGroupVip'..senderr)
+Redis:set(tuofe1..'SOFI:Group:Vip'..senderr,text)
 local text = "*⚡ تم حفظ جروبك بنجاح ✅*"
 local reply_markup = bot.replyMarkup{
 type = 'inline',
@@ -4746,17 +4746,17 @@ data = {
 }
 }
 bot.sendText(msg_chat_id,msg_id,text,"md",false, false, false, false, reply_markup)
-Redis:set(Fast..'SetGroupVip'..senderr,true)
+Redis:set(tuofe1..'SetGroupVip'..senderr,true)
 return false
 end
-if Redis:get(Fast..'SetnameVip'..senderr) then 
+if Redis:get(tuofe1..'SetnameVip'..senderr) then 
 if text =='الغاء' then 
 bot.sendText(msg_chat_id,msg_id, '* ⚡ تم الغاء حفظ اسمك 💥*',"md",true)  
-Redis:del(Fast..'SetnameVip'..senderr)
+Redis:del(tuofe1..'SetnameVip'..senderr)
 return false  
 end 
-Redis:del(Fast..'SetnameVip'..senderr)
-Redis:set(Fast..'Game:name'..senderr,text)
+Redis:del(tuofe1..'SetnameVip'..senderr)
+Redis:set(tuofe1..'Game:name'..senderr,text)
 local text = "*⚡ تم حفظ اسمك بنجاح 💥*"
 local reply_markup = bot.replyMarkup{
 type = 'inline',
@@ -4783,17 +4783,17 @@ data = {
 }
 }
 bot.sendText(msg_chat_id,msg_id,text,"md",false, false, false, false, reply_markup)
-Redis:set(Fast..'SetnameVip'..senderr,true)
+Redis:set(tuofe1..'SetnameVip'..senderr,true)
 return false
 end
-if Redis:get(Fast..'SetSunniVip'..senderr) then 
+if Redis:get(tuofe1..'SetSunniVip'..senderr) then 
 if text =='الغاء' then 
 bot.sendText(msg_chat_id,msg_id, '* ⚡ تم الغاء حفظ سنك ⏺️ *',"md",true)  
-Redis:del(Fast..'SetSunniVip'..senderr)
+Redis:del(tuofe1..'SetSunniVip'..senderr)
 return false  
 end 
-Redis:del(Fast..'SetSunniVip'..senderr)
-Redis:set(Fast..'Game:Sunni'..senderr,text)
+Redis:del(tuofe1..'SetSunniVip'..senderr)
+Redis:set(tuofe1..'Game:Sunni'..senderr,text)
 local text = "*⚡ تم حفظ اسمك سنك ⏺️*"
 local reply_markup = bot.replyMarkup{
 type = 'inline',
@@ -4820,17 +4820,17 @@ data = {
 }
 }
 bot.sendText(msg_chat_id,msg_id,text,"md",false, false, false, false, reply_markup)
-Redis:set(Fast..'SetSunniVip'..senderr,true)
+Redis:set(tuofe1..'SetSunniVip'..senderr,true)
 return false
 end
-if Redis:get(Fast..'SetBotVip'..senderr) then 
+if Redis:get(tuofe1..'SetBotVip'..senderr) then 
 if text =='الغاء' then 
 bot.sendText(msg_chat_id,msg_id, '* ⚡ تم الغاء حفظ بوتك 🤖 *',"md",true)  
-Redis:del(Fast..'SetBotVip'..senderr)
+Redis:del(tuofe1..'SetBotVip'..senderr)
 return false  
 end 
-Redis:del(Fast..'SetBotVip'..senderr)
-Redis:set(Fast..'SOFI:Bot:Vip'..senderr,text)
+Redis:del(tuofe1..'SetBotVip'..senderr)
+Redis:set(tuofe1..'SOFI:Bot:Vip'..senderr,text)
 local text = "*⚡ تم حفظ بوتك بنجاح 🤖*"
 local reply_markup = bot.replyMarkup{
 type = 'inline',
@@ -4857,15 +4857,15 @@ data = {
 }
 }
 bot.sendText(msg_chat_id,msg_id,text,"md",false, false, false, false, reply_markup)
-Redis:set(Fast..'SetBotVip'..senderr,true)
+Redis:set(tuofe1..'SetBotVip'..senderr,true)
 return false
 end
 if text == 'مسح اسمي' or text == 'حذف اسمي' then
-Redis:del(Fast..'Game:name'..senderr)
+Redis:del(tuofe1..'Game:name'..senderr)
 send(msg.chat_id,msg.id, "*⚡ تم مسح اسمك بنجاح ✅*","md",true)
 end
 if text == 'مسح سني' or text == 'حذف سني' then
-Redis:del(Fast..'Game:Sunni'..senderr)
+Redis:del(tuofe1..'Game:Sunni'..senderr)
 send(msg.chat_id,msg.id, "*⚡ تم مسح سنك بنجاح ✅*","md",true)
 end
 ---------------------- Dev JABWA ----------------------
@@ -4874,15 +4874,15 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:tphlesh"..msg_chat_id,true) 
-Redis:del(Fast.."Status:IdPhoto"..msg_chat_id) 
+Redis:set(tuofe1.."Lock:tphlesh"..msg_chat_id,true) 
+Redis:del(tuofe1.."Status:IdPhoto"..msg_chat_id) 
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل التفليش").Lock,"md",true)  
 return false
 end 
@@ -4891,15 +4891,15 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end 
-Redis:del(Fast.."Lock:tphlesh"..msg_chat_id)  
-Redis:set(Fast.."Status:IdPhoto"..msg_chat_id,true) 
+Redis:del(tuofe1.."Lock:tphlesh"..msg_chat_id)  
+Redis:set(tuofe1.."Status:IdPhoto"..msg_chat_id,true) 
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح التفليش").unLock,"md",true)  
 return false
 end 
@@ -4908,14 +4908,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:farsia"..msg_chat_id,true) 
+Redis:set(tuofe1.."Lock:farsia"..msg_chat_id,true) 
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الفارسيه").Lock,"md",true)  
 return false
 end 
@@ -4924,14 +4924,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end 
-Redis:del(Fast.."Lock:farsia"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:farsia"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح الفارسيه").unLock,"md",true)  
 return false
 end 
@@ -4941,14 +4941,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:text"..msg_chat_id,true) 
+Redis:set(tuofe1.."Lock:text"..msg_chat_id,true) 
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الدردشه").Lock,"md",true)  
 return false
 end 
@@ -4957,14 +4957,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end 
-Redis:set(Fast.."Lock:AddMempar"..msg_chat_id,"kick")  
+Redis:set(tuofe1.."Lock:AddMempar"..msg_chat_id,"kick")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل اضافة الاعضاء").Lock,"md",true)  
 return false
 end 
@@ -4973,14 +4973,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end 
-Redis:set(Fast.."Lock:Join"..msg_chat_id,"kick")  
+Redis:set(tuofe1.."Lock:Join"..msg_chat_id,"kick")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل دخول الاعضاء").Lock,"md",true)  
 return false
 end 
@@ -4989,14 +4989,14 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end 
-Redis:set(Fast.."Lock:Bot:kick"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:Bot:kick"..msg_chat_id,"del")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل البوتات").Lock,"md",true)  
 return false
 end 
@@ -5005,14 +5005,14 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end 
-Redis:set(Fast.."Lock:Bot:kick"..msg_chat_id,"kick")  
+Redis:set(tuofe1.."Lock:Bot:kick"..msg_chat_id,"kick")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل البوتات").lockKick,"md",true)  
 return false
 end 
@@ -5021,14 +5021,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end  
-Redis:set(Fast.."Lock:tagservr"..msg_chat_id,true)  
+Redis:set(tuofe1.."Lock:tagservr"..msg_chat_id,true)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الاشعارات").Lock,"md",true)  
 return false
 end 
@@ -5037,14 +5037,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end  
-Redis:set(Fast.."lockpin"..msg_chat_id,(bot.getChatPinnedMessage(msg_chat_id).id or true)) 
+Redis:set(tuofe1.."lockpin"..msg_chat_id,(bot.getChatPinnedMessage(msg_chat_id).id or true)) 
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل التثبيت هنا").Lock,"md",true)  
 return false
 end 
@@ -5053,14 +5053,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end 
-Redis:set(Fast.."Lock:edit"..msg_chat_id,true) 
+Redis:set(tuofe1.."Lock:edit"..msg_chat_id,true) 
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل تعديل").Lock,"md",true)  
 return false
 end 
@@ -5069,14 +5069,14 @@ if not msg.Creator then
 return send(msg_chat_id,msg_id,'*• انت لست المنشئ\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end 
-Redis:set(Fast.."Lock:edit"..msg_chat_id,true) 
+Redis:set(tuofe1.."Lock:edit"..msg_chat_id,true) 
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل تعديل").Lock,"md",true)  
 return false
 end 
@@ -5085,17 +5085,17 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end  
-Redis:set(Fast.."Lock:tagservrbot"..msg_chat_id,true)   
+Redis:set(tuofe1.."Lock:tagservrbot"..msg_chat_id,true)   
 list ={"Lock:Bot:kick","Lock:User:Name","Lock:hashtak","Lock:Cmd","Lock:Link","Lock:forward","Lock:Keyboard","Lock:geam","Lock:Photo","Lock:Animation","Lock:Video","Lock:Audio","Lock:vico","Lock:Sticker","Lock:Document","Lock:Unsupported","Lock:Markdaun","Lock:Contact","Lock:Spam"}
 for i,lock in pairs(list) do 
-Redis:set(Fast..''..lock..msg_chat_id,"del")    
+Redis:set(tuofe1..''..lock..msg_chat_id,"del")    
 end
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل جميع الاوامر").Lock,"md",true)  
 return false
@@ -5106,14 +5106,14 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end  
-Redis:set(Fast.."Lock:AlUasat"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:AlUasat"..msg_chat_id,"del")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل جميع الوسائط المميزين").Lock,"md",true)  
 return false
 end 
@@ -5122,14 +5122,14 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end 
-Redis:del(Fast.."Lock:AlUasat"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:AlUasat"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فـتح جميع الوسائط المميزين").unLock,"md",true)  
 return false
 end 
@@ -5139,19 +5139,19 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end  
-Redis:set(Fast.."Lock:Animation"..msg_chat_id,"del")  
-Redis:set(Fast.."Lock:Photo"..msg_chat_id,"del")  
-Redis:set(Fast.."Lock:vico"..msg_chat_id,"del")  
-Redis:set(Fast.."Lock:Audio"..msg_chat_id,"del")  
-Redis:set(Fast.."Lock:Sticker"..msg_chat_id,"del")  
-Redis:set(Fast.."Lock:Video"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:Animation"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:Photo"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:vico"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:Audio"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:Sticker"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:Video"..msg_chat_id,"del")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل جميع الوسائط").Lock,"md",true)  
 return false
 end 
@@ -5160,19 +5160,19 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end 
-Redis:del(Fast.."Lock:Animation"..msg_chat_id)  
-Redis:del(Fast.."Lock:Photo"..msg_chat_id)  
-Redis:del(Fast.."Lock:vico"..msg_chat_id)  
-Redis:del(Fast.."Lock:Audio"..msg_chat_id)  
-Redis:del(Fast.."Lock:Sticker"..msg_chat_id)  
-Redis:del(Fast.."Lock:Video"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:Animation"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:Photo"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:vico"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:Audio"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:Sticker"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:Video"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فـتح جميع الوسائط").unLock,"md",true)  
 return false
 end 
@@ -5182,14 +5182,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end 
-Redis:del(Fast.."Lock:AddMempar"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:AddMempar"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح اضافة الاعضاء").unLock,"md",true)  
 return false
 end 
@@ -5198,14 +5198,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end 
-Redis:del(Fast.."Lock:text"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:text"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح الدردشه").unLock,"md",true)  
 return false
 end 
@@ -5214,14 +5214,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end 
-Redis:del(Fast.."Lock:Join"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:Join"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح دخول الاعضاء").unLock,"md",true)  
 return false
 end 
@@ -5230,14 +5230,14 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end 
-Redis:del(Fast.."Lock:Bot:kick"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:Bot:kick"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فـتح البوتات").unLock,"md",true)  
 return false
 end 
@@ -5246,14 +5246,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end 
-Redis:del(Fast.."Lock:Bot:kick"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:Bot:kick"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فـتح البوتات").unLock,"md",true)  
 return false
 end 
@@ -5262,14 +5262,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end  
-Redis:del(Fast.."Lock:tagservr"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:tagservr"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فـتح الاشعارات").unLock,"md",true)  
 return false
 end 
@@ -5278,14 +5278,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end 
-Redis:del(Fast.."lockpin"..msg_chat_id)  
+Redis:del(tuofe1.."lockpin"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فـتح التثبيت هنا").unLock,"md",true)  
 return false
 end 
@@ -5294,14 +5294,14 @@ if not msg.Creator then
 return send(msg_chat_id,msg_id,'*• انت لست المنشئ\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end 
-Redis:del(Fast.."Lock:edit"..msg_chat_id) 
+Redis:del(tuofe1.."Lock:edit"..msg_chat_id) 
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فـتح تعديل").unLock,"md",true)  
 return false
 end 
@@ -5310,14 +5310,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end 
-Redis:del(Fast.."Lock:edit"..msg_chat_id) 
+Redis:del(tuofe1.."Lock:edit"..msg_chat_id) 
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فـتح تعديل").unLock,"md",true)  
 return false
 end 
@@ -5326,17 +5326,17 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end 
-Redis:del(Fast.."Lock:tagservrbot"..msg_chat_id)   
+Redis:del(tuofe1.."Lock:tagservrbot"..msg_chat_id)   
 list ={"Lock:Bot:kick","Lock:User:Name","Lock:hashtak","Lock:Cmd","Lock:Link","Lock:forward","Lock:Keyboard","Lock:geam","Lock:Photo","Lock:Animation","Lock:Video","Lock:Audio","Lock:vico","Lock:Sticker","Lock:Document","Lock:Unsupported","Lock:Markdaun","Lock:Contact","Lock:Spam"}
 for i,lock in pairs(list) do 
-Redis:del(Fast..''..lock..msg_chat_id)    
+Redis:del(tuofe1..''..lock..msg_chat_id)    
 end
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فـتح جميع الاوامر").unLock,"md",true)  
 return false
@@ -5347,70 +5347,70 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:hset(Fast.."Spam:Group:User"..msg_chat_id ,"Spam:User","del")  
+Redis:hset(tuofe1.."Spam:Group:User"..msg_chat_id ,"Spam:User","del")  
 return send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل التكرار").Lock,"md",true)  
 elseif text == "قفل التكرار بالتقييد" then 
 if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:hset(Fast.."Spam:Group:User"..msg_chat_id ,"Spam:User","keed")  
+Redis:hset(tuofe1.."Spam:Group:User"..msg_chat_id ,"Spam:User","keed")  
 return send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل التكرار").lockKid,"md",true)  
 elseif text == "قفل التكرار بالكتم" then 
 if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:hset(Fast.."Spam:Group:User"..msg_chat_id ,"Spam:User","mute")  
+Redis:hset(tuofe1.."Spam:Group:User"..msg_chat_id ,"Spam:User","mute")  
 return send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل التكرار").lockKtm,"md",true)  
 elseif text == "قفل التكرار بالطرد" then 
 if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:hset(Fast.."Spam:Group:User"..msg_chat_id ,"Spam:User","kick")  
+Redis:hset(tuofe1.."Spam:Group:User"..msg_chat_id ,"Spam:User","kick")  
 return send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل التكرار").lockKick,"md",true)  
 elseif text == "فتح التكرار" then 
 if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:hdel(Fast.."Spam:Group:User"..msg_chat_id ,"Spam:User")  
+Redis:hdel(tuofe1.."Spam:Group:User"..msg_chat_id ,"Spam:User")  
 return send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح التكرار").unLock,"md",true)  
 end
 if text == "قفل الروابط" then 
@@ -5418,14 +5418,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Link"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:Link"..msg_chat_id,"del")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الروابط").Lock,"md",true)  
 return false
 end 
@@ -5434,14 +5434,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Link"..msg_chat_id,"ked")  
+Redis:set(tuofe1.."Lock:Link"..msg_chat_id,"ked")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الروابط").lockKid,"md",true)  
 return false
 end 
@@ -5450,14 +5450,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Link"..msg_chat_id,"ktm")  
+Redis:set(tuofe1.."Lock:Link"..msg_chat_id,"ktm")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الروابط").lockKtm,"md",true)  
 return false
 end 
@@ -5466,14 +5466,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Link"..msg_chat_id,"kick")  
+Redis:set(tuofe1.."Lock:Link"..msg_chat_id,"kick")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الروابط").lockKick,"md",true)  
 return false
 end 
@@ -5482,14 +5482,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Lock:Link"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:Link"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح الروابط").unLock,"md",true)  
 return false
 end 
@@ -5498,14 +5498,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:User:Name"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:User:Name"..msg_chat_id,"del")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل المعرفات").Lock,"md",true)  
 return false
 end 
@@ -5514,14 +5514,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:User:Name"..msg_chat_id,"ked")  
+Redis:set(tuofe1.."Lock:User:Name"..msg_chat_id,"ked")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل المعرفات").lockKid,"md",true)  
 return false
 end 
@@ -5530,14 +5530,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:User:Name"..msg_chat_id,"ktm")  
+Redis:set(tuofe1.."Lock:User:Name"..msg_chat_id,"ktm")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل المعرفات").lockKtm,"md",true)  
 return false
 end 
@@ -5546,14 +5546,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:User:Name"..msg_chat_id,"kick")  
+Redis:set(tuofe1.."Lock:User:Name"..msg_chat_id,"kick")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل المعرفات").lockKick,"md",true)  
 return false
 end 
@@ -5562,14 +5562,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Lock:User:Name"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:User:Name"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح المعرفات").unLock,"md",true)  
 return false
 end 
@@ -5578,14 +5578,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:hashtak"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:hashtak"..msg_chat_id,"del")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل التاك").Lock,"md",true)  
 return false
 end 
@@ -5594,14 +5594,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:hashtak"..msg_chat_id,"ked")  
+Redis:set(tuofe1.."Lock:hashtak"..msg_chat_id,"ked")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل التاك").lockKid,"md",true)  
 return false
 end 
@@ -5610,14 +5610,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:hashtak"..msg_chat_id,"ktm")  
+Redis:set(tuofe1.."Lock:hashtak"..msg_chat_id,"ktm")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل التاك").lockKtm,"md",true)  
 return false
 end 
@@ -5626,14 +5626,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:hashtak"..msg_chat_id,"kick")  
+Redis:set(tuofe1.."Lock:hashtak"..msg_chat_id,"kick")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل التاك").lockKick,"md",true)  
 return false
 end 
@@ -5642,14 +5642,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Lock:hashtak"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:hashtak"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح التاك").unLock,"md",true)  
 return false
 end 
@@ -5658,14 +5658,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Cmd"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:Cmd"..msg_chat_id,"del")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الشارحه").Lock,"md",true)  
 return false
 end 
@@ -5674,14 +5674,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Cmd"..msg_chat_id,"ked")  
+Redis:set(tuofe1.."Lock:Cmd"..msg_chat_id,"ked")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الشارحه").lockKid,"md",true)  
 return false
 end 
@@ -5690,14 +5690,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Cmd"..msg_chat_id,"ktm")  
+Redis:set(tuofe1.."Lock:Cmd"..msg_chat_id,"ktm")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الشارحه").lockKtm,"md",true)  
 return false
 end 
@@ -5706,14 +5706,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Cmd"..msg_chat_id,"kick")  
+Redis:set(tuofe1.."Lock:Cmd"..msg_chat_id,"kick")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الشارحه").lockKick,"md",true)  
 return false
 end 
@@ -5722,14 +5722,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Lock:Cmd"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:Cmd"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح الشارحه").unLock,"md",true)  
 return false
 end 
@@ -5738,14 +5738,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Photo"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:Photo"..msg_chat_id,"del")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الصور").Lock,"md",true)  
 return false
 end 
@@ -5754,14 +5754,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Photo"..msg_chat_id,"ked")  
+Redis:set(tuofe1.."Lock:Photo"..msg_chat_id,"ked")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الصور").lockKid,"md",true)  
 return false
 end 
@@ -5770,14 +5770,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Photo"..msg_chat_id,"ktm")  
+Redis:set(tuofe1.."Lock:Photo"..msg_chat_id,"ktm")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الصور").lockKtm,"md",true)  
 return false
 end 
@@ -5786,14 +5786,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Photo"..msg_chat_id,"kick")  
+Redis:set(tuofe1.."Lock:Photo"..msg_chat_id,"kick")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الصور").lockKick,"md",true)  
 return false
 end 
@@ -5802,14 +5802,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Lock:Photo"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:Photo"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح الصور").unLock,"md",true)  
 return false
 end 
@@ -5818,14 +5818,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Video"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:Video"..msg_chat_id,"del")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الفيديو").Lock,"md",true)  
 return false
 end 
@@ -5834,14 +5834,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Video"..msg_chat_id,"ked")  
+Redis:set(tuofe1.."Lock:Video"..msg_chat_id,"ked")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الفيديو").lockKid,"md",true)  
 return false
 end 
@@ -5850,14 +5850,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Video"..msg_chat_id,"ktm")  
+Redis:set(tuofe1.."Lock:Video"..msg_chat_id,"ktm")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الفيديو").lockKtm,"md",true)  
 return false
 end 
@@ -5866,14 +5866,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Video"..msg_chat_id,"kick")  
+Redis:set(tuofe1.."Lock:Video"..msg_chat_id,"kick")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الفيديو").lockKick,"md",true)  
 return false
 end 
@@ -5882,14 +5882,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Lock:Video"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:Video"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح الفيديو").unLock,"md",true)  
 return false
 end 
@@ -5898,14 +5898,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Animation"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:Animation"..msg_chat_id,"del")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل المتحركه").Lock,"md",true)  
 return false
 end 
@@ -5914,14 +5914,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Animation"..msg_chat_id,"ked")  
+Redis:set(tuofe1.."Lock:Animation"..msg_chat_id,"ked")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل المتحركه").lockKid,"md",true)  
 return false
 end 
@@ -5930,14 +5930,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Animation"..msg_chat_id,"ktm")  
+Redis:set(tuofe1.."Lock:Animation"..msg_chat_id,"ktm")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل المتحركه").lockKtm,"md",true)  
 return false
 end 
@@ -5946,14 +5946,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Animation"..msg_chat_id,"kick")  
+Redis:set(tuofe1.."Lock:Animation"..msg_chat_id,"kick")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل المتحركه").lockKick,"md",true)  
 return false
 end 
@@ -5962,14 +5962,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Lock:Animation"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:Animation"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح المتحركه").unLock,"md",true)  
 return false
 end 
@@ -5978,14 +5978,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:geam"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:geam"..msg_chat_id,"del")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الالعاب").Lock,"md",true)  
 return false
 end 
@@ -5994,14 +5994,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:geam"..msg_chat_id,"ked")  
+Redis:set(tuofe1.."Lock:geam"..msg_chat_id,"ked")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الالعاب").lockKid,"md",true)  
 return false
 end 
@@ -6010,14 +6010,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:geam"..msg_chat_id,"ktm")  
+Redis:set(tuofe1.."Lock:geam"..msg_chat_id,"ktm")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الالعاب").lockKtm,"md",true)  
 return false
 end 
@@ -6026,14 +6026,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:geam"..msg_chat_id,"kick")  
+Redis:set(tuofe1.."Lock:geam"..msg_chat_id,"kick")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الالعاب").lockKick,"md",true)  
 return false
 end 
@@ -6042,14 +6042,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Lock:geam"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:geam"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح الالعاب").unLock,"md",true)  
 return false
 end 
@@ -6058,14 +6058,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Audio"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:Audio"..msg_chat_id,"del")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الاغاني").Lock,"md",true)  
 return false
 end 
@@ -6074,14 +6074,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Audio"..msg_chat_id,"ked")  
+Redis:set(tuofe1.."Lock:Audio"..msg_chat_id,"ked")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الاغاني").lockKid,"md",true)  
 return false
 end 
@@ -6090,14 +6090,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Audio"..msg_chat_id,"ktm")  
+Redis:set(tuofe1.."Lock:Audio"..msg_chat_id,"ktm")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الاغاني").lockKtm,"md",true)  
 return false
 end 
@@ -6106,14 +6106,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Audio"..msg_chat_id,"kick")  
+Redis:set(tuofe1.."Lock:Audio"..msg_chat_id,"kick")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الاغاني").lockKick,"md",true)  
 return false
 end 
@@ -6122,14 +6122,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Lock:Audio"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:Audio"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح الاغاني").unLock,"md",true)  
 return false
 end 
@@ -6138,14 +6138,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:vico"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:vico"..msg_chat_id,"del")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الصوت").Lock,"md",true)  
 return false
 end 
@@ -6154,14 +6154,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:vico"..msg_chat_id,"ked")  
+Redis:set(tuofe1.."Lock:vico"..msg_chat_id,"ked")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الصوت").lockKid,"md",true)  
 return false
 end 
@@ -6170,14 +6170,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:vico"..msg_chat_id,"ktm")  
+Redis:set(tuofe1.."Lock:vico"..msg_chat_id,"ktm")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الصوت").lockKtm,"md",true)  
 return false
 end 
@@ -6186,14 +6186,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:vico"..msg_chat_id,"kick")  
+Redis:set(tuofe1.."Lock:vico"..msg_chat_id,"kick")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الصوت").lockKick,"md",true)  
 return false
 end 
@@ -6202,14 +6202,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Lock:vico"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:vico"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح الصوت").unLock,"md",true)  
 return false
 end 
@@ -6218,14 +6218,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Keyboard"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:Keyboard"..msg_chat_id,"del")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الكيبورد").Lock,"md",true)  
 return false
 end 
@@ -6234,14 +6234,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Keyboard"..msg_chat_id,"ked")  
+Redis:set(tuofe1.."Lock:Keyboard"..msg_chat_id,"ked")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الكيبورد").lockKid,"md",true)  
 return false
 end 
@@ -6250,14 +6250,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Keyboard"..msg_chat_id,"ktm")  
+Redis:set(tuofe1.."Lock:Keyboard"..msg_chat_id,"ktm")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الكيبورد").lockKtm,"md",true)  
 return false
 end 
@@ -6266,14 +6266,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Keyboard"..msg_chat_id,"kick")  
+Redis:set(tuofe1.."Lock:Keyboard"..msg_chat_id,"kick")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الكيبورد").lockKick,"md",true)  
 return false
 end 
@@ -6282,14 +6282,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Lock:Keyboard"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:Keyboard"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح الكيبورد").unLock,"md",true)  
 return false
 end 
@@ -6298,14 +6298,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Sticker"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:Sticker"..msg_chat_id,"del")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الملصقات").Lock,"md",true)  
 return false
 end 
@@ -6314,14 +6314,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Sticker"..msg_chat_id,"ked")  
+Redis:set(tuofe1.."Lock:Sticker"..msg_chat_id,"ked")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الملصقات").lockKid,"md",true)  
 return false
 end 
@@ -6330,14 +6330,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Sticker"..msg_chat_id,"ktm")  
+Redis:set(tuofe1.."Lock:Sticker"..msg_chat_id,"ktm")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الملصقات").lockKtm,"md",true)  
 return false
 end 
@@ -6346,14 +6346,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Sticker"..msg_chat_id,"kick")  
+Redis:set(tuofe1.."Lock:Sticker"..msg_chat_id,"kick")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الملصقات").lockKick,"md",true)  
 return false
 end 
@@ -6362,14 +6362,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Lock:Sticker"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:Sticker"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح الملصقات").unLock,"md",true)  
 return false
 end 
@@ -6378,14 +6378,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:forward"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:forward"..msg_chat_id,"del")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل التوجيه").Lock,"md",true)  
 return false
 end 
@@ -6394,14 +6394,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:forward"..msg_chat_id,"ked")  
+Redis:set(tuofe1.."Lock:forward"..msg_chat_id,"ked")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل التوجيه").lockKid,"md",true)  
 return false
 end 
@@ -6410,14 +6410,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:forward"..msg_chat_id,"ktm")  
+Redis:set(tuofe1.."Lock:forward"..msg_chat_id,"ktm")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل التوجيه").lockKtm,"md",true)  
 return false
 end 
@@ -6426,14 +6426,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:forward"..msg_chat_id,"kick")  
+Redis:set(tuofe1.."Lock:forward"..msg_chat_id,"kick")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل التوجيه").lockKick,"md",true)  
 return false
 end 
@@ -6442,14 +6442,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Lock:forward"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:forward"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح التوجيه").unLock,"md",true)  
 return false
 end 
@@ -6458,14 +6458,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Document"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:Document"..msg_chat_id,"del")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الملفات").Lock,"md",true)  
 return false
 end 
@@ -6474,14 +6474,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Document"..msg_chat_id,"ked")  
+Redis:set(tuofe1.."Lock:Document"..msg_chat_id,"ked")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الملفات").lockKid,"md",true)  
 return false
 end 
@@ -6490,14 +6490,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Document"..msg_chat_id,"ktm")  
+Redis:set(tuofe1.."Lock:Document"..msg_chat_id,"ktm")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الملفات").lockKtm,"md",true)  
 return false
 end 
@@ -6506,14 +6506,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Document"..msg_chat_id,"kick")  
+Redis:set(tuofe1.."Lock:Document"..msg_chat_id,"kick")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الملفات").lockKick,"md",true)  
 return false
 end 
@@ -6522,14 +6522,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Lock:Document"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:Document"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح الملفات").unLock,"md",true)  
 return false
 end 
@@ -6538,14 +6538,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Unsupported"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:Unsupported"..msg_chat_id,"del")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل السيلفي").Lock,"md",true)  
 return false
 end 
@@ -6554,14 +6554,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Unsupported"..msg_chat_id,"ked")  
+Redis:set(tuofe1.."Lock:Unsupported"..msg_chat_id,"ked")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل السيلفي").lockKid,"md",true)  
 return false
 end 
@@ -6570,14 +6570,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Unsupported"..msg_chat_id,"ktm")  
+Redis:set(tuofe1.."Lock:Unsupported"..msg_chat_id,"ktm")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل السيلفي").lockKtm,"md",true)  
 return false
 end 
@@ -6586,14 +6586,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Unsupported"..msg_chat_id,"kick")  
+Redis:set(tuofe1.."Lock:Unsupported"..msg_chat_id,"kick")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل السيلفي").lockKick,"md",true)  
 return false
 end 
@@ -6602,14 +6602,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Lock:Unsupported"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:Unsupported"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح السيلفي").unLock,"md",true)  
 return false
 end 
@@ -6618,14 +6618,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Markdaun"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:Markdaun"..msg_chat_id,"del")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الماركداون").Lock,"md",true)  
 return false
 end 
@@ -6634,14 +6634,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Markdaun"..msg_chat_id,"ked")  
+Redis:set(tuofe1.."Lock:Markdaun"..msg_chat_id,"ked")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الماركداون").lockKid,"md",true)  
 return false
 end 
@@ -6650,14 +6650,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Markdaun"..msg_chat_id,"ktm")  
+Redis:set(tuofe1.."Lock:Markdaun"..msg_chat_id,"ktm")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الماركداون").lockKtm,"md",true)  
 return false
 end 
@@ -6666,14 +6666,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Markdaun"..msg_chat_id,"kick")  
+Redis:set(tuofe1.."Lock:Markdaun"..msg_chat_id,"kick")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الماركداون").lockKick,"md",true)  
 return false
 end 
@@ -6682,14 +6682,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Lock:Markdaun"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:Markdaun"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح الماركداون").unLock,"md",true)  
 return false
 end 
@@ -6698,14 +6698,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Contact"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:Contact"..msg_chat_id,"del")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الجهات").Lock,"md",true)  
 return false
 end 
@@ -6714,14 +6714,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Contact"..msg_chat_id,"ked")  
+Redis:set(tuofe1.."Lock:Contact"..msg_chat_id,"ked")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الجهات").lockKid,"md",true)  
 return false
 end 
@@ -6730,14 +6730,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Contact"..msg_chat_id,"ktm")  
+Redis:set(tuofe1.."Lock:Contact"..msg_chat_id,"ktm")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الجهات").lockKtm,"md",true)  
 return false
 end 
@@ -6746,14 +6746,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Contact"..msg_chat_id,"kick")  
+Redis:set(tuofe1.."Lock:Contact"..msg_chat_id,"kick")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الجهات").lockKick,"md",true)  
 return false
 end 
@@ -6762,14 +6762,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Lock:Contact"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:Contact"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح الجهات").unLock,"md",true)  
 return false
 end 
@@ -6778,14 +6778,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Spam"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:Spam"..msg_chat_id,"del")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الكلايش").Lock,"md",true)  
 return false
 end 
@@ -6794,14 +6794,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Spam"..msg_chat_id,"ked")  
+Redis:set(tuofe1.."Lock:Spam"..msg_chat_id,"ked")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الكلايش").lockKid,"md",true)  
 return false
 end 
@@ -6810,14 +6810,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Spam"..msg_chat_id,"ktm")  
+Redis:set(tuofe1.."Lock:Spam"..msg_chat_id,"ktm")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الكلايش").lockKtm,"md",true)  
 return false
 end 
@@ -6826,14 +6826,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Spam"..msg_chat_id,"kick")  
+Redis:set(tuofe1.."Lock:Spam"..msg_chat_id,"kick")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الكلايش").lockKick,"md",true)  
 return false
 end 
@@ -6842,14 +6842,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Lock:Spam"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:Spam"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح الكلايش").unLock,"md",true)  
 return false
 end 
@@ -6858,14 +6858,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Inlen"..msg_chat_id,"del")  
+Redis:set(tuofe1.."Lock:Inlen"..msg_chat_id,"del")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الانلاين").Lock,"md",true)  
 return false
 end 
@@ -6874,14 +6874,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Inlen"..msg_chat_id,"ked")  
+Redis:set(tuofe1.."Lock:Inlen"..msg_chat_id,"ked")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الانلاين").lockKid,"md",true)  
 return false
 end 
@@ -6890,14 +6890,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Inlen"..msg_chat_id,"ktm")  
+Redis:set(tuofe1.."Lock:Inlen"..msg_chat_id,"ktm")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الانلاين").lockKtm,"md",true)  
 return false
 end 
@@ -6906,14 +6906,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Lock:Inlen"..msg_chat_id,"kick")  
+Redis:set(tuofe1.."Lock:Inlen"..msg_chat_id,"kick")  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم قفـل الانلاين").lockKick,"md",true)  
 return false
 end 
@@ -6922,14 +6922,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Lock:Inlen"..msg_chat_id)  
+Redis:del(tuofe1.."Lock:Inlen"..msg_chat_id)  
 send(msg_chat_id,msg_id,Reply_Status(senderr," ⚡ تم فتح الانلاين").unLock,"md",true)  
 return false
 end 
@@ -6938,14 +6938,14 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:setex(Fast.."Set:Link"..msg_chat_id..""..senderr,120,true) 
+Redis:setex(tuofe1.."Set:Link"..msg_chat_id..""..senderr,120,true) 
 return send(msg_chat_id,msg_id,"* ⚡ ارسل رابط الجروب او رابط قناة الجروب\n√*","md",true)  
 end
 if text == "مسح الرابط" or text == "مسح الرابط" then
@@ -6953,22 +6953,22 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Group:Link"..msg_chat_id) 
+Redis:del(tuofe1.."Group:Link"..msg_chat_id) 
 return send(msg_chat_id,msg_id,"* ⚡ تم مسح الرابط\n√*","md",true)             
 end
 if text == "الرابط" then
-if not Redis:get(Fast.."Status:Link"..msg_chat_id) then
+if not Redis:get(tuofe1.."Status:Link"..msg_chat_id) then
 return send(msg_chat_id,msg_id,"* ⚡ تم تعطيل الرابط من قبل الادارة\n√*","md",true)
 end 
 local Get_Chat = bot.getChat(msg_chat_id)
-local GetLink = Redis:get(Fast.."Group:Link"..msg_chat_id) 
+local GetLink = Redis:get(tuofe1.."Group:Link"..msg_chat_id) 
 if GetLink then
 local reply_markup = bot.replyMarkup{type = 'inline',data = {
 {{text =Get_Chat.title, url = GetLink}, },}}
@@ -6986,7 +6986,7 @@ local LinkGroup = bot.generateChatInviteLink(msg_chat_id,'abbas',tonumber(msg.da
 if LinkGroup.code == 3 then
 return send(msg_chat_id,msg_id,"* ⚡ لا استطيع جلب الرابط بسبب ليس لدي صلاحيه دعوه مستخدمين من خلال الرابط\n√*","md",true)
 end
-Redis:set(Fast.."Group:Link"..msg_chat_id,LinkGroup.invite_link) 
+Redis:set(tuofe1.."Group:Link"..msg_chat_id,LinkGroup.invite_link) 
 local reply_markup = bot.replyMarkup{type = 'inline',data = {
 {{text = Get_Chat.title, url = LinkGroup.invite_link},},}}
 return send(msg_chat_id, msg_id, "* ⚡ Link Group -> \n["..LinkGroup.invite_link.. "]\n√*", 'md', true, false, false, false, reply_markup)
@@ -6997,14 +6997,14 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:setex(Fast.."Welcome:Group:Set" .. msg_chat_id .. "" .. senderr, 120, true)  
+Redis:setex(tuofe1.."Welcome:Group:Set" .. msg_chat_id .. "" .. senderr, 120, true)  
 local textett =[[
  ⚡ ارسل لي الترحيب عام الان
  ⚡ تستطيع اضافة مايلي !
@@ -7025,14 +7025,14 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local Welcome = Redis:get(Fast.."Welcome:Groups")
+local Welcome = Redis:get(tuofe1.."Welcome:Groups")
 if Welcome then 
 return send(msg_chat_id,msg_id,Welcome,"md",true)   
 else 
@@ -7044,24 +7044,24 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Welcome:Groups") 
+Redis:del(tuofe1.."Welcome:Groups") 
 return send(msg_chat_id,msg_id,"* ⚡ تم ازالة الترحيب العام في المجموعات\n√*","md",true)   
 end
 
-if Redis:get(Fast.."Welcome:Group:Set" .. msg_chat_id .. "" .. senderr) then 
+if Redis:get(tuofe1.."Welcome:Group:Set" .. msg_chat_id .. "" .. senderr) then 
 if text == "الغاء" then 
-Redis:del(Fast.."Welcome:Group:Set" .. msg_chat_id .. "" .. senderr)  
+Redis:del(tuofe1.."Welcome:Group:Set" .. msg_chat_id .. "" .. senderr)  
 return send(msg_chat_id,msg_id,"* ⚡ تم الغاء حفظ الترحيب عام\n√*","md",true)   
 end 
-Redis:del(Fast.."Welcome:Group:Set" .. msg_chat_id .. "" .. senderr)  
-Redis:set(Fast.."Welcome:Groups",text) 
+Redis:del(tuofe1.."Welcome:Group:Set" .. msg_chat_id .. "" .. senderr)  
+Redis:set(tuofe1.."Welcome:Groups",text) 
 return send(msg_chat_id,msg_id,"* ⚡ تم حفظ الترحيب العام للمجموعا\n√","md",true)     
 end
 
@@ -7072,14 +7072,14 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:setex(Fast.."Tshake:Welcome:Group" .. msg_chat_id .. "" .. senderr, 120, true)  
+Redis:setex(tuofe1.."Tshake:Welcome:Group" .. msg_chat_id .. "" .. senderr, 120, true)  
 local textett =[[
  ⚡ ارسل لي الترحيب عام الان
  ⚡ تستطيع اضافة مايلي !
@@ -7100,17 +7100,17 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:get(Fast.."Status:Welcome"..msg_chat_id) then
+if not Redis:get(tuofe1.."Status:Welcome"..msg_chat_id) then
 return send(msg_chat_id,msg_id,"* ⚡ تم تعطيل الترحيب من قبل الادمنيه\n√*","md",true)
 end 
-local Welcome = Redis:get(Fast.."Welcome:Group"..msg_chat_id)
+local Welcome = Redis:get(tuofe1.."Welcome:Group"..msg_chat_id)
 if Welcome then 
 return send(msg_chat_id,msg_id,Welcome,"md",true)   
 else 
@@ -7122,14 +7122,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Welcome:Group"..msg_chat_id) 
+Redis:del(tuofe1.."Welcome:Group"..msg_chat_id) 
 return send(msg_chat_id,msg_id,"* ⚡ تم ازالة ترحيب الجروب\n√*","md",true)   
 end
 if text == "ضع قوانين" or text == "وضع قوانين" then 
@@ -7137,14 +7137,14 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:setex(Fast.."Set:Rules:" .. msg_chat_id .. ":" .. senderr, 600, true) 
+Redis:setex(tuofe1.."Set:Rules:" .. msg_chat_id .. ":" .. senderr, 600, true) 
 return send(msg_chat_id,msg_id,"* ⚡ ارسل لي القوانين الان\n√*","md",true)  
 end
 if text == "مسح القوانين" or text == "مسح القوانين" then  
@@ -7152,18 +7152,18 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Group:Rules"..msg_chat_id) 
+Redis:del(tuofe1.."Group:Rules"..msg_chat_id) 
 return send(msg_chat_id,msg_id,"* ⚡ تم ازالة قوانين الجروب\n√*","md",true)    
 end
 if text == "القوانين" then 
-local Rules = Redis:get(Fast.."Group:Rules" .. msg_chat_id)   
+local Rules = Redis:get(tuofe1.."Group:Rules" .. msg_chat_id)   
 if Rules then     
 return send(msg_chat_id,msg_id,Rules,"md",true)     
 else      
@@ -7175,11 +7175,11 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -7188,7 +7188,7 @@ end
 if GetInfoBot(msg).Info == false then
 return send(msg_chat_id,msg_id,'* ⚡ البوت ليس لديه صلاحيه تغيير المعلومات\n√*',"md",true)  
 end
-Redis:setex(Fast.."Set:Description:" .. msg_chat_id .. ":" .. senderr, 600, true) 
+Redis:setex(tuofe1.."Set:Description:" .. msg_chat_id .. ":" .. senderr, 600, true) 
 return send(msg_chat_id,msg_id,"* ⚡ ارسل لي وصف الجروب الان\n√*","md",true)  
 end
 if text == "مسح الوصف" or text == "مسح الوصف" then  
@@ -7196,11 +7196,11 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -7219,11 +7219,11 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -7241,17 +7241,17 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if GetInfoBot(msg).Info == false then
 return send(msg_chat_id,msg_id,'* ⚡ البوت ليس لديه صلاحيه تغيير المعلومات\n√*',"md",true)  
 end
-Redis:set(Fast.."Chat:Photo"..msg_chat_id..":"..senderr,true) 
+Redis:set(tuofe1.."Chat:Photo"..msg_chat_id..":"..senderr,true) 
 return send(msg_chat_id,msg_id,"* ⚡ ارسل الصوره لوضعها للجروب\n√*","md",true)    
 end
 
@@ -7260,14 +7260,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local list = Redis:smembers(Fast.."List:Filter"..msg_chat_id)  
+local list = Redis:smembers(tuofe1.."List:Filter"..msg_chat_id)  
 if #list == 0 then  
 return send(msg_chat_id,msg_id,"* ⚡ لا يوجد كلمات ممنوعه هنا\n√*","md",true)   
 end  
@@ -7276,8 +7276,8 @@ v = v:gsub('photo:',"")
 v = v:gsub('sticker:',"") 
 v = v:gsub('animation:',"") 
 v = v:gsub('text:',"") 
-Redis:del(Fast.."Filter:Group:"..v..msg_chat_id)  
-Redis:srem(Fast.."List:Filter"..msg_chat_id,v)  
+Redis:del(tuofe1.."Filter:Group:"..v..msg_chat_id)  
+Redis:srem(tuofe1.."List:Filter"..msg_chat_id,v)  
 end  
 return send(msg_chat_id,msg_id,"* ⚡ تم مسح ("..#list..") كلمات ممنوعه\n√*","md",true)   
 end
@@ -7286,14 +7286,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local list = Redis:smembers(Fast.."List:Filter"..msg_chat_id)  
+local list = Redis:smembers(tuofe1.."List:Filter"..msg_chat_id)  
 if #list == 0 then  
 return send(msg_chat_id,msg_id,"* ⚡ لا يوجد كلمات ممنوعه هنا\n√*","md",true)   
 end  
@@ -7313,7 +7313,7 @@ v = v:gsub('photo:',"")
 v = v:gsub('sticker:',"") 
 v = v:gsub('animation:',"") 
 v = v:gsub('text:',"") 
-local Text_Filter = Redis:get(Fast.."Filter:Group:"..v..msg_chat_id)   
+local Text_Filter = Redis:get(tuofe1.."Filter:Group:"..v..msg_chat_id)   
 Filter = Filter.."*"..k.." ⇿ "..ver.." ->『 "..Text_Filter.." 』*\n"    
 end  
 send(msg_chat_id,msg_id,Filter,"md",true)  
@@ -7323,14 +7323,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast..'FilterText'..msg_chat_id..':'..senderr,'true')
+Redis:set(tuofe1..'FilterText'..msg_chat_id..':'..senderr,'true')
 return send(msg_chat_id,msg_id,'* ⚡ ارسل الان { ملصق ,متحركه ,صوره ,رساله }\n√*',"md",true)  
 end    
 if text == "الغاء منع" then    
@@ -7338,14 +7338,14 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast..'FilterText'..msg_chat_id..':'..senderr,'DelFilter')
+Redis:set(tuofe1..'FilterText'..msg_chat_id..':'..senderr,'DelFilter')
 return send(msg_chat_id,msg_id,'* ⚡ ارسل الان { ملصق ,متحركه ,صوره ,رساله }\n√*',"md",true)  
 end
 
@@ -7354,11 +7354,11 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Fast.."ch:admin")
+local chinfo = Redis:get(tuofe1.."ch:admin")
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
 return send(msg.chat_id,msg.id,'*\n ⚡ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."All:Command:Reids:Group"..msg_chat_id..":"..msg.sender_id.user_id,"true") 
+Redis:set(tuofe1.."All:Command:Reids:Group"..msg_chat_id..":"..msg.sender_id.user_id,"true") 
 return send(msg_chat_id,msg_id,"* ⚡ الان ارسل لي الامر القديم ...\n√*","md",true)
 end
 if text == "حذف امر عام" or text == "مسح امر عام" then 
@@ -7366,11 +7366,11 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Fast.."ch:admin")
+local chinfo = Redis:get(tuofe1.."ch:admin")
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
 return send(msg.chat_id,msg.id,'*\n ⚡ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."All:Command:Reids:Group:Del"..msg_chat_id..":"..msg.sender_id.user_id,"true") 
+Redis:set(tuofe1.."All:Command:Reids:Group:Del"..msg_chat_id..":"..msg.sender_id.user_id,"true") 
 return send(msg_chat_id,msg_id,"* ⚡ ارسل الان الامر الذي قمت بوضعه مكان الامر القديم\n√*","md",true)
 end
 if text == "حذف الاوامر المضافه العامه" or text == "مسح الاوامر المضافه العامه" then 
@@ -7378,14 +7378,14 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Fast.."ch:admin")
+local chinfo = Redis:get(tuofe1.."ch:admin")
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
 return send(msg.chat_id,msg.id,'*\n ⚡ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-local list = Redis:smembers(Fast.."All:Command:List:Group")
+local list = Redis:smembers(tuofe1.."All:Command:List:Group")
 for k,v in pairs(list) do
-Redis:del(Fast.."All:Get:Reides:Commands:Group"..v)
-Redis:del(Fast.."All:Command:List:Group")
+Redis:del(tuofe1.."All:Get:Reides:Commands:Group"..v)
+Redis:del(tuofe1.."All:Command:List:Group")
 end
 return send(msg_chat_id,msg_id,"* ⚡ تم مسح جميع الاوامر التي تم اضافتها في العام\n√*","md",true)
 end
@@ -7394,14 +7394,14 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Fast.."ch:admin")
+local chinfo = Redis:get(tuofe1.."ch:admin")
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
 return send(msg.chat_id,msg.id,'*\n ⚡ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-local list = Redis:smembers(Fast.."All:Command:List:Group")
+local list = Redis:smembers(tuofe1.."All:Command:List:Group")
 Command = " ⚡ قائمه الاوامر المضافه العامه ↑↓\nꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ\n"
 for k,v in pairs(list) do
-Commands = Redis:get(Fast.."All:Get:Reides:Commands:Group"..v)
+Commands = Redis:get(tuofe1.."All:Get:Reides:Commands:Group"..v)
 if Commands then 
 Command = Command..""..k.." ⇿『 "..v.." 』->『 "..Commands.." 』\n"
 else
@@ -7419,14 +7419,14 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Command:Reids:Group"..msg_chat_id..":"..senderr,"true") 
+Redis:set(tuofe1.."Command:Reids:Group"..msg_chat_id..":"..senderr,"true") 
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -7442,14 +7442,14 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Command:Reids:Group:Del"..msg_chat_id..":"..senderr,"true") 
+Redis:set(tuofe1.."Command:Reids:Group:Del"..msg_chat_id..":"..senderr,"true") 
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -7465,17 +7465,17 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local list = Redis:smembers(Fast.."Command:List:Group"..msg_chat_id)
+local list = Redis:smembers(tuofe1.."Command:List:Group"..msg_chat_id)
 for k,v in pairs(list) do
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..v)
-Redis:del(Fast.."Command:List:Group"..msg_chat_id)
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..v)
+Redis:del(tuofe1.."Command:List:Group"..msg_chat_id)
 end
 return send(msg_chat_id,msg_id,"* ⚡ تم مسح جميع الاوامر التي تم اضافتها\n√*","md",true)
 end
@@ -7484,17 +7484,17 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local list = Redis:smembers(Fast.."Command:List:Group"..msg_chat_id.."")
+local list = Redis:smembers(tuofe1.."Command:List:Group"..msg_chat_id.."")
 Command = " ⚡ قائمه الاوامر المضافه ↑↓\nꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ\n"
 for k,v in pairs(list) do
-Commands = Redis:get(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..v)
+Commands = Redis:get(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..v)
 if Commands then 
 Command = Command..""..k.." ⇿『 "..v.." 』->『 "..Commands.." 』\n"
 else
@@ -7512,11 +7512,11 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -7534,11 +7534,11 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -7555,11 +7555,11 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -7581,11 +7581,11 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 local reply_markup = bot.replyMarkup{
@@ -7657,44 +7657,44 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-if Redis:get(Fast.."Status:Link"..msg.chat_id) then
+if Redis:get(tuofe1.."Status:Link"..msg.chat_id) then
 Statuslink = '✅' else Statuslink = '❌'
 end
-if Redis:get(Fast.."Status:Welcome"..msg.chat_id) then
+if Redis:get(tuofe1.."Status:Welcome"..msg.chat_id) then
 StatusWelcome = '✅' else StatusWelcome = '❌'
 end
-if Redis:get(Fast.."Status:Id"..msg.chat_id) then
+if Redis:get(tuofe1.."Status:Id"..msg.chat_id) then
 StatusId = '✅' else StatusId = '❌'
 end
-if Redis:get(Fast.."Status:IdPhoto"..msg.chat_id) then
+if Redis:get(tuofe1.."Status:IdPhoto"..msg.chat_id) then
 StatusIdPhoto = '✅' else StatusIdPhoto = '❌'
 end
-if Redis:get(Fast.."Status:Reply"..msg.chat_id) then
+if Redis:get(tuofe1.."Status:Reply"..msg.chat_id) then
 StatusReply = '✅' else StatusReply = '❌'
 end
-if Redis:get(Fast.."Status:ReplySudo"..msg.chat_id) then
+if Redis:get(tuofe1.."Status:ReplySudo"..msg.chat_id) then
 StatusReplySudo = '✅' else StatusReplySudo = '❌'
 end
-if Redis:get(Fast.."Status:BanId"..msg.chat_id)  then
+if Redis:get(tuofe1.."Status:BanId"..msg.chat_id)  then
 StatusBanId = '✅' else StatusBanId = '❌'
 end
-if Redis:get(Fast.."Status:SetId"..msg.chat_id) then
+if Redis:get(tuofe1.."Status:SetId"..msg.chat_id) then
 StatusSetId = '✅' else StatusSetId = '❌'
 end
-if Redis:get(Fast.."Status:Games"..msg.chat_id) then
+if Redis:get(tuofe1.."Status:Games"..msg.chat_id) then
 StatusGames = '✅' else StatusGames = '❌'
 end
-if Redis:get(Fast.."Status:KickMe"..msg.chat_id) then
+if Redis:get(tuofe1.."Status:KickMe"..msg.chat_id) then
 Statuskickme = '✅' else Statuskickme = '❌'
 end
-if Redis:get(Fast.."Status:AddMe"..msg.chat_id) then
+if Redis:get(tuofe1.."Status:AddMe"..msg.chat_id) then
 StatusAddme = '✅' else StatusAddme = '❌'
 end
 local protectionGroup = '\n* ⚡ اعدادات حمايه الجروب\n ꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ\n'
@@ -7723,11 +7723,11 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 local Text = "*\n ⚡ اعدادات الجروب ⇧⇩".."\n✅ علامة صح تعني مفتوح".."\n❌ علامة غلط تعني مقفول*"
@@ -7826,11 +7826,11 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -7877,11 +7877,11 @@ if not msg.SuperCreator then
 return send(msg_chat_id,msg_id,'*• انت لست المنشئ الاساسي\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -7951,11 +7951,11 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
@@ -7966,63 +7966,63 @@ end
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
 return send(msg_chat_id,msg_id,"*⚡ عذرآ لا تستطيع استخدام الامر على البوت\n√*","md",true)  
 end
-if Redis:sismember(Fast.."Devss:Groups",rep_idd) then
+if Redis:sismember(tuofe1.."Devss:Groups",rep_idd) then
 devQ = "المطور الثانوي ،" 
 else 
 devQ = "" 
 end
-if Redis:sismember(Fast.."Dev:Groups",rep_idd) then
+if Redis:sismember(tuofe1.."Dev:Groups",rep_idd) then
 dev = "المطور ،" 
 else 
 dev = "" 
 end
-if Redis:sismember(Fast.."Ownerss:Group"..msg_chat_id, rep_idd) then
+if Redis:sismember(tuofe1.."Ownerss:Group"..msg_chat_id, rep_idd) then
 crrQ = "المالك ،" 
 else 
 crrQ = "" 
 end
-if Redis:sismember(Fast.."SuperCreator:Group"..msg_chat_id, rep_idd) then
+if Redis:sismember(tuofe1.."SuperCreator:Group"..msg_chat_id, rep_idd) then
 crr = "منشئ اساسي ،" 
 else 
 crr = "" 
 end
-if Redis:sismember(Fast..'Creator:Group'..msg_chat_id, rep_idd) then
+if Redis:sismember(tuofe1..'Creator:Group'..msg_chat_id, rep_idd) then
 cr = "منشئ ،" 
 else 
 cr = "" 
 end
-if Redis:sismember(Fast..'Manger:Group'..msg_chat_id, rep_idd) then
+if Redis:sismember(tuofe1..'Manger:Group'..msg_chat_id, rep_idd) then
 own = "مدير ،" 
 else 
 own = "" 
 end
-if Redis:sismember(Fast..'Admin:Group'..msg_chat_id, rep_idd) then
+if Redis:sismember(tuofe1..'Admin:Group'..msg_chat_id, rep_idd) then
 mod = "ادمن ،" 
 else 
 mod = "" 
 end
-if Redis:sismember(Fast..'Special:Group'..msg_chat_id, rep_idd) then
+if Redis:sismember(tuofe1..'Special:Group'..msg_chat_id, rep_idd) then
 vip = "مميز ،" 
 else 
 vip = ""
 end
 if The_ControllerAll(rep_idd) == true then
 Rink = 1
-elseif Redis:sismember(Fast.."Devss:Groups",rep_idd)  then
+elseif Redis:sismember(tuofe1.."Devss:Groups",rep_idd)  then
 Rink = 2
-elseif Redis:sismember(Fast.."Dev:Groups",rep_idd)  then
+elseif Redis:sismember(tuofe1.."Dev:Groups",rep_idd)  then
 Rink = 3
-elseif Redis:sismember(Fast.."Ownerss:Group"..msg_chat_id, rep_idd) then
+elseif Redis:sismember(tuofe1.."Ownerss:Group"..msg_chat_id, rep_idd) then
 Rink = 4
-elseif Redis:sismember(Fast.."SuperCreator:Group"..msg_chat_id, rep_idd) then
+elseif Redis:sismember(tuofe1.."SuperCreator:Group"..msg_chat_id, rep_idd) then
 Rink = 5
-elseif Redis:sismember(Fast.."Creator:Group"..msg_chat_id, rep_idd) then
+elseif Redis:sismember(tuofe1.."Creator:Group"..msg_chat_id, rep_idd) then
 Rink = 6
-elseif Redis:sismember(Fast.."Manger:Group"..msg_chat_id, rep_idd) then
+elseif Redis:sismember(tuofe1.."Manger:Group"..msg_chat_id, rep_idd) then
 Rink = 7
-elseif Redis:sismember(Fast.."Admin:Group"..msg_chat_id, rep_idd) then
+elseif Redis:sismember(tuofe1.."Admin:Group"..msg_chat_id, rep_idd) then
 Rink = 8
-elseif Redis:sismember(Fast.."Special:Group"..msg_chat_id, rep_idd) then
+elseif Redis:sismember(tuofe1.."Special:Group"..msg_chat_id, rep_idd) then
 Rink = 9
 else
 Rink = 10
@@ -8034,70 +8034,70 @@ if msg.Asasy then
 if Rink == 1 or Rink < 1 then
 return send(msg_chat_id,msg_id,"\n* ⚡ لا يمكن تنزيل رتبه نفس رتبتك ولا اعلى من رتبتك *","md",true)  
 end
-Redis:srem(Fast.."Devss:Groups",rep_idd)
-Redis:srem(Fast.."Dev:Groups",rep_idd)
-Redis:srem(Fast.."Ownerss:Group"..msg_chat_id, rep_idd)
-Redis:srem(Fast.."SuperCreator:Group"..msg_chat_id, rep_idd)
-Redis:srem(Fast.."Creator:Group"..msg_chat_id, rep_idd)
-Redis:srem(Fast.."Manger:Group"..msg_chat_id, rep_idd)
-Redis:srem(Fast.."Admin:Group"..msg_chat_id, rep_idd)
-Redis:srem(Fast.."Special:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Devss:Groups",rep_idd)
+Redis:srem(tuofe1.."Dev:Groups",rep_idd)
+Redis:srem(tuofe1.."Ownerss:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."SuperCreator:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Creator:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Manger:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Admin:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Special:Group"..msg_chat_id, rep_idd)
 elseif msg.Devss then
 if Rink == 2 or Rink < 2 then
 return send(msg_chat_id,msg_id,"\n* ⚡ لا يمكن تنزيل رتبه نفس رتبتك ولا اعلى من رتبتك *","md",true)  
 end
-Redis:srem(Fast.."Dev:Groups",rep_idd)
-Redis:srem(Fast.."Ownerss:Group"..msg_chat_id, rep_idd)
-Redis:srem(Fast.."SuperCreator:Group"..msg_chat_id, rep_idd)
-Redis:srem(Fast.."Creator:Group"..msg_chat_id, rep_idd)
-Redis:srem(Fast.."Manger:Group"..msg_chat_id, rep_idd)
-Redis:srem(Fast.."Admin:Group"..msg_chat_id, rep_idd)
-Redis:srem(Fast.."Special:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Dev:Groups",rep_idd)
+Redis:srem(tuofe1.."Ownerss:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."SuperCreator:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Creator:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Manger:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Admin:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Special:Group"..msg_chat_id, rep_idd)
 elseif msg.Dev then
 if Rink == 3 or Rink < 3 then
 return send(msg_chat_id,msg_id,"\n* ⚡ لا يمكن تنزيل رتبه نفس رتبتك ولا اعلى من رتبتك *","md",true)  
 end
-Redis:srem(Fast.."Ownerss:Group"..msg_chat_id, rep_idd)
-Redis:srem(Fast.."SuperCreator:Group"..msg_chat_id, rep_idd)
-Redis:srem(Fast.."Creator:Group"..msg_chat_id, rep_idd)
-Redis:srem(Fast.."Manger:Group"..msg_chat_id, rep_idd)
-Redis:srem(Fast.."Admin:Group"..msg_chat_id, rep_idd)
-Redis:srem(Fast.."Special:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Ownerss:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."SuperCreator:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Creator:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Manger:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Admin:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Special:Group"..msg_chat_id, rep_idd)
 elseif msg.Ownerss then
 if Rink == 4 or Rink < 4 then
 return send(msg_chat_id,msg_id,"\n* ⚡ لا يمكن تنزيل رتبه نفس رتبتك ولا اعلى من رتبتك *","md",true)  
 end
-Redis:srem(Fast.."SuperCreator:Group"..msg_chat_id, rep_idd)
-Redis:srem(Fast.."Creator:Group"..msg_chat_id, rep_idd)
-Redis:srem(Fast.."Manger:Group"..msg_chat_id, rep_idd)
-Redis:srem(Fast.."Admin:Group"..msg_chat_id, rep_idd)
-Redis:srem(Fast.."Special:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."SuperCreator:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Creator:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Manger:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Admin:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Special:Group"..msg_chat_id, rep_idd)
 elseif msg.SuperCreator then
 if Rink == 5 or Rink < 5 then
 return send(msg_chat_id,msg_id,"\n* ⚡ لا يمكن تنزيل رتبه نفس رتبتك ولا اعلى من رتبتك *","md",true)  
 end
-Redis:srem(Fast.."Creator:Group"..msg_chat_id, rep_idd)
-Redis:srem(Fast.."Manger:Group"..msg_chat_id, rep_idd)
-Redis:srem(Fast.."Admin:Group"..msg_chat_id, rep_idd)
-Redis:srem(Fast.."Special:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Creator:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Manger:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Admin:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Special:Group"..msg_chat_id, rep_idd)
 elseif msg.Creator then
 if Rink == 6 or Rink < 6 then
 return send(msg_chat_id,msg_id,"\n* ⚡ لا يمكن تنزيل رتبه نفس رتبتك ولا اعلى من رتبتك *","md",true)  
 end
-Redis:srem(Fast.."Manger:Group"..msg_chat_id, rep_idd)
-Redis:srem(Fast.."Admin:Group"..msg_chat_id, rep_idd)
-Redis:srem(Fast.."Special:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Manger:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Admin:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Special:Group"..msg_chat_id, rep_idd)
 elseif msg.Manger then
 if Rink == 7 or Rink < 7 then
 return send(msg_chat_id,msg_id,"\n* ⚡ لا يمكن تنزيل رتبه نفس رتبتك ولا اعلى من رتبتك *","md",true)  
 end
-Redis:srem(Fast.."Admin:Group"..msg_chat_id, rep_idd)
-Redis:srem(Fast.."Special:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Admin:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Special:Group"..msg_chat_id, rep_idd)
 elseif msg.Admin then
 if Rink == 8 or Rink < 8 then
 return send(msg_chat_id,msg_id,"\n* ⚡ لا يمكن تنزيل رتبه نفس رتبتك ولا اعلى من رتبتك *","md",true)  
 end
-Redis:srem(Fast.."Special:Group"..msg_chat_id, rep_idd)
+Redis:srem(tuofe1.."Special:Group"..msg_chat_id, rep_idd)
 end
 return send(msg_chat_id,msg_id,"\n* ⚡ تم تنزيل المستخدم من الرتب التاليه { "..devQ..""..dev..""..crrQ..""..crr..""..cr..""..own..""..mod..""..vip.." *}","md",true)  
 end
@@ -8108,11 +8108,11 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 local UserId_Info = bot.searchPublicChat(UserName)
@@ -8125,63 +8125,63 @@ end
 if UserName and UserName:match('(%S+)[Bb][Oo][Tt]') then
 return send(msg_chat_id,msg_id,"*⚡ عذرآ لا تستطيع استخدام معرف البوت\n√* ","md",true)  
 end
-if Redis:sismember(Fast.."Devss:Groups",UserId_Info.id) then
+if Redis:sismember(tuofe1.."Devss:Groups",UserId_Info.id) then
 devQ = "المطور الثانوي ،" 
 else 
 devQ = "" 
 end
-if Redis:sismember(Fast.."Dev:Groups",UserId_Info.id) then
+if Redis:sismember(tuofe1.."Dev:Groups",UserId_Info.id) then
 dev = "المطور ،" 
 else 
 dev = "" 
 end
-if Redis:sismember(Fast.."Ownerss:Group"..msg_chat_id, UserId_Info.id) then
+if Redis:sismember(tuofe1.."Ownerss:Group"..msg_chat_id, UserId_Info.id) then
 crrQ = "المالك ،" 
 else 
 crrQ = "" 
 end
-if Redis:sismember(Fast.."SuperCreator:Group"..msg_chat_id, UserId_Info.id) then
+if Redis:sismember(tuofe1.."SuperCreator:Group"..msg_chat_id, UserId_Info.id) then
 crr = "منشئ اساسي ،" 
 else 
 crr = "" 
 end
-if Redis:sismember(Fast..'Creator:Group'..msg_chat_id, UserId_Info.id) then
+if Redis:sismember(tuofe1..'Creator:Group'..msg_chat_id, UserId_Info.id) then
 cr = "منشئ ،" 
 else 
 cr = "" 
 end
-if Redis:sismember(Fast..'Manger:Group'..msg_chat_id, UserId_Info.id) then
+if Redis:sismember(tuofe1..'Manger:Group'..msg_chat_id, UserId_Info.id) then
 own = "مدير ،" 
 else 
 own = "" 
 end
-if Redis:sismember(Fast..'Admin:Group'..msg_chat_id, UserId_Info.id) then
+if Redis:sismember(tuofe1..'Admin:Group'..msg_chat_id, UserId_Info.id) then
 mod = "ادمن ،" 
 else 
 mod = "" 
 end
-if Redis:sismember(Fast..'Special:Group'..msg_chat_id, UserId_Info.id) then
+if Redis:sismember(tuofe1..'Special:Group'..msg_chat_id, UserId_Info.id) then
 vip = "مميز ،" 
 else 
 vip = ""
 end
 if The_ControllerAll(UserId_Info.id) == true then
 Rink = 1
-elseif Redis:sismember(Fast.."Devss:Groups",UserId_Info.id)  then
+elseif Redis:sismember(tuofe1.."Devss:Groups",UserId_Info.id)  then
 Rink = 2
-elseif Redis:sismember(Fast.."Dev:Groups",UserId_Info.id)  then
+elseif Redis:sismember(tuofe1.."Dev:Groups",UserId_Info.id)  then
 Rink = 3
-elseif Redis:sismember(Fast.."Ownerss:Group"..msg_chat_id, UserId_Info.id) then
+elseif Redis:sismember(tuofe1.."Ownerss:Group"..msg_chat_id, UserId_Info.id) then
 Rink = 4
-elseif Redis:sismember(Fast.."SuperCreator:Group"..msg_chat_id, UserId_Info.id) then
+elseif Redis:sismember(tuofe1.."SuperCreator:Group"..msg_chat_id, UserId_Info.id) then
 Rink = 5
-elseif Redis:sismember(Fast.."Creator:Group"..msg_chat_id, UserId_Info.id) then
+elseif Redis:sismember(tuofe1.."Creator:Group"..msg_chat_id, UserId_Info.id) then
 Rink = 6
-elseif Redis:sismember(Fast.."Manger:Group"..msg_chat_id, UserId_Info.id) then
+elseif Redis:sismember(tuofe1.."Manger:Group"..msg_chat_id, UserId_Info.id) then
 Rink = 7
-elseif Redis:sismember(Fast.."Admin:Group"..msg_chat_id, UserId_Info.id) then
+elseif Redis:sismember(tuofe1.."Admin:Group"..msg_chat_id, UserId_Info.id) then
 Rink = 8
-elseif Redis:sismember(Fast.."Special:Group"..msg_chat_id, UserId_Info.id) then
+elseif Redis:sismember(tuofe1.."Special:Group"..msg_chat_id, UserId_Info.id) then
 Rink = 9
 else
 Rink = 10
@@ -8193,70 +8193,70 @@ if msg.Asasy then
 if Rink == 1 or Rink < 1 then
 return send(msg_chat_id,msg_id,"\n* ⚡ لا يمكن تنزيل رتبه نفس رتبتك ولا اعلى من رتبتك *","md",true)  
 end
-Redis:srem(Fast.."Devss:Groups",UserId_Info.id)
-Redis:srem(Fast.."Dev:Groups",UserId_Info.id)
-Redis:srem(Fast.."Ownerss:Group"..msg_chat_id, UserId_Info.id)
-Redis:srem(Fast.."SuperCreator:Group"..msg_chat_id, UserId_Info.id)
-Redis:srem(Fast.."Creator:Group"..msg_chat_id, UserId_Info.id)
-Redis:srem(Fast.."Manger:Group"..msg_chat_id, UserId_Info.id)
-Redis:srem(Fast.."Admin:Group"..msg_chat_id, UserId_Info.id)
-Redis:srem(Fast.."Special:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Devss:Groups",UserId_Info.id)
+Redis:srem(tuofe1.."Dev:Groups",UserId_Info.id)
+Redis:srem(tuofe1.."Ownerss:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."SuperCreator:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Creator:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Manger:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Admin:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Special:Group"..msg_chat_id, UserId_Info.id)
 elseif msg.Devss then
 if Rink == 2 or Rink < 2 then
 return send(msg_chat_id,msg_id,"\n* ⚡ لا يمكن تنزيل رتبه نفس رتبتك ولا اعلى من رتبتك *","md",true)  
 end
-Redis:srem(Fast.."Dev:Groups",UserId_Info.id)
-Redis:srem(Fast.."Ownerss:Group"..msg_chat_id, UserId_Info.id)
-Redis:srem(Fast.."SuperCreator:Group"..msg_chat_id, UserId_Info.id)
-Redis:srem(Fast.."Creator:Group"..msg_chat_id, UserId_Info.id)
-Redis:srem(Fast.."Manger:Group"..msg_chat_id, UserId_Info.id)
-Redis:srem(Fast.."Admin:Group"..msg_chat_id, UserId_Info.id)
-Redis:srem(Fast.."Special:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Dev:Groups",UserId_Info.id)
+Redis:srem(tuofe1.."Ownerss:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."SuperCreator:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Creator:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Manger:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Admin:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Special:Group"..msg_chat_id, UserId_Info.id)
 elseif msg.Dev then
 if Rink == 3 or Rink < 3 then
 return send(msg_chat_id,msg_id,"\n* ⚡ لا يمكن تنزيل رتبه نفس رتبتك ولا اعلى من رتبتك *","md",true)  
 end
-Redis:srem(Fast.."Ownerss:Group"..msg_chat_id, UserId_Info.id)
-Redis:srem(Fast.."SuperCreator:Group"..msg_chat_id, UserId_Info.id)
-Redis:srem(Fast.."Creator:Group"..msg_chat_id, UserId_Info.id)
-Redis:srem(Fast.."Manger:Group"..msg_chat_id, UserId_Info.id)
-Redis:srem(Fast.."Admin:Group"..msg_chat_id, UserId_Info.id)
-Redis:srem(Fast.."Special:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Ownerss:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."SuperCreator:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Creator:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Manger:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Admin:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Special:Group"..msg_chat_id, UserId_Info.id)
 elseif msg.Ownerss then
 if Rink == 4 or Rink < 4 then
 return send(msg_chat_id,msg_id,"\n* ⚡ لا يمكن تنزيل رتبه نفس رتبتك ولا اعلى من رتبتك *","md",true)  
 end
-Redis:srem(Fast.."SuperCreator:Group"..msg_chat_id, UserId_Info.id)
-Redis:srem(Fast.."Creator:Group"..msg_chat_id, UserId_Info.id)
-Redis:srem(Fast.."Manger:Group"..msg_chat_id, UserId_Info.id)
-Redis:srem(Fast.."Admin:Group"..msg_chat_id, UserId_Info.id)
-Redis:srem(Fast.."Special:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."SuperCreator:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Creator:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Manger:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Admin:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Special:Group"..msg_chat_id, UserId_Info.id)
 elseif msg.SuperCreator then
 if Rink == 5 or Rink < 5 then
 return send(msg_chat_id,msg_id,"\n* ⚡ لا يمكن تنزيل رتبه نفس رتبتك ولا اعلى من رتبتك *","md",true)  
 end
-Redis:srem(Fast.."Creator:Group"..msg_chat_id, UserId_Info.id)
-Redis:srem(Fast.."Manger:Group"..msg_chat_id, UserId_Info.id)
-Redis:srem(Fast.."Admin:Group"..msg_chat_id, UserId_Info.id)
-Redis:srem(Fast.."Special:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Creator:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Manger:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Admin:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Special:Group"..msg_chat_id, UserId_Info.id)
 elseif msg.Creator then
 if Rink == 6 or Rink < 6 then
 return send(msg_chat_id,msg_id,"\n* ⚡ لا يمكن تنزيل رتبه نفس رتبتك ولا اعلى من رتبتك *","md",true)  
 end
-Redis:srem(Fast.."Manger:Group"..msg_chat_id, UserId_Info.id)
-Redis:srem(Fast.."Admin:Group"..msg_chat_id, UserId_Info.id)
-Redis:srem(Fast.."Special:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Manger:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Admin:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Special:Group"..msg_chat_id, UserId_Info.id)
 elseif msg.Manger then
 if Rink == 7 or Rink < 7 then
 return send(msg_chat_id,msg_id,"\n* ⚡ لا يمكن تنزيل رتبه نفس رتبتك ولا اعلى من رتبتك *","md",true)  
 end
-Redis:srem(Fast.."Admin:Group"..msg_chat_id, UserId_Info.id)
-Redis:srem(Fast.."Special:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Admin:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Special:Group"..msg_chat_id, UserId_Info.id)
 elseif msg.Admin then
 if Rink == 8 or Rink < 8 then
 return send(msg_chat_id,msg_id,"\n* ⚡ لا يمكن تنزيل رتبه نفس رتبتك ولا اعلى من رتبتك *","md",true)  
 end
-Redis:srem(Fast.."Special:Group"..msg_chat_id, UserId_Info.id)
+Redis:srem(tuofe1.."Special:Group"..msg_chat_id, UserId_Info.id)
 end
 return send(msg_chat_id,msg_id,"\n* ⚡ تم تنزيل المستخدم من الرتب التاليه { "..devQ..""..dev..""..crrQ..""..crr..""..cr..""..own..""..mod..""..vip.." *}","md",true)  
 end
@@ -8273,18 +8273,18 @@ if statusvar == false then
 return send(msg_chat_id,msg_id,'\n* ⚡ هذا الامر يخص { '..Controller_Num(8)..' , مالك الجروب }* ',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."SuperCreator:Group"..msg_chat_id)
-Redis:del(Fast.."Creator:Group"..msg_chat_id)
-Redis:del(Fast.."Manger:Group"..msg_chat_id)
-Redis:del(Fast.."Admin:Group"..msg_chat_id)
---Redis:del(Fast.."Special:Group"..msg_chat_id)
+Redis:del(tuofe1.."SuperCreator:Group"..msg_chat_id)
+Redis:del(tuofe1.."Creator:Group"..msg_chat_id)
+Redis:del(tuofe1.."Manger:Group"..msg_chat_id)
+Redis:del(tuofe1.."Admin:Group"..msg_chat_id)
+--Redis:del(tuofe1.."Special:Group"..msg_chat_id)
 return send(msg_chat_id,msg_id,'\n* ⚡ تم تنزيل جميع رتب الجروب { المنشئين الاساسسين , المنشئين , المدراء , الادمنيه  }* ',"md",true)  
 end
 
@@ -8349,7 +8349,7 @@ if not msg.Creator then
 return send(msg_chat_id,msg_id,'*• انت لست المنشئ\n√*',"md",true)    
 end
 local Numbardel = text:match("^ضع التكرار (%d+)$")
-Redis:hset(Fast.."Spam:Group:User"..msg_chat_id ,"Num:Spam",Numbardel)  
+Redis:hset(tuofe1.."Spam:Group:User"..msg_chat_id ,"Num:Spam",Numbardel)  
 send(msg_chat_id,msg_id, 'تم تعيين عدد التكرار الى  -> '..Numbardel)
 end
 if text == ('رفع مشرف') and msg.reply_to_message_id ~= 0 then
@@ -8357,11 +8357,11 @@ if not msg.SuperCreator then
 return send(msg_chat_id,msg_id,'*• انت لست المنشئ الاساسي\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -8399,11 +8399,11 @@ if not msg.SuperCreator then
 return send(msg_chat_id,msg_id,'*• انت لست المنشئ الاساسي\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -8442,11 +8442,11 @@ if not msg.SuperCreator then
 return send(msg_chat_id,msg_id,'*• انت لست المنشئ الاساسي\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -8478,11 +8478,11 @@ if not msg.SuperCreator then
 return send(msg_chat_id,msg_id,'*• انت لست المنشئ الاساسي\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -8512,82 +8512,82 @@ return send(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⚡ تم تنزيل
 end 
 if text == 'مسح رسائلي' then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast..'Num:Message:User'..msg.chat_id..':'..senderr)
+Redis:del(tuofe1..'Num:Message:User'..msg.chat_id..':'..senderr)
 send(msg_chat_id,msg_id,' ⚡ تم مسح جميع رسائلك ',"md",true)  
 elseif text == 'مسح تعديلاتي' or text == 'مسح تعديلاتي' then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast..'Num:Message:Edit'..msg.chat_id..senderr)
+Redis:del(tuofe1..'Num:Message:Edit'..msg.chat_id..senderr)
 send(msg_chat_id,msg_id,' ⚡ تم مسح جميع تعديلاتك ',"md",true)  
 elseif text == 'مسح جهاتي' then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast..'Num:Add:Memp'..msg.chat_id..':'..senderr)
+Redis:del(tuofe1..'Num:Add:Memp'..msg.chat_id..':'..senderr)
 send(msg_chat_id,msg_id,' ⚡ تم مسح جميع جهاتك المضافه ',"md",true)  
 elseif text == 'رسائلي' then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-send(msg_chat_id,msg_id,' ⚡ عدد رسائلك هنا *~ '..(Redis:get(Fast..'Num:Message:User'..msg.chat_id..':'..senderr) or 1)..'*',"md",true)  
+send(msg_chat_id,msg_id,' ⚡ عدد رسائلك هنا *~ '..(Redis:get(tuofe1..'Num:Message:User'..msg.chat_id..':'..senderr) or 1)..'*',"md",true)  
 elseif text == 'تعديلاتي' or text == 'تعديلاتي' then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-send(msg_chat_id,msg_id,' ⚡ عدد التعديلات هنا *~ '..(Redis:get(Fast..'Num:Message:Edit'..msg.chat_id..senderr) or 0)..'*',"md",true)  
+send(msg_chat_id,msg_id,' ⚡ عدد التعديلات هنا *~ '..(Redis:get(tuofe1..'Num:Message:Edit'..msg.chat_id..senderr) or 0)..'*',"md",true)  
 elseif text == 'جهاتي' then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-send(msg_chat_id,msg_id,' ⚡ عدد جهاتك المضافه هنا *~ '..(Redis:get(Fast.."Num:Add:Memp"..msg.chat_id..":"..senderr) or 0)..'*',"md",true)  
+send(msg_chat_id,msg_id,' ⚡ عدد جهاتك المضافه هنا *~ '..(Redis:get(tuofe1.."Num:Add:Memp"..msg.chat_id..":"..senderr) or 0)..'*',"md",true)  
 elseif text == 'مسح' and msg.reply_to_message_id ~= 0 and msg.Admin then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if GetInfoBot(msg).Delmsg == false then
@@ -8599,11 +8599,11 @@ end
 
 if text == 'تفاعل الجروب' and msg.reply_to_message_id == 0 then
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 local Message = msg.id/2097152/0.5
@@ -8644,14 +8644,14 @@ if not msg.Creator then
 return send(msg_chat_id,msg_id,'*• انت لست المنشئ\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:setex(Fast.."Redis:Id:Group"..msg.chat_id..""..senderr,240,true)  
+Redis:setex(tuofe1.."Redis:Id:Group"..msg.chat_id..""..senderr,240,true)  
 return send(msg_chat_id,msg_id,[[*
 ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 , يمكنك الان الاضافه ،
@@ -8677,14 +8677,14 @@ if not msg.Creator then
 return send(msg_chat_id,msg_id,'*• انت لست المنشئ\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Set:Id:Group"..msg.chat_id)
+Redis:del(tuofe1.."Set:Id:Group"..msg.chat_id)
 return send(msg_chat_id,msg_id, ' ⚡ تم ازالة كليشة الايدي ',"md",true)  
 end
 if text == 'تغيير الايدي' or text == 'تغير الايدي' then
@@ -8692,11 +8692,11 @@ if not msg.Creator then
 return send(msg_chat_id,msg_id,'*• انت لست المنشئ\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 local List = { 
@@ -8806,7 +8806,7 @@ local List = {
 .𖣂 𝙢??𝙂𝙨 , #msgs 
 ]]} 
 local Text_Rand = List[math.random(#List)] 
-Redis:set(Fast.."Set:Id:Group"..msg.chat_id,Text_Rand)
+Redis:set(tuofe1.."Set:Id:Group"..msg.chat_id,Text_Rand)
 return send(msg_chat_id,msg_id, ' ⚡ تم التغيير ارسل ايدي لعرض الايدي الجديد',"md",true)  
 end
 if text == 'مسح الايدي عام' or text == 'مسح الايدي عام' then
@@ -8814,14 +8814,14 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Set:Id:Groups")
+Redis:del(tuofe1.."Set:Id:Groups")
 return send(msg_chat_id,msg_id, ' ⚡ تم ازالة كليشة الايدي ',"md",true)  
 end
 if text == 'تعيين الايدي عام' then
@@ -8829,14 +8829,14 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:setex(Fast.."Redis:Id:Groups"..msg.chat_id..""..senderr,240,true)  
+Redis:setex(tuofe1.."Redis:Id:Groups"..msg.chat_id..""..senderr,240,true)  
 return send(msg_chat_id,msg_id,[[*
 ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 , يمكنك الان الاضافه ،
@@ -8865,18 +8865,18 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local Info_Members = Redis:smembers(Fast.."Devss:Groups") 
+local Info_Members = Redis:smembers(tuofe1.."Devss:Groups") 
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id," ⚡ لا يوجد مطورين ثانوين حاليا , ","md",true)  
 end
-Redis:del(Fast.."Devss:Groups") 
+Redis:del(tuofe1.."Devss:Groups") 
 return send(msg_chat_id,msg_id,"* ⚡ تم مسح {"..#Info_Members.."} من المطورين الثانويين*","md",true)
 end
 if TextMsg == 'المطورين' then
@@ -8884,18 +8884,18 @@ if not msg.Devss then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local Info_Members = Redis:smembers(Fast.."Dev:Groups") 
+local Info_Members = Redis:smembers(tuofe1.."Dev:Groups") 
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"*⚡ لا يوجد مطورين حاليا\n√*","md",true)  
 end
-Redis:del(Fast.."Dev:Groups") 
+Redis:del(tuofe1.."Dev:Groups") 
 return send(msg_chat_id,msg_id,"* ⚡ تم مسح {"..#Info_Members.."} من المطورين *","md",true)
 end
 if TextMsg == 'المالكين' then
@@ -8911,24 +8911,24 @@ if statusvar == false then
 return send(msg_chat_id,msg_id,'\n* ⚡ هذا الامر يخص { '..Controller_Num(3)..' , مالك الجروب }* ',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local Info_Memberss = Redis:smembers(Fast.."Ownerss:Group"..msg_chat_id) 
+local Info_Memberss = Redis:smembers(tuofe1.."Ownerss:Group"..msg_chat_id) 
 if #Info_Memberss == 0 then
 return send(msg_chat_id,msg_id," ⚡ لا يوجد المالكين حاليا , ","md",true)  
 end
-Redis:del(Fast.."Ownerss:Group"..msg_chat_id) 
+Redis:del(tuofe1.."Ownerss:Group"..msg_chat_id) 
 local Info_Members = bot.getSupergroupMembers(msg_chat_id, "Administrators", "*", 0, 200)
 local List_Members = Info_Members.members
 for k, v in pairs(List_Members) do
 if Info_Members.members[k].bot_info == nil then
 if Info_Members.members[k].status.luatele == "chatMemberStatusCreator" then
-Redis:sadd(Fast.."Ownerss:Group"..msg_chat_id,v.member_id.user_id) 
+Redis:sadd(tuofe1.."Ownerss:Group"..msg_chat_id,v.member_id.user_id) 
 end
 end
 end
@@ -8939,18 +8939,18 @@ if not msg.Ownerss then
 return send(msg_chat_id,msg_id,'\n* ⚡ هذا الامر يخص { '..Controller_Num(8)..' }* ',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local Info_Members = Redis:smembers(Fast.."SuperCreator:Group"..msg_chat_id) 
+local Info_Members = Redis:smembers(tuofe1.."SuperCreator:Group"..msg_chat_id) 
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id," ⚡ لا يوجد منشئين اساسيين حاليا , ","md",true)  
 end
-Redis:del(Fast.."SuperCreator:Group"..msg_chat_id) 
+Redis:del(tuofe1.."SuperCreator:Group"..msg_chat_id) 
 return send(msg_chat_id,msg_id,"* ⚡ تم مسح {"..#Info_Members.."} من المنشؤين الاساسيين *","md",true)
 end
 if TextMsg == 'المنشئين' then
@@ -8958,18 +8958,18 @@ if not msg.SuperCreator then
 return send(msg_chat_id,msg_id,'*• انت لست المنشئ الاساسي\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local Info_Members = Redis:smembers(Fast.."Creator:Group"..msg_chat_id) 
+local Info_Members = Redis:smembers(tuofe1.."Creator:Group"..msg_chat_id) 
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id," ⚡ لا يوجد منشئين حاليا , ","md",true)  
 end
-Redis:del(Fast.."Creator:Group"..msg_chat_id) 
+Redis:del(tuofe1.."Creator:Group"..msg_chat_id) 
 return send(msg_chat_id,msg_id,"* ⚡ تم مسح {"..#Info_Members.."} من المنشئين *","md",true)
 end
 if TextMsg == 'المدراء' then
@@ -8977,18 +8977,18 @@ if not msg.Creator then
 return send(msg_chat_id,msg_id,'*• انت لست المنشئ\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local Info_Members = Redis:smembers(Fast.."Manger:Group"..msg_chat_id) 
+local Info_Members = Redis:smembers(tuofe1.."Manger:Group"..msg_chat_id) 
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id," ⚡ لا يوجد مدراء حاليا , ","md",true)  
 end
-Redis:del(Fast.."Manger:Group"..msg_chat_id) 
+Redis:del(tuofe1.."Manger:Group"..msg_chat_id) 
 return send(msg_chat_id,msg_id,"* ⚡ تم مسح {"..#Info_Members.."} من المدراء *","md",true)
 end
 if TextMsg == 'الادمنيه' then
@@ -8996,18 +8996,18 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local Info_Members = Redis:smembers(Fast.."Admin:Group"..msg_chat_id) 
+local Info_Members = Redis:smembers(tuofe1.."Admin:Group"..msg_chat_id) 
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id," ⚡ لا يوجد ادمنيه حاليا , ","md",true)  
 end
-Redis:del(Fast.."Admin:Group"..msg_chat_id) 
+Redis:del(tuofe1.."Admin:Group"..msg_chat_id) 
 return send(msg_chat_id,msg_id,"* ⚡ تم مسح {"..#Info_Members.."} من الادمنيه *","md",true)
 end
 if TextMsg == 'المميزين' then
@@ -9015,18 +9015,18 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local Info_Members = Redis:smembers(Fast.."Special:Group"..msg_chat_id) 
+local Info_Members = Redis:smembers(tuofe1.."Special:Group"..msg_chat_id) 
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id," ⚡ لا يوجد مميزين حاليا , ","md",true)  
 end
-Redis:del(Fast.."Special:Group"..msg_chat_id) 
+Redis:del(tuofe1.."Special:Group"..msg_chat_id) 
 return send(msg_chat_id,msg_id,"* ⚡ تم مسح {"..#Info_Members.."} من المميزين *","md",true)
 end
 if TextMsg == 'المحظورين عام' or TextMsg == 'قائمه العام' then
@@ -9034,18 +9034,18 @@ if not msg.Devss then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local Info_Members = Redis:smembers(Fast.."BanAll:Groups") 
+local Info_Members = Redis:smembers(tuofe1.."BanAll:Groups") 
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id," ⚡ لا يوجد محظورين عام حاليا , ","md",true)  
 end
-Redis:del(Fast.."BanAll:Groups") 
+Redis:del(tuofe1.."BanAll:Groups") 
 return send(msg_chat_id,msg_id,"* ⚡ تم مسح {"..#Info_Members.."} من المحظورين عام *","md",true)
 end
 if TextMsg == 'المحظورين' then
@@ -9053,18 +9053,18 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local Info_Members = Redis:smembers(Fast.."BanGroup:Group"..msg_chat_id) 
+local Info_Members = Redis:smembers(tuofe1.."BanGroup:Group"..msg_chat_id) 
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id," ⚡ لا يوجد محظورين حاليا , ","md",true)  
 end
-Redis:del(Fast.."BanGroup:Group"..msg_chat_id) 
+Redis:del(tuofe1.."BanGroup:Group"..msg_chat_id) 
 return send(msg_chat_id,msg_id,"* ⚡ تم مسح {"..#Info_Members.."} من المحظورين *","md",true)
 end
 if TextMsg == 'المكتومين' then
@@ -9072,18 +9072,18 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local Info_Members = Redis:smembers(Fast.."SilentGroup:Group"..msg_chat_id) 
+local Info_Members = Redis:smembers(tuofe1.."SilentGroup:Group"..msg_chat_id) 
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id," ⚡ لا يوجد مكتومين حاليا , ","md",true)  
 end
-Redis:del(Fast.."SilentGroup:Group"..msg_chat_id) 
+Redis:del(tuofe1.."SilentGroup:Group"..msg_chat_id) 
 return send(msg_chat_id,msg_id,"* ⚡ تم مسح {"..#Info_Members.."} من المكتومين *","md",true)
 end
 if TextMsg == 'المقيدين' then
@@ -9091,11 +9091,11 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if GetInfoBot(msg).BanUser == false then
@@ -9126,11 +9126,11 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -9155,11 +9155,11 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -9190,11 +9190,11 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -9229,11 +9229,11 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -9267,11 +9267,11 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -9296,25 +9296,25 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local list = Redis:smembers(Fast.."List:Manager"..msg_chat_id.."")
+local list = Redis:smembers(tuofe1.."List:Manager"..msg_chat_id.."")
 for k,v in pairs(list) do
-Redis:del(Fast.."Add:Rd:Manager:Gif"..v..msg_chat_id)   
-Redis:del(Fast.."Add:Rd:Manager:Vico"..v..msg_chat_id)   
-Redis:del(Fast.."Add:Rd:Manager:Stekrs"..v..msg_chat_id)     
-Redis:del(Fast.."Add:Rd:Manager:Text"..v..msg_chat_id)   
-Redis:del(Fast.."Add:Rd:Manager:Photo"..v..msg_chat_id)
-Redis:del(Fast.."Add:Rd:Manager:Video"..v..msg_chat_id)
-Redis:del(Fast.."Add:Rd:Manager:File"..v..msg_chat_id)
-Redis:del(Fast.."Add:Rd:Manager:video_note"..v..msg_chat_id)
-Redis:del(Fast.."Add:Rd:Manager:Audio"..v..msg_chat_id)
-Redis:del(Fast.."List:Manager"..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:Gif"..v..msg_chat_id)   
+Redis:del(tuofe1.."Add:Rd:Manager:Vico"..v..msg_chat_id)   
+Redis:del(tuofe1.."Add:Rd:Manager:Stekrs"..v..msg_chat_id)     
+Redis:del(tuofe1.."Add:Rd:Manager:Text"..v..msg_chat_id)   
+Redis:del(tuofe1.."Add:Rd:Manager:Photo"..v..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:Video"..v..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:File"..v..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:video_note"..v..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:Audio"..v..msg_chat_id)
+Redis:del(tuofe1.."List:Manager"..msg_chat_id)
 end
 return send(msg_chat_id,msg_id," ⚡ تم مسح قائمه الردود","md",true)  
 end
@@ -9323,33 +9323,33 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local list = Redis:smembers(Fast.."List:Manager"..msg_chat_id.."")
+local list = Redis:smembers(tuofe1.."List:Manager"..msg_chat_id.."")
 text = " ⚡ قائمه الردود \nꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ\n"
 for k,v in pairs(list) do
-if Redis:get(Fast.."Add:Rd:Manager:Gif"..v..msg_chat_id) then
+if Redis:get(tuofe1.."Add:Rd:Manager:Gif"..v..msg_chat_id) then
 db = "متحركه 🎭"
-elseif Redis:get(Fast.."Add:Rd:Manager:Vico"..v..msg_chat_id) then
+elseif Redis:get(tuofe1.."Add:Rd:Manager:Vico"..v..msg_chat_id) then
 db = "بصمه 📢"
-elseif Redis:get(Fast.."Add:Rd:Manager:Stekrs"..v..msg_chat_id) then
+elseif Redis:get(tuofe1.."Add:Rd:Manager:Stekrs"..v..msg_chat_id) then
 db = "ملصق 🧿"
-elseif Redis:get(Fast.."Add:Rd:Manager:Text"..v..msg_chat_id) then
+elseif Redis:get(tuofe1.."Add:Rd:Manager:Text"..v..msg_chat_id) then
 db = "رساله ✉"
-elseif Redis:get(Fast.."Add:Rd:Manager:Photo"..v..msg_chat_id) then
+elseif Redis:get(tuofe1.."Add:Rd:Manager:Photo"..v..msg_chat_id) then
 db = "صوره 🎇"
-elseif Redis:get(Fast.."Add:Rd:Manager:Video"..v..msg_chat_id) then
+elseif Redis:get(tuofe1.."Add:Rd:Manager:Video"..v..msg_chat_id) then
 db = "فيديو ??"
-elseif Redis:get(Fast.."Add:Rd:Manager:File"..v..msg_chat_id) then
+elseif Redis:get(tuofe1.."Add:Rd:Manager:File"..v..msg_chat_id) then
 db = "ملف ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Manager:Audio"..v..msg_chat_id) then
+elseif Redis:get(tuofe1.."Add:Rd:Manager:Audio"..v..msg_chat_id) then
 db = "اغنيه 🎵"
-elseif Redis:get(Fast.."Add:Rd:Manager:video_note"..v..msg_chat_id) then
+elseif Redis:get(tuofe1.."Add:Rd:Manager:video_note"..v..msg_chat_id) then
 db = "بصمه فيديو 🎥"
 end
 text = text..""..k.." ⇿『 "..v.."』⇿『 "..db.." 』\n"
@@ -9364,14 +9364,14 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Set:Manager:rd"..senderr..":"..msg_chat_id,true)
+Redis:set(tuofe1.."Set:Manager:rd"..senderr..":"..msg_chat_id,true)
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -9387,14 +9387,14 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Set:Manager:rd"..senderr..":"..msg_chat_id,"true2")
+Redis:set(tuofe1.."Set:Manager:rd"..senderr..":"..msg_chat_id,"true2")
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -9410,25 +9410,25 @@ if not msg.Devss then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local list = Redis:smembers(Fast.."List:Rd:Sudo")
+local list = Redis:smembers(tuofe1.."List:Rd:Sudo")
 for k,v in pairs(list) do
-Redis:del(Fast.."Add:Rd:Sudo:Gif"..v)   
-Redis:del(Fast.."Add:Rd:Sudo:vico"..v)   
-Redis:del(Fast.."Add:Rd:Sudo:stekr"..v)     
-Redis:del(Fast.."Add:Rd:Sudo:Text"..v)   
-Redis:del(Fast.."Add:Rd:Sudo:Photo"..v)
-Redis:del(Fast.."Add:Rd:Sudo:Video"..v)
-Redis:del(Fast.."Add:Rd:Sudo:File"..v)
-Redis:del(Fast.."Add:Rd:Sudo:Audio"..v)
-Redis:del(Fast.."Add:Rd:Sudo:video_note"..v)
-Redis:del(Fast.."List:Rd:Sudo")
+Redis:del(tuofe1.."Add:Rd:Sudo:Gif"..v)   
+Redis:del(tuofe1.."Add:Rd:Sudo:vico"..v)   
+Redis:del(tuofe1.."Add:Rd:Sudo:stekr"..v)     
+Redis:del(tuofe1.."Add:Rd:Sudo:Text"..v)   
+Redis:del(tuofe1.."Add:Rd:Sudo:Photo"..v)
+Redis:del(tuofe1.."Add:Rd:Sudo:Video"..v)
+Redis:del(tuofe1.."Add:Rd:Sudo:File"..v)
+Redis:del(tuofe1.."Add:Rd:Sudo:Audio"..v)
+Redis:del(tuofe1.."Add:Rd:Sudo:video_note"..v)
+Redis:del(tuofe1.."List:Rd:Sudo")
 end
 return send(msg_chat_id,msg_id,"*⚡ تم مسح الردود العامه\n√*","md",true)  
 end
@@ -9437,33 +9437,33 @@ if not msg.Devss then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local list = Redis:smembers(Fast.."List:Rd:Sudo")
+local list = Redis:smembers(tuofe1.."List:Rd:Sudo")
 text = "\n📝︙قائمة الردود العامه \nꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ\n"
 for k,v in pairs(list) do
-if Redis:get(Fast.."Add:Rd:Sudo:Gif"..v) then
+if Redis:get(tuofe1.."Add:Rd:Sudo:Gif"..v) then
 db = "متحركه 🎭"
-elseif Redis:get(Fast.."Add:Rd:Sudo:vico"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Sudo:vico"..v) then
 db = "بصمه 📢"
-elseif Redis:get(Fast.."Add:Rd:Sudo:stekr"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Sudo:stekr"..v) then
 db = "ملصق 🧿"
-elseif Redis:get(Fast.."Add:Rd:Sudo:Text"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Sudo:Text"..v) then
 db = "رساله ✉"
-elseif Redis:get(Fast.."Add:Rd:Sudo:Photo"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Sudo:Photo"..v) then
 db = "صوره 🎇"
-elseif Redis:get(Fast.."Add:Rd:Sudo:Video"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Sudo:Video"..v) then
 db = "فيديو 📹"
-elseif Redis:get(Fast.."Add:Rd:Sudo:File"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Sudo:File"..v) then
 db = "ملف ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Sudo:Audio"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Sudo:Audio"..v) then
 db = "اغنيه 🎵"
-elseif Redis:get(Fast.."Add:Rd:Sudo:video_note"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Sudo:video_note"..v) then
 db = "بصمه فيديو 🎥"
 end
 text = text..""..k.." ⇿『 "..v.."』⇿『 "..db.." 』\n"
@@ -9478,14 +9478,14 @@ if not msg.Devss then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Set:Rd"..senderr..":"..msg_chat_id,true)
+Redis:set(tuofe1.."Set:Rd"..senderr..":"..msg_chat_id,true)
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -9501,14 +9501,14 @@ if not msg.Devss then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Set:On"..senderr..":"..msg_chat_id,true)
+Redis:set(tuofe1.."Set:On"..senderr..":"..msg_chat_id,true)
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -9532,11 +9532,11 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -9571,11 +9571,11 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -9627,11 +9627,11 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -9646,20 +9646,20 @@ Restricted = ''
 end
 if Statusrestricted(msg_chat_id,rep_idd).BanAll == true and msg.Asasy then
 BanAll = 'محظور عام ,'
-Redis:srem(Fast.."BanAll:Groups",rep_idd) 
+Redis:srem(tuofe1.."BanAll:Groups",rep_idd) 
 else
 BanAll = ''
 end
 if Statusrestricted(msg_chat_id,rep_idd).BanGroup == true then
 BanGroup = 'محظور ,'
-Redis:srem(Fast.."BanGroup:Group"..msg_chat_id,rep_idd) 
+Redis:srem(tuofe1.."BanGroup:Group"..msg_chat_id,rep_idd) 
 bot.setChatMemberStatus(msg.chat_id,rep_idd,'restricted',{1,1,1,1,1,1,1,1,1})
 else
 BanGroup = ''
 end
 if Statusrestricted(msg_chat_id,rep_idd).SilentGroup == true then
 SilentGroup = 'مكتوم ,'
-Redis:srem(Fast.."SilentGroup:Group"..msg_chat_id,rep_idd) 
+Redis:srem(tuofe1.."SilentGroup:Group"..msg_chat_id,rep_idd) 
 else
 SilentGroup = ''
 end
@@ -9672,11 +9672,11 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'*• انت لست ادمن\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -9701,20 +9701,20 @@ Restricted = ''
 end
 if Statusrestricted(msg_chat_id,UserId_Info.id).BanAll == true and msg.Asasy then
 BanAll = 'محظور عام ,'
-Redis:srem(Fast.."BanAll:Groups",UserId_Info.id) 
+Redis:srem(tuofe1.."BanAll:Groups",UserId_Info.id) 
 else
 BanAll = ''
 end
 if Statusrestricted(msg_chat_id,UserId_Info.id).BanGroup == true then
 BanGroup = 'محظور ,'
-Redis:srem(Fast.."BanGroup:Group"..msg_chat_id,UserId_Info.id) 
+Redis:srem(tuofe1.."BanGroup:Group"..msg_chat_id,UserId_Info.id) 
 bot.setChatMemberStatus(msg.chat_id,UserId_Info.id,'restricted',{1,1,1,1,1,1,1,1,1})
 else
 BanGroup = ''
 end
 if Statusrestricted(msg_chat_id,UserId_Info.id).SilentGroup == true then
 SilentGroup = 'مكتوم ,'
-Redis:srem(Fast.."SilentGroup:Group"..msg_chat_id,UserId_Info.id) 
+Redis:srem(tuofe1.."SilentGroup:Group"..msg_chat_id,UserId_Info.id) 
 else
 SilentGroup = ''
 end
@@ -9727,14 +9727,14 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast..'GetTexting:DevFast'..msg_chat_id..':'..senderr,true)
+Redis:set(tuofe1..'GetTexting:Devtuofe1'..msg_chat_id..':'..senderr,true)
 return send(msg_chat_id,msg_id,' ⚡ ارسل لي الكليشه الان')
 end
 if text == 'مسح كليشة المطور' then
@@ -9742,14 +9742,14 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast..'Texting:DevFast')
+Redis:del(tuofe1..'Texting:Devtuofe1')
 return send(msg_chat_id,msg_id,' ⚡ تم مسح كليشه المطور')
 end
 if text == 'المطور' or text == 'مطور البوت' then   
@@ -9825,31 +9825,31 @@ if text == "استبدال كلمه" then
 if not msg.Devss then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي\n√*',"md",true)  
 end
-Redis:set(Fast..msg.chat_id..senderr.."replace",true)
+Redis:set(tuofe1..msg.chat_id..senderr.."replace",true)
 return bot.sendText(msg_chat_id,msg_id,'*\n ⚡ ارسل الكلمه القديمه ليتم استبدالها*',"md",true)  
 end
 if text == "مسح الكلمات المستبدله" then
 if not msg.Devss then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي\n√*',"md",true)  
 end
-local list = Redis:smembers(Fast.."Words:r")
+local list = Redis:smembers(tuofe1.."Words:r")
 for k,v in pairs(list) do
-Redis:del(Fast.."Word:Replace"..v)
+Redis:del(tuofe1.."Word:Replace"..v)
 end
-Redis:del(Fast.."Words:r")
+Redis:del(tuofe1.."Words:r")
 send(msg_chat_id,msg_id," ⚡ تم مسح الكلمات المستبدله")
 end
 if text == "الكلمات المستبدله" then
 if not msg.Devss then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي\n√*',"md",true)  
 end
-local list = Redis:smembers(Fast.."Words:r")
+local list = Redis:smembers(tuofe1.."Words:r")
 if #list == 0 then
 return send(msg.chat_id,msg.id," ⚡ لا توجد كلمات مستبدله")
 end
 local txx = " قائمه الكلمات المستبدله \nꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ"
 for k,v in pairs(list) do 
-cmdd = Redis:get(Fast.."Word:Replace"..v)
+cmdd = Redis:get(tuofe1.."Word:Replace"..v)
 txx = txx..k.." ⇿ "..v.." ⚡ "..cmdd.."\n"
 end
 bot.sendText(msg_chat_id,msg_id,txx)
@@ -9860,30 +9860,30 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'\n* ⚡ هاذا الامر يخص '..Controller_Num(6)..' * ',"md",true)
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local list = Redis:smembers(Fast.."List:Manager:inline"..msg_chat_id.."")
+local list = Redis:smembers(tuofe1.."List:Manager:inline"..msg_chat_id.."")
 for k,v in pairs(list) do
-Redis:del(Fast.."Add:Rd:Manager:Gif:inline"..v..msg_chat_id) 
-Redis:del(Fast.."Add:Rd:Manager:Vico:inline"..v..msg_chat_id) 
-Redis:del(Fast.."Add:Rd:Manager:Stekrs:inline"..v..msg_chat_id) 
-Redis:del(Fast.."Add:Rd:Manager:Text:inline"..v..msg_chat_id) 
-Redis:del(Fast.."Add:Rd:Manager:Photo:inline"..v..msg_chat_id)
-Redis:del(Fast.."Add:Rd:Manager:Photoc:inline"..v..msg_chat_id)
-Redis:del(Fast.."Add:Rd:Manager:Video:inline"..v..msg_chat_id)
-Redis:del(Fast.."Add:Rd:Manager:Videoc:inline"..v..msg_chat_id)
-Redis:del(Fast.."Add:Rd:Manager:File:inline"..v..msg_chat_id)
-Redis:del(Fast.."Add:Rd:Manager:video_note:inline"..v..msg_chat_id)
-Redis:del(Fast.."Add:Rd:Manager:Audio:inline"..v..msg_chat_id)
-Redis:del(Fast.."Add:Rd:Manager:Audioc:inline"..v..msg_chat_id)
-Redis:del(Fast.."Rd:Manager:inline:v"..v..msg_chat_id)
-Redis:del(Fast.."Rd:Manager:inline:link"..v..msg_chat_id)
-Redis:del(Fast.."List:Manager:inline"..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:Gif:inline"..v..msg_chat_id) 
+Redis:del(tuofe1.."Add:Rd:Manager:Vico:inline"..v..msg_chat_id) 
+Redis:del(tuofe1.."Add:Rd:Manager:Stekrs:inline"..v..msg_chat_id) 
+Redis:del(tuofe1.."Add:Rd:Manager:Text:inline"..v..msg_chat_id) 
+Redis:del(tuofe1.."Add:Rd:Manager:Photo:inline"..v..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:Photoc:inline"..v..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:Video:inline"..v..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:Videoc:inline"..v..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:File:inline"..v..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:video_note:inline"..v..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:Audio:inline"..v..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:Audioc:inline"..v..msg_chat_id)
+Redis:del(tuofe1.."Rd:Manager:inline:v"..v..msg_chat_id)
+Redis:del(tuofe1.."Rd:Manager:inline:link"..v..msg_chat_id)
+Redis:del(tuofe1.."List:Manager:inline"..msg_chat_id)
 end
 return send(msg_chat_id,msg_id," ⚡ تم مسح قائمه الانلاين","md",true)
 end
@@ -9891,7 +9891,7 @@ if text == "اضف رد انلاين" then
 if not msg.Admin then
 return send(msg_chat_id,msg_id,'\n* ⚡ هاذا الامر يخص '..Controller_Num(7)..' * ',"md",true)
 end
-Redis:set(Fast.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id,true)
+Redis:set(tuofe1.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id,true)
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -9902,25 +9902,25 @@ data = {
 }
 return send(msg_chat_id,msg_id," ⚡ ارسل الان الكلمه لاضافتها في الردود ","md",false, false, false, false, reply_markup)
 end
-if text and text:match("^(.*)$") and tonumber(senderr) ~= tonumber(Fast) then
-if Redis:get(Fast.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id) == "true" then
-Redis:set(Fast.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id,"true1")
-Redis:set(Fast.."Text:Manager:inline"..senderr..":"..msg_chat_id, text)
-Redis:del(Fast.."Add:Rd:Manager:Gif:inline"..text..msg_chat_id) 
-Redis:del(Fast.."Add:Rd:Manager:Vico:inline"..text..msg_chat_id) 
-Redis:del(Fast.."Add:Rd:Manager:Stekrs:inline"..text..msg_chat_id) 
-Redis:del(Fast.."Add:Rd:Manager:Text:inline"..text..msg_chat_id) 
-Redis:del(Fast.."Add:Rd:Manager:Photo:inline"..text..msg_chat_id)
-Redis:del(Fast.."Add:Rd:Manager:Photoc:inline"..text..msg_chat_id)
-Redis:del(Fast.."Add:Rd:Manager:Video:inline"..text..msg_chat_id)
-Redis:del(Fast.."Add:Rd:Manager:Videoc:inline"..text..msg_chat_id)
-Redis:del(Fast.."Add:Rd:Manager:File:inline"..text..msg_chat_id)
-Redis:del(Fast.."Add:Rd:Manager:video_note:inline"..text..msg_chat_id)
-Redis:del(Fast.."Add:Rd:Manager:Audio:inline"..text..msg_chat_id)
-Redis:del(Fast.."Add:Rd:Manager:Audioc:inline"..text..msg_chat_id)
-Redis:del(Fast.."Rd:Manager:inline:text"..text..msg_chat_id)
-Redis:del(Fast.."Rd:Manager:inline:link"..text..msg_chat_id)
-Redis:sadd(Fast.."List:Manager:inline"..msg_chat_id.."", text)
+if text and text:match("^(.*)$") and tonumber(senderr) ~= tonumber(tuofe1) then
+if Redis:get(tuofe1.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id) == "true" then
+Redis:set(tuofe1.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id,"true1")
+Redis:set(tuofe1.."Text:Manager:inline"..senderr..":"..msg_chat_id, text)
+Redis:del(tuofe1.."Add:Rd:Manager:Gif:inline"..text..msg_chat_id) 
+Redis:del(tuofe1.."Add:Rd:Manager:Vico:inline"..text..msg_chat_id) 
+Redis:del(tuofe1.."Add:Rd:Manager:Stekrs:inline"..text..msg_chat_id) 
+Redis:del(tuofe1.."Add:Rd:Manager:Text:inline"..text..msg_chat_id) 
+Redis:del(tuofe1.."Add:Rd:Manager:Photo:inline"..text..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:Photoc:inline"..text..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:Video:inline"..text..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:Videoc:inline"..text..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:File:inline"..text..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:video_note:inline"..text..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:Audio:inline"..text..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:Audioc:inline"..text..msg_chat_id)
+Redis:del(tuofe1.."Rd:Manager:inline:text"..text..msg_chat_id)
+Redis:del(tuofe1.."Rd:Manager:inline:link"..text..msg_chat_id)
+Redis:sadd(tuofe1.."List:Manager:inline"..msg_chat_id.."", text)
 send(msg_chat_id,msg_id,[[
 ↯︙ارسل لي الرد سواء كان 
 ❨ ملف ، ملصق ، متحركه ، صوره
@@ -9939,54 +9939,54 @@ return false
 end
 end
 if text and text:match("^(.*)$") then
-if Redis:get(Fast.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id.."") == "true2" then
-Redis:del(Fast.."Add:Rd:Manager:Gif:inline"..text..msg_chat_id) 
-Redis:del(Fast.."Add:Rd:Manager:Vico:inline"..text..msg_chat_id) 
-Redis:del(Fast.."Add:Rd:Manager:Stekrs:inline"..text..msg_chat_id) 
-Redis:del(Fast.."Add:Rd:Manager:Text:inline"..text..msg_chat_id) 
-Redis:del(Fast.."Add:Rd:Manager:Photo:inline"..text..msg_chat_id)
-Redis:del(Fast.."Add:Rd:Manager:Photoc:inline"..text..msg_chat_id)
-Redis:del(Fast.."Add:Rd:Manager:Video:inline"..text..msg_chat_id)
-Redis:del(Fast.."Add:Rd:Manager:Videoc:inline"..text..msg_chat_id)
-Redis:del(Fast.."Add:Rd:Manager:File:inline"..text..msg_chat_id)
-Redis:del(Fast.."Add:Rd:Manager:video_note:inline"..text..msg_chat_id)
-Redis:del(Fast.."Add:Rd:Manager:Audio:inline"..text..msg_chat_id)
-Redis:del(Fast.."Add:Rd:Manager:Audioc:inline"..text..msg_chat_id)
-Redis:del(Fast.."Rd:Manager:inline:text"..text..msg_chat_id)
-Redis:del(Fast.."Rd:Manager:inline:link"..text..msg_chat_id)
-Redis:del(Fast.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id.."")
-Redis:srem(Fast.."List:Manager:inline"..msg_chat_id.."", text)
+if Redis:get(tuofe1.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id.."") == "true2" then
+Redis:del(tuofe1.."Add:Rd:Manager:Gif:inline"..text..msg_chat_id) 
+Redis:del(tuofe1.."Add:Rd:Manager:Vico:inline"..text..msg_chat_id) 
+Redis:del(tuofe1.."Add:Rd:Manager:Stekrs:inline"..text..msg_chat_id) 
+Redis:del(tuofe1.."Add:Rd:Manager:Text:inline"..text..msg_chat_id) 
+Redis:del(tuofe1.."Add:Rd:Manager:Photo:inline"..text..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:Photoc:inline"..text..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:Video:inline"..text..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:Videoc:inline"..text..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:File:inline"..text..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:video_note:inline"..text..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:Audio:inline"..text..msg_chat_id)
+Redis:del(tuofe1.."Add:Rd:Manager:Audioc:inline"..text..msg_chat_id)
+Redis:del(tuofe1.."Rd:Manager:inline:text"..text..msg_chat_id)
+Redis:del(tuofe1.."Rd:Manager:inline:link"..text..msg_chat_id)
+Redis:del(tuofe1.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id.."")
+Redis:srem(tuofe1.."List:Manager:inline"..msg_chat_id.."", text)
 send(msg_chat_id,msg_id," ⚡ تم حذف الرد من الردود الانلاين ","md",true)
 return false
 end
 end
-if Redis:get(Fast.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id) == "true1" and tonumber(senderr) ~= tonumber(Fast) then
-Redis:del(Fast.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id)
-Redis:set(Fast.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id,"set_inline")
+if Redis:get(tuofe1.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id) == "true1" and tonumber(senderr) ~= tonumber(tuofe1) then
+Redis:del(tuofe1.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id)
+Redis:set(tuofe1.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id,"set_inline")
 if text or msg.content.video_note or msg.content.document or msg.content.audio or msg.content.video or msg.content.voice_note or msg.content.sticker or msg.content.animation or msg.content.photo then
-local anubis = Redis:get(Fast.."Text:Manager:inline"..senderr..":"..msg_chat_id)
+local anubis = Redis:get(tuofe1.."Text:Manager:inline"..senderr..":"..msg_chat_id)
 if msg.content.text then 
 text = text:gsub('"',"") 
 text = text:gsub('"',"") 
 text = text:gsub("`","") 
 text = text:gsub("*","") 
-Redis:set(Fast.."Add:Rd:Manager:Text:inline"..anubis..msg_chat_id, text)
+Redis:set(tuofe1.."Add:Rd:Manager:Text:inline"..anubis..msg_chat_id, text)
 elseif msg.content.sticker then 
-Redis:set(Fast.."Add:Rd:Manager:Stekrs:inline"..anubis..msg_chat_id, msg.content.sticker.sticker.remote.id)
+Redis:set(tuofe1.."Add:Rd:Manager:Stekrs:inline"..anubis..msg_chat_id, msg.content.sticker.sticker.remote.id)
 elseif msg.content.voice_note then
-Redis:set(Fast.."Add:Rd:Manager:Vico:inline"..anubis..msg_chat_id, msg.content.voice_note.voice.remote.id)
+Redis:set(tuofe1.."Add:Rd:Manager:Vico:inline"..anubis..msg_chat_id, msg.content.voice_note.voice.remote.id)
 elseif msg.content.audio then
-Redis:set(Fast.."Add:Rd:Manager:Audio:inline"..anubis..msg_chat_id, msg.content.audio.audio.remote.id)
-Redis:set(Fast.."Add:Rd:Manager:Audioc:inline"..anubis..msg_chat_id, msg.content.caption.text)
+Redis:set(tuofe1.."Add:Rd:Manager:Audio:inline"..anubis..msg_chat_id, msg.content.audio.audio.remote.id)
+Redis:set(tuofe1.."Add:Rd:Manager:Audioc:inline"..anubis..msg_chat_id, msg.content.caption.text)
 elseif msg.content.document then
-Redis:set(Fast.."Add:Rd:Manager:File:inline"..anubis..msg_chat_id, msg.content.document.document.remote.id)
+Redis:set(tuofe1.."Add:Rd:Manager:File:inline"..anubis..msg_chat_id, msg.content.document.document.remote.id)
 elseif msg.content.animation then
-Redis:set(Fast.."Add:Rd:Manager:Gif:inline"..anubis..msg_chat_id, msg.content.animation.animation.remote.id)
+Redis:set(tuofe1.."Add:Rd:Manager:Gif:inline"..anubis..msg_chat_id, msg.content.animation.animation.remote.id)
 elseif msg.content.video_note then
-Redis:set(Fast.."Add:Rd:Manager:video_note:inline"..anubis..msg_chat_id, msg.content.video_note.video.remote.id)
+Redis:set(tuofe1.."Add:Rd:Manager:video_note:inline"..anubis..msg_chat_id, msg.content.video_note.video.remote.id)
 elseif msg.content.video then
-Redis:set(Fast.."Add:Rd:Manager:Video:inline"..anubis..msg_chat_id, msg.content.video.video.remote.id)
-Redis:set(Fast.."Add:Rd:Manager:Videoc:inline"..anubis..msg_chat_id, msg.content.caption.text)
+Redis:set(tuofe1.."Add:Rd:Manager:Video:inline"..anubis..msg_chat_id, msg.content.video.video.remote.id)
+Redis:set(tuofe1.."Add:Rd:Manager:Videoc:inline"..anubis..msg_chat_id, msg.content.caption.text)
 elseif msg.content.photo then
 if msg.content.photo.sizes[1].photo.remote.id then
 idPhoto = msg.content.photo.sizes[1].photo.remote.id
@@ -9995,42 +9995,42 @@ idPhoto = msg.content.photo.sizes[2].photo.remote.id
 elseif msg.content.photo.sizes[3].photo.remote.id then
 idPhoto = msg.content.photo.sizes[3].photo.remote.id
 end
-Redis:set(Fast.."Add:Rd:Manager:Photo:inline"..anubis..msg_chat_id, idPhoto)
-Redis:set(Fast.."Add:Rd:Manager:Photoc:inline"..anubis..msg_chat_id, msg.content.caption.text)
+Redis:set(tuofe1.."Add:Rd:Manager:Photo:inline"..anubis..msg_chat_id, idPhoto)
+Redis:set(tuofe1.."Add:Rd:Manager:Photoc:inline"..anubis..msg_chat_id, msg.content.caption.text)
 end
 send(msg_chat_id,msg_id," ⚡ الان ارسل الكلام داخل الزر","md",true)
 return false
 end
 end
-if text and Redis:get(Fast.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id) == "set_inline" then
-Redis:set(Fast.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id, "set_link")
-local anubis = Redis:get(Fast.."Text:Manager:inline"..senderr..":"..msg_chat_id)
-Redis:set(Fast.."Rd:Manager:inline:text"..anubis..msg_chat_id, text)
+if text and Redis:get(tuofe1.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id) == "set_inline" then
+Redis:set(tuofe1.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id, "set_link")
+local anubis = Redis:get(tuofe1.."Text:Manager:inline"..senderr..":"..msg_chat_id)
+Redis:set(tuofe1.."Rd:Manager:inline:text"..anubis..msg_chat_id, text)
 send(msg_chat_id,msg_id," ⚡ الان ارسل الرابط","md",true)
 return false
 end
-if text and Redis:get(Fast.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id) == "set_link" then
-Redis:del(Fast.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id)
-local anubis = Redis:get(Fast.."Text:Manager:inline"..senderr..":"..msg_chat_id)
-Redis:set(Fast.."Rd:Manager:inline:link"..anubis..msg_chat_id, text)
+if text and Redis:get(tuofe1.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id) == "set_link" then
+Redis:del(tuofe1.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id)
+local anubis = Redis:get(tuofe1.."Text:Manager:inline"..senderr..":"..msg_chat_id)
+Redis:set(tuofe1.."Rd:Manager:inline:link"..anubis..msg_chat_id, text)
 send(msg_chat_id,msg_id," ⚡ تم اضافه الرد بنجاح","md",true)
 return false
 end
-if text and not Redis:get(Fast.."Status:Reply:inline"..msg_chat_id) then
-local btext = Redis:get(Fast.."Rd:Manager:inline:text"..text..msg_chat_id)
-local blink = Redis:get(Fast.."Rd:Manager:inline:link"..text..msg_chat_id)
-local anemi = Redis:get(Fast.."Add:Rd:Manager:Gif:inline"..text..msg_chat_id) 
-local veico = Redis:get(Fast.."Add:Rd:Manager:Vico:inline"..text..msg_chat_id) 
-local stekr = Redis:get(Fast.."Add:Rd:Manager:Stekrs:inline"..text..msg_chat_id) 
-local Texingt = Redis:get(Fast.."Add:Rd:Manager:Text:inline"..text..msg_chat_id) 
-local photo = Redis:get(Fast.."Add:Rd:Manager:Photo:inline"..text..msg_chat_id)
-local photoc = Redis:get(Fast.."Add:Rd:Manager:Photoc:inline"..text..msg_chat_id)
-local video = Redis:get(Fast.."Add:Rd:Manager:Video:inline"..text..msg_chat_id)
-local videoc = Redis:get(Fast.."Add:Rd:Manager:Videoc:inline"..text..msg_chat_id)
-local document = Redis:get(Fast.."Add:Rd:Manager:File:inline"..text..msg_chat_id)
-local audio = Redis:get(Fast.."Add:Rd:Manager:Audio:inline"..text..msg_chat_id)
-local audioc = Redis:get(Fast.."Add:Rd:Manager:Audioc:inline"..text..msg_chat_id)
-local video_note = Redis:get(Fast.."Add:Rd:Manager:video_note:inline"..text..msg_chat_id)
+if text and not Redis:get(tuofe1.."Status:Reply:inline"..msg_chat_id) then
+local btext = Redis:get(tuofe1.."Rd:Manager:inline:text"..text..msg_chat_id)
+local blink = Redis:get(tuofe1.."Rd:Manager:inline:link"..text..msg_chat_id)
+local anemi = Redis:get(tuofe1.."Add:Rd:Manager:Gif:inline"..text..msg_chat_id) 
+local veico = Redis:get(tuofe1.."Add:Rd:Manager:Vico:inline"..text..msg_chat_id) 
+local stekr = Redis:get(tuofe1.."Add:Rd:Manager:Stekrs:inline"..text..msg_chat_id) 
+local Texingt = Redis:get(tuofe1.."Add:Rd:Manager:Text:inline"..text..msg_chat_id) 
+local photo = Redis:get(tuofe1.."Add:Rd:Manager:Photo:inline"..text..msg_chat_id)
+local photoc = Redis:get(tuofe1.."Add:Rd:Manager:Photoc:inline"..text..msg_chat_id)
+local video = Redis:get(tuofe1.."Add:Rd:Manager:Video:inline"..text..msg_chat_id)
+local videoc = Redis:get(tuofe1.."Add:Rd:Manager:Videoc:inline"..text..msg_chat_id)
+local document = Redis:get(tuofe1.."Add:Rd:Manager:File:inline"..text..msg_chat_id)
+local audio = Redis:get(tuofe1.."Add:Rd:Manager:Audio:inline"..text..msg_chat_id)
+local audioc = Redis:get(tuofe1.."Add:Rd:Manager:Audioc:inline"..text..msg_chat_id)
+local video_note = Redis:get(tuofe1.."Add:Rd:Manager:video_note:inline"..text..msg_chat_id)
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -10041,10 +10041,10 @@ data = {
 }
 if Texingt then 
 local UserInfo = bot.getUser(senderr)
-local NumMsg = Redis:get(Fast..'Num:Message:User'..msg_chat_id..':'..senderr) or 0
+local NumMsg = Redis:get(tuofe1..'Num:Message:User'..msg_chat_id..':'..senderr) or 0
 local TotalMsg = Total_message(NumMsg) 
 local Status_Gps = msg.Name_Controller
-local NumMessageEdit = Redis:get(Fast..'Num:Message:Edit'..msg_chat_id..senderr) or 0
+local NumMessageEdit = Redis:get(tuofe1..'Num:Message:Edit'..msg_chat_id..senderr) or 0
 local Texingt = Texingt:gsub('#username',(UserInfo.username or 'لا يوجد')) 
 local Texingt = Texingt:gsub('#name',FlterBio(UserInfo.first_name))
 local Texingt = Texingt:gsub('#id',senderr)
@@ -10083,11 +10083,11 @@ if not msg.Admin then
 return send(msg_chat_id,msg_id,'\n* ⚡ هاذا الامر يخص '..Controller_Num(7)..' * ',"md",true)
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 local reply_markup = bot.replyMarkup{
@@ -10098,7 +10098,7 @@ data = {
 },
 }
 }
-Redis:set(Fast.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id,"true2")
+Redis:set(tuofe1.."Set:Manager:rd:inline"..senderr..":"..msg_chat_id,"true2")
 return send(msg_chat_id,msg_id," ⚡ ارسل الان الكلمه لحذفها من الردود الانلاين","md",false, false, false, false, reply_markup)
 end 
 
@@ -10107,33 +10107,33 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'\n* ⚡ هاذا الامر يخص '..Controller_Num(6)..' * ',"md",true)
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local list = Redis:smembers(Fast.."List:Manager:inline"..msg_chat_id.."")
+local list = Redis:smembers(tuofe1.."List:Manager:inline"..msg_chat_id.."")
 text = " ⚡ قائمه الردود الانلاين \nꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ\n"
 for k,v in pairs(list) do
-if Redis:get(Fast.."Add:Rd:Manager:Gif:inline"..v..msg_chat_id) then
+if Redis:get(tuofe1.."Add:Rd:Manager:Gif:inline"..v..msg_chat_id) then
 db = "متحركه ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Manager:Vico:inline"..v..msg_chat_id) then
+elseif Redis:get(tuofe1.."Add:Rd:Manager:Vico:inline"..v..msg_chat_id) then
 db = "بصمه ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Manager:Stekrs:inline"..v..msg_chat_id) then
+elseif Redis:get(tuofe1.."Add:Rd:Manager:Stekrs:inline"..v..msg_chat_id) then
 db = "ملصق ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Manager:Text:inline"..v..msg_chat_id) then
+elseif Redis:get(tuofe1.."Add:Rd:Manager:Text:inline"..v..msg_chat_id) then
 db = "رساله ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Manager:Photo:inline"..v..msg_chat_id) then
+elseif Redis:get(tuofe1.."Add:Rd:Manager:Photo:inline"..v..msg_chat_id) then
 db = "صوره ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Manager:Video:inline"..v..msg_chat_id) then
+elseif Redis:get(tuofe1.."Add:Rd:Manager:Video:inline"..v..msg_chat_id) then
 db = "فيديو ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Manager:File:inline"..v..msg_chat_id) then
+elseif Redis:get(tuofe1.."Add:Rd:Manager:File:inline"..v..msg_chat_id) then
 db = "ملف ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Manager:Audio:inline"..v..msg_chat_id) then
+elseif Redis:get(tuofe1.."Add:Rd:Manager:Audio:inline"..v..msg_chat_id) then
 db = "اغنيه ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Manager:video_note:inline"..v..msg_chat_id) then
+elseif Redis:get(tuofe1.."Add:Rd:Manager:video_note:inline"..v..msg_chat_id) then
 db = "بصمه فيديو ⚡ "
 end
 text = text..""..k.." ⇿『 "..v.."』⇿『 "..db.." 』\n"
@@ -10149,74 +10149,74 @@ if not msg.Devss then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local list = Redis:smembers(Fast.."List:Manager:inline3am")
+local list = Redis:smembers(tuofe1.."List:Manager:inline3am")
 for k,v in pairs(list) do
-Redis:del(Fast.."Add:Rd:Manager:Gif:inline3am"..v) 
-Redis:del(Fast.."Add:Rd:Manager:Vico:inline3am"..v) 
-Redis:del(Fast.."Add:Rd:Manager:Stekrs:inline3am"..v) 
-Redis:del(Fast.."Add:Rd:Manager:Text:inline3am"..v) 
-Redis:del(Fast.."Add:Rd:Manager:Photo:inline3am"..v)
-Redis:del(Fast.."Add:Rd:Manager:Photoc:inline3am"..v)
-Redis:del(Fast.."Add:Rd:Manager:Video:inline3am"..v)
-Redis:del(Fast.."Add:Rd:Manager:Videoc:inline3am"..v)
-Redis:del(Fast.."Add:Rd:Manager:File:inline3am"..v)
-Redis:del(Fast.."Add:Rd:Manager:video_note:inline3am"..v)
-Redis:del(Fast.."Add:Rd:Manager:Audio:inline3am"..v)
-Redis:del(Fast.."Add:Rd:Manager:Audioc:inline3am"..v)
-Redis:del(Fast.."Rd:Manager:inline3am:v"..v)
-Redis:del(Fast.."Rd:Manager:inline3am:link"..v)
-Redis:del(Fast.."List:Manager:inline3am")
+Redis:del(tuofe1.."Add:Rd:Manager:Gif:inline3am"..v) 
+Redis:del(tuofe1.."Add:Rd:Manager:Vico:inline3am"..v) 
+Redis:del(tuofe1.."Add:Rd:Manager:Stekrs:inline3am"..v) 
+Redis:del(tuofe1.."Add:Rd:Manager:Text:inline3am"..v) 
+Redis:del(tuofe1.."Add:Rd:Manager:Photo:inline3am"..v)
+Redis:del(tuofe1.."Add:Rd:Manager:Photoc:inline3am"..v)
+Redis:del(tuofe1.."Add:Rd:Manager:Video:inline3am"..v)
+Redis:del(tuofe1.."Add:Rd:Manager:Videoc:inline3am"..v)
+Redis:del(tuofe1.."Add:Rd:Manager:File:inline3am"..v)
+Redis:del(tuofe1.."Add:Rd:Manager:video_note:inline3am"..v)
+Redis:del(tuofe1.."Add:Rd:Manager:Audio:inline3am"..v)
+Redis:del(tuofe1.."Add:Rd:Manager:Audioc:inline3am"..v)
+Redis:del(tuofe1.."Rd:Manager:inline3am:v"..v)
+Redis:del(tuofe1.."Rd:Manager:inline3am:link"..v)
+Redis:del(tuofe1.."List:Manager:inline3am")
 end
 return send(msg_chat_id,msg_id," ⚡ تم مسح قائمه الانلاين","md",true)
 end
-if text and Redis:get(Fast.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id) == "set_link" then
-Redis:del(Fast.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id)
-local anubis = Redis:get(Fast.."Text:Manager:inline3am"..senderr..":")
-Redis:set(Fast.."Rd:Manager:inline3am:link"..anubis, text)
+if text and Redis:get(tuofe1.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id) == "set_link" then
+Redis:del(tuofe1.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id)
+local anubis = Redis:get(tuofe1.."Text:Manager:inline3am"..senderr..":")
+Redis:set(tuofe1.."Rd:Manager:inline3am:link"..anubis, text)
 send(msg_chat_id,msg_id," ⚡ تم اضافه الرد بنجاح","md",true)
 return false
 end
-if text and Redis:get(Fast.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id) == "set_inline" then
-Redis:set(Fast.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id, "set_link")
-local anubis = Redis:get(Fast.."Text:Manager:inline3am"..senderr..":")
-Redis:set(Fast.."Rd:Manager:inline3am:text"..anubis, text)
+if text and Redis:get(tuofe1.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id) == "set_inline" then
+Redis:set(tuofe1.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id, "set_link")
+local anubis = Redis:get(tuofe1.."Text:Manager:inline3am"..senderr..":")
+Redis:set(tuofe1.."Rd:Manager:inline3am:text"..anubis, text)
 send(msg_chat_id,msg_id," ⚡ الان ارسل الرابط","md",true)
 return false
 end
-if Redis:get(Fast.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id) == "true1" and tonumber(senderr) ~= tonumber(Fast) then
-Redis:del(Fast.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id)
-Redis:set(Fast.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id,"set_inline")
+if Redis:get(tuofe1.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id) == "true1" and tonumber(senderr) ~= tonumber(tuofe1) then
+Redis:del(tuofe1.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id)
+Redis:set(tuofe1.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id,"set_inline")
 if text or msg.content.video_note or msg.content.document or msg.content.audio or msg.content.video or msg.content.voice_note or msg.content.sticker or msg.content.animation or msg.content.photo then
-local anubis = Redis:get(Fast.."Text:Manager:inline3am"..senderr..":")
+local anubis = Redis:get(tuofe1.."Text:Manager:inline3am"..senderr..":")
 if msg.content.text then 
 text = text:gsub('"',"") 
 text = text:gsub('"',"") 
 text = text:gsub("`","") 
 text = text:gsub("*","") 
-Redis:set(Fast.."Add:Rd:Manager:Text:inline3am"..anubis, text)
+Redis:set(tuofe1.."Add:Rd:Manager:Text:inline3am"..anubis, text)
 elseif msg.content.sticker then 
-Redis:set(Fast.."Add:Rd:Manager:Stekrs:inline3am"..anubis, msg.content.sticker.sticker.remote.id)
+Redis:set(tuofe1.."Add:Rd:Manager:Stekrs:inline3am"..anubis, msg.content.sticker.sticker.remote.id)
 elseif msg.content.voice_note then
-Redis:set(Fast.."Add:Rd:Manager:Vico:inline3am"..anubis, msg.content.voice_note.voice.remote.id)
+Redis:set(tuofe1.."Add:Rd:Manager:Vico:inline3am"..anubis, msg.content.voice_note.voice.remote.id)
 elseif msg.content.audio then
-Redis:set(Fast.."Add:Rd:Manager:Audio:inline3am"..anubis, msg.content.audio.audio.remote.id)
-Redis:set(Fast.."Add:Rd:Manager:Audioc:inline3am"..anubis, msg.content.caption.text)
+Redis:set(tuofe1.."Add:Rd:Manager:Audio:inline3am"..anubis, msg.content.audio.audio.remote.id)
+Redis:set(tuofe1.."Add:Rd:Manager:Audioc:inline3am"..anubis, msg.content.caption.text)
 elseif msg.content.document then
-Redis:set(Fast.."Add:Rd:Manager:File:inline3am"..anubis, msg.content.document.document.remote.id)
+Redis:set(tuofe1.."Add:Rd:Manager:File:inline3am"..anubis, msg.content.document.document.remote.id)
 elseif msg.content.animation then
-Redis:set(Fast.."Add:Rd:Manager:Gif:inline3am"..anubis, msg.content.animation.animation.remote.id)
+Redis:set(tuofe1.."Add:Rd:Manager:Gif:inline3am"..anubis, msg.content.animation.animation.remote.id)
 elseif msg.content.video_note then
-Redis:set(Fast.."Add:Rd:Manager:video_note:inline3am"..anubis, msg.content.video_note.video.remote.id)
+Redis:set(tuofe1.."Add:Rd:Manager:video_note:inline3am"..anubis, msg.content.video_note.video.remote.id)
 elseif msg.content.video then
-Redis:set(Fast.."Add:Rd:Manager:Video:inline3am"..anubis, msg.content.video.video.remote.id)
-Redis:set(Fast.."Add:Rd:Manager:Videoc:inline3am"..anubis, msg.content.caption.text)
+Redis:set(tuofe1.."Add:Rd:Manager:Video:inline3am"..anubis, msg.content.video.video.remote.id)
+Redis:set(tuofe1.."Add:Rd:Manager:Videoc:inline3am"..anubis, msg.content.caption.text)
 elseif msg.content.photo then
 if msg.content.photo.sizes[1].photo.remote.id then
 idPhoto = msg.content.photo.sizes[1].photo.remote.id
@@ -10225,8 +10225,8 @@ idPhoto = msg.content.photo.sizes[2].photo.remote.id
 elseif msg.content.photo.sizes[3].photo.remote.id then
 idPhoto = msg.content.photo.sizes[3].photo.remote.id
 end
-Redis:set(Fast.."Add:Rd:Manager:Photo:inline3am"..anubis, idPhoto)
-Redis:set(Fast.."Add:Rd:Manager:Photoc:inline3am"..anubis, msg.content.caption.text)
+Redis:set(tuofe1.."Add:Rd:Manager:Photo:inline3am"..anubis, idPhoto)
+Redis:set(tuofe1.."Add:Rd:Manager:Photoc:inline3am"..anubis, msg.content.caption.text)
 end
 send(msg_chat_id,msg_id," ⚡ الان ارسل الكلام داخل الزر","md",true)
 return false
@@ -10234,50 +10234,50 @@ end
 end
 
 if text and text:match("^(.*)$") then
-if Redis:get(Fast.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id.."") == "true2" then
-if not Redis:sismember(Fast.."List:Manager:inline3am", text) then
- Redis:del(Fast.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id.."")
+if Redis:get(tuofe1.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id.."") == "true2" then
+if not Redis:sismember(tuofe1.."List:Manager:inline3am", text) then
+ Redis:del(tuofe1.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id.."")
  return send(msg_chat_id,msg_id," ⚡ لا يوجد رد لهذه الكلمه","md",true)
 end
-Redis:del(Fast.."Add:Rd:Manager:Gif:inline3am"..text) 
-Redis:del(Fast.."Add:Rd:Manager:Vico:inline3am"..text) 
-Redis:del(Fast.."Add:Rd:Manager:Stekrs:inline3am"..text) 
-Redis:del(Fast.."Add:Rd:Manager:Text:inline3am"..text) 
-Redis:del(Fast.."Add:Rd:Manager:Photo:inline3am"..text)
-Redis:del(Fast.."Add:Rd:Manager:Photoc:inline3am"..text)
-Redis:del(Fast.."Add:Rd:Manager:Video:inline3am"..text)
-Redis:del(Fast.."Add:Rd:Manager:Videoc:inline3am"..text)
-Redis:del(Fast.."Add:Rd:Manager:File:inline3am"..text)
-Redis:del(Fast.."Add:Rd:Manager:video_note:inline3am"..text)
-Redis:del(Fast.."Add:Rd:Manager:Audio:inline3am"..text)
-Redis:del(Fast.."Add:Rd:Manager:Audioc:inline3am"..text)
-Redis:del(Fast.."Rd:Manager:inline3am:text"..text)
-Redis:del(Fast.."Rd:Manager:inline3am:link"..text)
-Redis:del(Fast.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id.."")
-Redis:srem(Fast.."List:Manager:inline3am", text)
+Redis:del(tuofe1.."Add:Rd:Manager:Gif:inline3am"..text) 
+Redis:del(tuofe1.."Add:Rd:Manager:Vico:inline3am"..text) 
+Redis:del(tuofe1.."Add:Rd:Manager:Stekrs:inline3am"..text) 
+Redis:del(tuofe1.."Add:Rd:Manager:Text:inline3am"..text) 
+Redis:del(tuofe1.."Add:Rd:Manager:Photo:inline3am"..text)
+Redis:del(tuofe1.."Add:Rd:Manager:Photoc:inline3am"..text)
+Redis:del(tuofe1.."Add:Rd:Manager:Video:inline3am"..text)
+Redis:del(tuofe1.."Add:Rd:Manager:Videoc:inline3am"..text)
+Redis:del(tuofe1.."Add:Rd:Manager:File:inline3am"..text)
+Redis:del(tuofe1.."Add:Rd:Manager:video_note:inline3am"..text)
+Redis:del(tuofe1.."Add:Rd:Manager:Audio:inline3am"..text)
+Redis:del(tuofe1.."Add:Rd:Manager:Audioc:inline3am"..text)
+Redis:del(tuofe1.."Rd:Manager:inline3am:text"..text)
+Redis:del(tuofe1.."Rd:Manager:inline3am:link"..text)
+Redis:del(tuofe1.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id.."")
+Redis:srem(tuofe1.."List:Manager:inline3am", text)
 send(msg_chat_id,msg_id," ⚡ تم حذف الرد من الردود الانلاين العامه","md",true)
 return false
 end
 end
-if text and text:match("^(.*)$") and tonumber(senderr) ~= tonumber(Fast) then
-if Redis:get(Fast.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id) == "true" then
-Redis:set(Fast.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id,"true1")
-Redis:set(Fast.."Text:Manager:inline3am"..senderr..":", text)
-Redis:del(Fast.."Add:Rd:Manager:Gif:inline3am"..text) 
-Redis:del(Fast.."Add:Rd:Manager:Vico:inline3am"..text) 
-Redis:del(Fast.."Add:Rd:Manager:Stekrs:inline3am"..text) 
-Redis:del(Fast.."Add:Rd:Manager:Text:inline3am"..text) 
-Redis:del(Fast.."Add:Rd:Manager:Photo:inline3am"..text)
-Redis:del(Fast.."Add:Rd:Manager:Photoc:inline3am"..text)
-Redis:del(Fast.."Add:Rd:Manager:Video:inline3am"..text)
-Redis:del(Fast.."Add:Rd:Manager:Videoc:inline3am"..text)
-Redis:del(Fast.."Add:Rd:Manager:File:inline3am"..text)
-Redis:del(Fast.."Add:Rd:Manager:video_note:inline3am"..text)
-Redis:del(Fast.."Add:Rd:Manager:Audio:inline3am"..text)
-Redis:del(Fast.."Add:Rd:Manager:Audioc:inline3am"..text)
-Redis:del(Fast.."Rd:Manager:inline3am:text"..text)
-Redis:del(Fast.."Rd:Manager:inline3am:link"..text)
-Redis:sadd(Fast.."List:Manager:inline3am", text)
+if text and text:match("^(.*)$") and tonumber(senderr) ~= tonumber(tuofe1) then
+if Redis:get(tuofe1.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id) == "true" then
+Redis:set(tuofe1.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id,"true1")
+Redis:set(tuofe1.."Text:Manager:inline3am"..senderr..":", text)
+Redis:del(tuofe1.."Add:Rd:Manager:Gif:inline3am"..text) 
+Redis:del(tuofe1.."Add:Rd:Manager:Vico:inline3am"..text) 
+Redis:del(tuofe1.."Add:Rd:Manager:Stekrs:inline3am"..text) 
+Redis:del(tuofe1.."Add:Rd:Manager:Text:inline3am"..text) 
+Redis:del(tuofe1.."Add:Rd:Manager:Photo:inline3am"..text)
+Redis:del(tuofe1.."Add:Rd:Manager:Photoc:inline3am"..text)
+Redis:del(tuofe1.."Add:Rd:Manager:Video:inline3am"..text)
+Redis:del(tuofe1.."Add:Rd:Manager:Videoc:inline3am"..text)
+Redis:del(tuofe1.."Add:Rd:Manager:File:inline3am"..text)
+Redis:del(tuofe1.."Add:Rd:Manager:video_note:inline3am"..text)
+Redis:del(tuofe1.."Add:Rd:Manager:Audio:inline3am"..text)
+Redis:del(tuofe1.."Add:Rd:Manager:Audioc:inline3am"..text)
+Redis:del(tuofe1.."Rd:Manager:inline3am:text"..text)
+Redis:del(tuofe1.."Rd:Manager:inline3am:link"..text)
+Redis:sadd(tuofe1.."List:Manager:inline3am", text)
 send(msg_chat_id,msg_id,[[
 ↯︙ارسل لي الرد سواء كان 
 ❨ ملف ، ملصق ، متحركه ، صوره
@@ -10299,7 +10299,7 @@ if text == "اضف رد انلاين عام" then
 if not msg.Devss then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي\n√*',"md",true)  
 end
-Redis:set(Fast.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id,true)
+Redis:set(tuofe1.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id,true)
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -10312,21 +10312,21 @@ return send(msg_chat_id,msg_id," ⚡ ارسل الان الكلمه لاضافت
 end
 
 
-if text and not Redis:get(Fast.."Status:Reply:inline3am"..msg_chat_id) then
-local btext = Redis:get(Fast.."Rd:Manager:inline3am:text"..text)
-local blink = Redis:get(Fast.."Rd:Manager:inline3am:link"..text)
-local anemi = Redis:get(Fast.."Add:Rd:Manager:Gif:inline3am"..text) 
-local veico = Redis:get(Fast.."Add:Rd:Manager:Vico:inline3am"..text) 
-local stekr = Redis:get(Fast.."Add:Rd:Manager:Stekrs:inline3am"..text) 
-local Texingt = Redis:get(Fast.."Add:Rd:Manager:Text:inline3am"..text) 
-local photo = Redis:get(Fast.."Add:Rd:Manager:Photo:inline3am"..text)
-local photoc = Redis:get(Fast.."Add:Rd:Manager:Photoc:inline3am"..text)
-local video = Redis:get(Fast.."Add:Rd:Manager:Video:inline3am"..text)
-local videoc = Redis:get(Fast.."Add:Rd:Manager:Videoc:inline3am"..text)
-local document = Redis:get(Fast.."Add:Rd:Manager:File:inline3am"..text)
-local audio = Redis:get(Fast.."Add:Rd:Manager:Audio:inline3am"..text)
-local audioc = Redis:get(Fast.."Add:Rd:Manager:Audioc:inline3am"..text)
-local video_note = Redis:get(Fast.."Add:Rd:Manager:video_note:inline3am"..text)
+if text and not Redis:get(tuofe1.."Status:Reply:inline3am"..msg_chat_id) then
+local btext = Redis:get(tuofe1.."Rd:Manager:inline3am:text"..text)
+local blink = Redis:get(tuofe1.."Rd:Manager:inline3am:link"..text)
+local anemi = Redis:get(tuofe1.."Add:Rd:Manager:Gif:inline3am"..text) 
+local veico = Redis:get(tuofe1.."Add:Rd:Manager:Vico:inline3am"..text) 
+local stekr = Redis:get(tuofe1.."Add:Rd:Manager:Stekrs:inline3am"..text) 
+local Texingt = Redis:get(tuofe1.."Add:Rd:Manager:Text:inline3am"..text) 
+local photo = Redis:get(tuofe1.."Add:Rd:Manager:Photo:inline3am"..text)
+local photoc = Redis:get(tuofe1.."Add:Rd:Manager:Photoc:inline3am"..text)
+local video = Redis:get(tuofe1.."Add:Rd:Manager:Video:inline3am"..text)
+local videoc = Redis:get(tuofe1.."Add:Rd:Manager:Videoc:inline3am"..text)
+local document = Redis:get(tuofe1.."Add:Rd:Manager:File:inline3am"..text)
+local audio = Redis:get(tuofe1.."Add:Rd:Manager:Audio:inline3am"..text)
+local audioc = Redis:get(tuofe1.."Add:Rd:Manager:Audioc:inline3am"..text)
+local video_note = Redis:get(tuofe1.."Add:Rd:Manager:video_note:inline3am"..text)
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -10337,10 +10337,10 @@ data = {
 }
 if Texingt then 
 local UserInfo = bot.getUser(senderr)
-local NumMsg = Redis:get(Fast..'Num:Message:User'..msg_chat_id..':'..senderr) or 0
+local NumMsg = Redis:get(tuofe1..'Num:Message:User'..msg_chat_id..':'..senderr) or 0
 local TotalMsg = Total_message(NumMsg) 
 local Status_Gps = msg.Name_Controller
-local NumMessageEdit = Redis:get(Fast..'Num:Message:Edit'..msg_chat_id..senderr) or 0
+local NumMessageEdit = Redis:get(tuofe1..'Num:Message:Edit'..msg_chat_id..senderr) or 0
 local Texingt = Texingt:gsub('#username',(UserInfo.username or 'لا يوجد')) 
 local Texingt = Texingt:gsub('#name',FlterBio(UserInfo.first_name))
 local Texingt = Texingt:gsub('#id',senderr)
@@ -10379,11 +10379,11 @@ if not msg.Devss then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 local reply_markup = bot.replyMarkup{
@@ -10394,7 +10394,7 @@ data = {
 },
 }
 }
-Redis:set(Fast.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id,"true2")
+Redis:set(tuofe1.."Set:Manager:rd:inline3am"..senderr..":"..msg_chat_id,"true2")
 return send(msg_chat_id,msg_id," ⚡ ارسل الان الكلمه لحذفها من الردود الانلاين","md",false, false, false, false, reply_markup)
 end 
 
@@ -10403,33 +10403,33 @@ if not msg.Devss then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local list = Redis:smembers(Fast.."List:Manager:inline3am")
+local list = Redis:smembers(tuofe1.."List:Manager:inline3am")
 text = " ⚡ قائمه الردود الانلاين \nꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ\n"
 for k,v in pairs(list) do
-if Redis:get(Fast.."Add:Rd:Manager:Gif:inline3am"..v) then
+if Redis:get(tuofe1.."Add:Rd:Manager:Gif:inline3am"..v) then
 db = "متحركه ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Manager:Vico:inline3am"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Manager:Vico:inline3am"..v) then
 db = "بصمه ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Manager:Stekrs:inline3am"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Manager:Stekrs:inline3am"..v) then
 db = "ملصق ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Manager:Text:inline3am"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Manager:Text:inline3am"..v) then
 db = "رساله ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Manager:Photo:inline3am"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Manager:Photo:inline3am"..v) then
 db = "صوره ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Manager:Video:inline3am"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Manager:Video:inline3am"..v) then
 db = "فيديو ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Manager:File:inline3am"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Manager:File:inline3am"..v) then
 db = "ملف ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Manager:Audio:inline3am"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Manager:Audio:inline3am"..v) then
 db = "اغنيه ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Manager:video_note:inline3am"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Manager:video_note:inline3am"..v) then
 db = "بصمه فيديو ⚡ "
 end
 text = text..""..k.." ⇿『 "..v.."』⇿『 "..db.." 』\n"
@@ -10441,32 +10441,32 @@ return send(msg_chat_id,msg_id,text,"md",true)
 end
 --------------
 
-if text or msg.content.video_note or msg.content.document or msg.content.audio or msg.content.video or msg.content.voice_note or msg.content.sticker or msg.content.animation or msg.content.photo and senderr ~= Fast then
-local test = Redis:get(Fast.."Text:Sudo:Bot"..senderr..":"..msg_chat_id)
-if Redis:get(Fast.."Set:Rd:mz"..senderr..":"..msg_chat_id) == "true1" then
-Redis:del(Fast.."Set:Rd:mz"..senderr..":"..msg_chat_id)
+if text or msg.content.video_note or msg.content.document or msg.content.audio or msg.content.video or msg.content.voice_note or msg.content.sticker or msg.content.animation or msg.content.photo and senderr ~= tuofe1 then
+local test = Redis:get(tuofe1.."Text:Sudo:Bot"..senderr..":"..msg_chat_id)
+if Redis:get(tuofe1.."Set:Rd:mz"..senderr..":"..msg_chat_id) == "true1" then
+Redis:del(tuofe1.."Set:Rd:mz"..senderr..":"..msg_chat_id)
 if msg.content.text then   
 text = text:gsub('"',"") 
 text = text:gsub('"',"") 
 text = text:gsub("`","") 
 text = text:gsub("*","") 
-Redis:set(Fast.."Add:Rd:Sudo:mz:Text"..test, text)  
+Redis:set(tuofe1.."Add:Rd:Sudo:mz:Text"..test, text)  
 elseif msg.content.sticker then   
-Redis:set(Fast.."Add:Rd:Sudo:mz:stekr"..test, msg.content.sticker.sticker.remote.id)  
+Redis:set(tuofe1.."Add:Rd:Sudo:mz:stekr"..test, msg.content.sticker.sticker.remote.id)  
 elseif msg.content.voice_note then  
-Redis:set(Fast.."Add:Rd:Sudo:mz:vico"..test, msg.content.voice_note.voice.remote.id)  
+Redis:set(tuofe1.."Add:Rd:Sudo:mz:vico"..test, msg.content.voice_note.voice.remote.id)  
 elseif msg.content.animation then   
-Redis:set(Fast.."Add:Rd:Sudo:mz:Gif"..test, msg.content.animation.animation.remote.id)  
+Redis:set(tuofe1.."Add:Rd:Sudo:mz:Gif"..test, msg.content.animation.animation.remote.id)  
 elseif msg.content.audio then
-Redis:set(Fast.."Add:Rd:Sudo:mz:Audio"..test, msg.content.audio.audio.remote.id)  
-Redis:set(Fast.."Add:Rd:Sudo:mz:Audioc"..test, msg.content.caption.text)  
+Redis:set(tuofe1.."Add:Rd:Sudo:mz:Audio"..test, msg.content.audio.audio.remote.id)  
+Redis:set(tuofe1.."Add:Rd:Sudo:mz:Audioc"..test, msg.content.caption.text)  
 elseif msg.content.document then
-Redis:set(Fast.."Add:Rd:Sudo:mz:File"..test, msg.content.document.document.remote.id)  
+Redis:set(tuofe1.."Add:Rd:Sudo:mz:File"..test, msg.content.document.document.remote.id)  
 elseif msg.content.video then
-Redis:set(Fast.."Add:Rd:Sudo:mz:Video"..test, msg.content.video.video.remote.id)  
-Redis:set(Fast.."Add:Rd:Sudo:mz:Videoc"..test, msg.content.caption.text)  
+Redis:set(tuofe1.."Add:Rd:Sudo:mz:Video"..test, msg.content.video.video.remote.id)  
+Redis:set(tuofe1.."Add:Rd:Sudo:mz:Videoc"..test, msg.content.caption.text)  
 elseif msg.content.video_note then
-Redis:set(Fast.."Add:Rd:Sudo:mz:video_note"..test..msg_chat_id, msg.content.video_note.video.remote.id)  
+Redis:set(tuofe1.."Add:Rd:Sudo:mz:video_note"..test..msg_chat_id, msg.content.video_note.video.remote.id)  
 elseif msg.content.photo then
 if msg.content.photo.sizes[1].photo.remote.id then
 idPhoto = msg.content.photo.sizes[1].photo.remote.id
@@ -10475,18 +10475,18 @@ idPhoto = msg.content.photo.sizes[2].photo.remote.id
 elseif msg.content.photo.sizes[3].photo.remote.id then
 idPhoto = msg.content.photo.sizes[3].photo.remote.id
 end
-Redis:set(Fast.."Add:Rd:Sudo:mz:Photo"..test, idPhoto)  
-Redis:set(Fast.."Add:Rd:Sudo:mz:Photoc"..test, msg.content.caption.text)  
+Redis:set(tuofe1.."Add:Rd:Sudo:mz:Photo"..test, idPhoto)  
+Redis:set(tuofe1.."Add:Rd:Sudo:mz:Photoc"..test, msg.content.caption.text)  
 end
 send(msg_chat_id,msg_id," ⚡ تم حفظ الرد \n ⚡ ارسل ( "..test.." ) لرئية الرد","md",true)  
 return false
 end  
 end
 if text and text:match("^(.*)$") then
-if Redis:get(Fast.."Set:Rd:mz"..senderr..":"..msg_chat_id) == "true" then
-Redis:set(Fast.."Set:Rd:mz"..senderr..":"..msg_chat_id, "true1")
-Redis:set(Fast.."Text:Sudo:Bot"..senderr..":"..msg_chat_id, text)
-Redis:sadd(Fast.."List:Rd:Sudo:mz", text)
+if Redis:get(tuofe1.."Set:Rd:mz"..senderr..":"..msg_chat_id) == "true" then
+Redis:set(tuofe1.."Set:Rd:mz"..senderr..":"..msg_chat_id, "true1")
+Redis:set(tuofe1.."Text:Sudo:Bot"..senderr..":"..msg_chat_id, text)
+Redis:sadd(tuofe1.."List:Rd:Sudo:mz", text)
 send(msg_chat_id,msg_id,[[
 ↯︙ارسل لي الرد سواء كان 
 ❨ ملف ، ملصق ، متحركه ، صوره
@@ -10505,43 +10505,43 @@ return false
 end
 end
 if text and text:match("^(.*)$") then
-if Redis:get(Fast.."Set:On:mz"..senderr..":"..msg_chat_id) == "true" then
+if Redis:get(tuofe1.."Set:On:mz"..senderr..":"..msg_chat_id) == "true" then
 list = {"Add:Rd:Sudo:mz:video_note","Add:Rd:Sudo:mz:Audio","Add:Rd:Sudo:mz:Audioc","Add:Rd:Sudo:mz:File","Add:Rd:Sudo:mz:Video","Add:Rd:Sudo:mz:Videoc","Add:Rd:Sudo:mz:Photo","Add:Rd:Sudo:mz:Photoc","Add:Rd:Sudo:mz:Text","Add:Rd:Sudo:mz:stekr","Add:Rd:Sudo:mz:vico","Add:Rd:Sudo:mz:Gif"}
 for k,v in pairs(list) do
-Redis:del(Fast..''..v..text)
+Redis:del(tuofe1..''..v..text)
 end
-Redis:del(Fast.."Set:On:mz"..senderr..":"..msg_chat_id)
-Redis:srem(Fast.."List:Rd:Sudo:mz", text)
+Redis:del(tuofe1.."Set:On:mz"..senderr..":"..msg_chat_id)
+Redis:srem(tuofe1.."List:Rd:Sudo:mz", text)
 return send(msg_chat_id,msg_id," ⚡ تم حذف الرد من الردود العامه","md",true)  
 end
 end
 
 if text and text ~= "حذف رد مميز" and text ~= "اضف رد مميز" and text ~= "مسح الردود المميزه" then
-local listmz = Redis:smembers(Fast.."List:Rd:Sudo:mz")
+local listmz = Redis:smembers(tuofe1.."List:Rd:Sudo:mz")
 for k,v in pairs(listmz) do
 i ,j  = string.find(text, v)
 if j and i then
 local x = string.sub(text, i,j)
 
 if x then
-local anemi = Redis:get(Fast.."Add:Rd:Sudo:mz:Gif"..x)   
-local veico = Redis:get(Fast.."Add:Rd:Sudo:mz:vico"..x)   
-local stekr = Redis:get(Fast.."Add:Rd:Sudo:mz:stekr"..x)     
-local Text = Redis:get(Fast.."Add:Rd:Sudo:mz:Text"..x)   
-local photo = Redis:get(Fast.."Add:Rd:Sudo:mz:Photo"..x)
-local photoc = Redis:get(Fast.."Add:Rd:Sudo:mz:Photoc"..x)
-local video = Redis:get(Fast.."Add:Rd:Sudo:mz:Video"..x)
-local videoc = Redis:get(Fast.."Add:Rd:Sudo:mz:Videoc"..x)
-local document = Redis:get(Fast.."Add:Rd:Sudo:mz:File"..x)
-local audio = Redis:get(Fast.."Add:Rd:Sudo:mz:Audio"..x)
-local audioc = Redis:get(Fast.."Add:Rd:Sudo:mz:Audioc"..x)
-local video_note = Redis:get(Fast.."Add:Rd:Sudo:mz:video_note"..x)
+local anemi = Redis:get(tuofe1.."Add:Rd:Sudo:mz:Gif"..x)   
+local veico = Redis:get(tuofe1.."Add:Rd:Sudo:mz:vico"..x)   
+local stekr = Redis:get(tuofe1.."Add:Rd:Sudo:mz:stekr"..x)     
+local Text = Redis:get(tuofe1.."Add:Rd:Sudo:mz:Text"..x)   
+local photo = Redis:get(tuofe1.."Add:Rd:Sudo:mz:Photo"..x)
+local photoc = Redis:get(tuofe1.."Add:Rd:Sudo:mz:Photoc"..x)
+local video = Redis:get(tuofe1.."Add:Rd:Sudo:mz:Video"..x)
+local videoc = Redis:get(tuofe1.."Add:Rd:Sudo:mz:Videoc"..x)
+local document = Redis:get(tuofe1.."Add:Rd:Sudo:mz:File"..x)
+local audio = Redis:get(tuofe1.."Add:Rd:Sudo:mz:Audio"..x)
+local audioc = Redis:get(tuofe1.."Add:Rd:Sudo:mz:Audioc"..x)
+local video_note = Redis:get(tuofe1.."Add:Rd:Sudo:mz:video_note"..x)
 if Text then 
 local UserInfo = bot.getUser(senderr)
-local NumMsg = Redis:get(Fast..'Num:Message:User'..msg_chat_id..':'..senderr) or 0
+local NumMsg = Redis:get(tuofe1..'Num:Message:User'..msg_chat_id..':'..senderr) or 0
 local TotalMsg = Total_message(NumMsg)
 local Status_Gps = msg.Name_Controller
-local NumMessageEdit = Redis:get(Fast..'Num:Message:Edit'..msg_chat_id..senderr) or 0
+local NumMessageEdit = Redis:get(tuofe1..'Num:Message:Edit'..msg_chat_id..senderr) or 0
 local Text = Text:gsub('#username',(UserInfo.username or 'لا يوجد')) 
 local Text = Text:gsub('#name',FlterBio(UserInfo.first_name))
 local Text = Text:gsub('#id',senderr)
@@ -10552,35 +10552,35 @@ send(msg_chat_id,msg_id,'['..Text..']',"md",true)
 end
 if video_note then
 bot.sendVideoNote(msg_chat_id, msg.id, video_note)
-Redis:sadd(Fast.."Spam:Group"..senderr,text) 
+Redis:sadd(tuofe1.."Spam:Group"..senderr,text) 
 end
 if photo then
 bot.sendPhoto(msg.chat_id, msg.id, photo,photoc)
-Redis:sadd(Fast.."Spam:Group"..senderr,text) 
+Redis:sadd(tuofe1.."Spam:Group"..senderr,text) 
 end  
 if stekr then 
 bot.sendSticker(msg_chat_id, msg.id, stekr)
-Redis:sadd(Fast.."Spam:Group"..senderr,text) 
+Redis:sadd(tuofe1.."Spam:Group"..senderr,text) 
 end
 if veico then 
 bot.sendVoiceNote(msg_chat_id, msg.id, veico, '', 'md')
-Redis:sadd(Fast.."Spam:Group"..senderr,text) 
+Redis:sadd(tuofe1.."Spam:Group"..senderr,text) 
 end
 if video then 
 bot.sendVideo(msg_chat_id, msg.id, video, videoc, "md")
-Redis:sadd(Fast.."Spam:Group"..senderr,text) 
+Redis:sadd(tuofe1.."Spam:Group"..senderr,text) 
 end
 if anemi then 
 bot.sendAnimation(msg_chat_id,msg.id, anemi, '', 'md')
-Redis:sadd(Fast.."Spam:Group"..senderr,text) 
+Redis:sadd(tuofe1.."Spam:Group"..senderr,text) 
 end
 if document then
 bot.sendDocument(msg_chat_id, msg.id, document, '', 'md')
-Redis:sadd(Fast.."Spam:Group"..senderr,text) 
+Redis:sadd(tuofe1.."Spam:Group"..senderr,text) 
 end  
 if audio then
 bot.sendAudio(msg_chat_id, msg.id, audio, audioc, "md") 
-Redis:sadd(Fast.."Spam:Group"..senderr,text) 
+Redis:sadd(tuofe1.."Spam:Group"..senderr,text) 
 end
 end
 end
@@ -10594,7 +10594,7 @@ if ChannelJoin(msg) == false then
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/uui9u'}, },}}
 return send(msg.chat_id,msg.id,'*\n ⚡ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Set:Rd:mz"..senderr..":"..msg_chat_id,true)
+Redis:set(tuofe1.."Set:Rd:mz"..senderr..":"..msg_chat_id,true)
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -10613,7 +10613,7 @@ if ChannelJoin(msg) == false then
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/uui9u'}, },}}
 return send(msg.chat_id,msg.id,'*\n ⚡ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Set:On:mz"..senderr..":"..msg_chat_id,true)
+Redis:set(tuofe1.."Set:On:mz"..senderr..":"..msg_chat_id,true)
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -10624,36 +10624,36 @@ data = {
 }
 return send(msg_chat_id,msg_id," ⚡ ارسل الان الكلمه لحذفها من الردود المميزه","md",false, false, false, false, reply_markup)
 end 
-if text and not Redis:sismember(Fast.."Spam:Group"..senderr,text) then
-Redis:del(Fast.."Spam:Group"..senderr) 
+if text and not Redis:sismember(tuofe1.."Spam:Group"..senderr,text) then
+Redis:del(tuofe1.."Spam:Group"..senderr) 
 end
 if text == "مسح الردود المميزه" then
 if not msg.Devss then 
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local list = Redis:smembers(Fast.."List:Rd:Sudo:mz")
+local list = Redis:smembers(tuofe1.."List:Rd:Sudo:mz")
 for k,v in pairs(list) do
-Redis:del(Fast.."Add:Rd:Sudo:mz:Gif"..v)
-Redis:del(Fast.."Add:Rd:Sudo:mz:vico"..v)
-Redis:del(Fast.."Add:Rd:Sudo:mz:stekr"..v)
-Redis:del(Fast.."Add:Rd:Sudo:mz:Text"..v)
-Redis:del(Fast.."Add:Rd:Sudo:mz:Photo"..v)
-Redis:del(Fast.."Add:Rd:Sudo:mz:Photoc"..v)
-Redis:del(Fast.."Add:Rd:Sudo:mz:Video"..v)
-Redis:del(Fast.."Add:Rd:Sudo:mz:Videoc"..v)
-Redis:del(Fast.."Add:Rd:Sudo:mz:File"..v)
-Redis:del(Fast.."Add:Rd:Sudo:mz:Audio"..v)
-Redis:del(Fast.."Add:Rd:Sudo:mz:Audioc"..v)
-Redis:del(Fast.."Add:Rd:Sudo:mz:video_note"..v)
-Redis:del(Fast.."List:Rd:Sudo:mz")
+Redis:del(tuofe1.."Add:Rd:Sudo:mz:Gif"..v)
+Redis:del(tuofe1.."Add:Rd:Sudo:mz:vico"..v)
+Redis:del(tuofe1.."Add:Rd:Sudo:mz:stekr"..v)
+Redis:del(tuofe1.."Add:Rd:Sudo:mz:Text"..v)
+Redis:del(tuofe1.."Add:Rd:Sudo:mz:Photo"..v)
+Redis:del(tuofe1.."Add:Rd:Sudo:mz:Photoc"..v)
+Redis:del(tuofe1.."Add:Rd:Sudo:mz:Video"..v)
+Redis:del(tuofe1.."Add:Rd:Sudo:mz:Videoc"..v)
+Redis:del(tuofe1.."Add:Rd:Sudo:mz:File"..v)
+Redis:del(tuofe1.."Add:Rd:Sudo:mz:Audio"..v)
+Redis:del(tuofe1.."Add:Rd:Sudo:mz:Audioc"..v)
+Redis:del(tuofe1.."Add:Rd:Sudo:mz:video_note"..v)
+Redis:del(tuofe1.."List:Rd:Sudo:mz")
 end
 send(msg_chat_id,msg_id," ⚡ تم مسح قائمه الردود المميزه","md",true)  
 end
@@ -10662,33 +10662,33 @@ if not msg.Devss then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local list = Redis:smembers(Fast.."List:Rd:Sudo:mz")
+local list = Redis:smembers(tuofe1.."List:Rd:Sudo:mz")
 text = "\n ⚡ قائمة الردود المميزه \nꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ\n"
 for k,v in pairs(list) do
-if Redis:get(Fast.."Add:Rd:Sudo:mz:Gif"..v) then
+if Redis:get(tuofe1.."Add:Rd:Sudo:mz:Gif"..v) then
 db = "متحركه ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Sudo:mz:vico"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Sudo:mz:vico"..v) then
 db = "بصمه ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Sudo:mz:stekr"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Sudo:mz:stekr"..v) then
 db = "ملصق ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Sudo:mz:Text"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Sudo:mz:Text"..v) then
 db = "رساله ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Sudo:mz:Photo"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Sudo:mz:Photo"..v) then
 db = "صوره ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Sudo:mz:Video"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Sudo:mz:Video"..v) then
 db = "فيديو ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Sudo:mz:File"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Sudo:mz:File"..v) then
 db = "ملف ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Sudo:mz:Audio"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Sudo:mz:Audio"..v) then
 db = "اغنيه ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Sudo:mz:video_note"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Sudo:mz:video_note"..v) then
 db = "بصمه فيديو ⚡ "
 end
 text = text..""..k.." ⇿『 "..v.."』⇿『 "..db.." 』\n"
@@ -10727,7 +10727,7 @@ end
 send(msg.chat_id,msg.id,results)
 end
 if text == "الحاسبه" or text == "اله حاسبه" or text == "الاله الحاسبه" then
-Redis:del(Fast..senderr..msg.chat_id.."num")
+Redis:del(tuofe1..senderr..msg.chat_id.."num")
 start_mrkup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -10778,9 +10778,9 @@ local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
 if Message_Reply and Message_Reply.sender_id and Message_Reply.sender_id.user_id then
 local testhms = math.random(1,9999999999999)
 local first_name = bot.getUser(Message_Reply.sender_id.user_id).first_name
-Redis:set(Fast.."hms:"..testhms.."chat_id", msg_chat_id)
-Redis:set(Fast.."hms:"..testhms.."to", Message_Reply.sender_id.user_id)
-Redis:set(Fast.."hms:"..testhms.."msg_id",msg.reply_to_message_id)
+Redis:set(tuofe1.."hms:"..testhms.."chat_id", msg_chat_id)
+Redis:set(tuofe1.."hms:"..testhms.."to", Message_Reply.sender_id.user_id)
+Redis:set(tuofe1.."hms:"..testhms.."msg_id",msg.reply_to_message_id)
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -10798,11 +10798,11 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 send(msg_chat_id,msg_id, "* ⚡ تم تحديث الملفات*","md",true)
@@ -10813,21 +10813,21 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local list = Redis:smembers(Fast.."Num:User:Pv")   
+local list = Redis:smembers(tuofe1.."Num:User:Pv")   
 local x = 0
 for k,v in pairs(list) do  
 local Get_Chat = bot.getChat(v)
 local ChatAction = bot.sendChatAction(v,'Typing')
 if ChatAction.luatele ~= "ok" then
 x = x + 1
-Redis:srem(Fast..'Num:User:Pv',v)
+Redis:srem(tuofe1..'Num:User:Pv',v)
 end
 end
 if x ~= 0 then
@@ -10841,24 +10841,24 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local list = Redis:smembers(Fast.."ChekBotAdd")   
+local list = Redis:smembers(tuofe1.."ChekBotAdd")   
 local x = 0
 for k,v in pairs(list) do  
 local Get_Chat = bot.getChat(v)
 if Get_Chat.id then
-local statusMem = bot.getChatMember(Get_Chat.id,Fast)
+local statusMem = bot.getChatMember(Get_Chat.id,tuofe1)
 if statusMem.status.luatele == "chatMemberStatusMember" then
 x = x + 1
 send(Get_Chat.id,0,'* ⚡ البوت عضو في الجروب سوف اغادر ويمكنك تفعيلي مره اخره *',"md")
-Redis:srem(Fast..'ChekBotAdd',Get_Chat.id)
-local keys = Redis:keys(Fast..'*'..Get_Chat.id)
+Redis:srem(tuofe1..'ChekBotAdd',Get_Chat.id)
+local keys = Redis:keys(tuofe1..'*'..Get_Chat.id)
 for i = 1, #keys do
 Redis:del(keys[i])
 end
@@ -10866,11 +10866,11 @@ bot.leaveChat(Get_Chat.id)
 end
 else
 x = x + 1
-local keys = Redis:keys(Fast..'*'..v)
+local keys = Redis:keys(tuofe1..'*'..v)
 for i = 1, #keys do
 Redis:del(keys[i])
 end
-Redis:srem(Fast..'ChekBotAdd',v)
+Redis:srem(tuofe1..'ChekBotAdd',v)
 bot.leaveChat(v)
 end
 end
@@ -10917,14 +10917,14 @@ return send(msg_chat_id,msg_id,"* ⚡ اختر احدى القوائم لمسح�
 end 
 if text == "مسح نقاطي" then 
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Num:Add:Games"..msg.chat_id..senderr)
+Redis:del(tuofe1.."Num:Add:Games"..msg.chat_id..senderr)
 return send(msg_chat_id,msg_id, " ⚡ تم مسح نقاطك","md",true)  
 end
 
@@ -10933,51 +10933,51 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تعط','تعطيل الايدي بالصوره')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تفع','تفعيل الايدي بالصوره')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ا','ايدي')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'م','رفع مميز')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'اد', 'رفع ادمن')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'مد','رفع مدير')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'من', 'رفع منشئ')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'اس', 'رفع منشئ اساسي')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'مط','رفع مطور')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تن','تنزيل الكل')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ر','الرابط')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'رر','الردود')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'،،','مسح المكتومين')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'رد','اضف رد')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'غ','غنيلي')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'رس','رسائلي')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ثانوي','رفع مطور ثانوي')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'مس','مسح تعديلاتي')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ن','نقاطي')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'س','اسالني')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ل','لغز')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'مع','معاني')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ح','حزوره')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'رف','رفع القيود')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'الغ','الغاء حظر')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ث','تثبيت')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ك','كشف')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تت','تاك')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تك','تاك للكل')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تغ','تغيير الايدي')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تنز','تنزيل جميع الرتب')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'قق','قفل الاشعارات')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'فف','فتح الاشعارات')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'مر','مسح رد')
-Redis:set(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'امر','اضف امر')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تعط','تعطيل الايدي بالصوره')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تفع','تفعيل الايدي بالصوره')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ا','ايدي')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'م','رفع مميز')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'اد', 'رفع ادمن')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'مد','رفع مدير')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'من', 'رفع منشئ')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'اس', 'رفع منشئ اساسي')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'مط','رفع مطور')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تن','تنزيل الكل')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ر','الرابط')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'رر','الردود')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'،،','مسح المكتومين')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'رد','اضف رد')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'غ','غنيلي')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'رس','رسائلي')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ثانوي','رفع مطور ثانوي')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'مس','مسح تعديلاتي')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ن','نقاطي')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'س','اسالني')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ل','لغز')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'مع','معاني')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ح','حزوره')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'رف','رفع القيود')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'الغ','الغاء حظر')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ث','تثبيت')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ك','كشف')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تت','تاك')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تك','تاك للكل')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تغ','تغيير الايدي')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تنز','تنزيل جميع الرتب')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'قق','قفل الاشعارات')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'فف','فتح الاشعارات')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'مر','مسح رد')
+Redis:set(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'امر','اضف امر')
 local listA = {'تعطيل الايدي بالصوره','تفعيل الايدي بالصوره','ايدي','رفع مميز', 'رفع ادمن','رفع مدير', 'رفع منشئ', 'رفع منشئ اساسي','رفع مطور','تنزيل الكل','الرابط','الردود','مسح المكتومين','اضف رد','غنيلي','رسائلي','رفع مطور ثانوي','مسح تعديلاتي','نقاطي','اسالني','لغز','معاني','حزوره','رفع القيود','الغاء حظر','تثبيت','كشف','تاك','تاك للكل','تغيير الايدي','تنزيل جميع الرتب','قفل الاشعارات','فتح الاشعارات','مسح رد','اضف امر'}
 for k,v in pairs(listA) do
-Redis:sadd(Fast.."Command:List:Group"..msg_chat_id.."",v)
+Redis:sadd(tuofe1.."Command:List:Group"..msg_chat_id.."",v)
 end
 return send(msg_chat_id,msg_id,[[*
  ⚡ تم ترتيب الاوامر بالشكل التالي ~
@@ -11024,48 +11024,48 @@ if not msg.Manger then
 return send(msg_chat_id,msg_id,'*• انت لست مدير\n√*',"md",true)    
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تعط','تعطيل الايدي بالصوره')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تفع','تفعيل الايدي بالصوره')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ا','ايدي')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'م','رفع مميز')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'اد', 'رفع ادمن')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'مد','رفع مدير')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'من', 'رفع منشئ')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'اس', 'رفع منشئ اساسي')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'مط','رفع مطور')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تن','تنزيل الكل')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ر','الرابط')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'رر','الردود')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'،،','مسح المكتومين')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'رد','اضف رد')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'مس','مسح تعديلاتي')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'غ','غنيلي')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'رس','رسائلي')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ثانوي','رفع مطور ثانوي')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ن','نقاطي')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'س','اسالني')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ل','لغز')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'مع','مغاني')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ح','حزوره')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'رف','رفع القيود')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'الغ','الغاء حظر')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ث','تثبيت')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ك','كشف')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تت','تاك')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تك','تاك للكل')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تغ','تغيير الايدي')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تنزل','تنزيل جميع الرتب')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'قق','قفل الاشعارات')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'فف','فتح الاشعارات')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'مر','مسح رد')
-Redis:del(Fast.."Get:Reides:Commands:Group"..msg_chat_id..":"..'امر','اضف امر')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تعط','تعطيل الايدي بالصوره')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تفع','تفعيل الايدي بالصوره')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ا','ايدي')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'م','رفع مميز')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'اد', 'رفع ادمن')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'مد','رفع مدير')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'من', 'رفع منشئ')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'اس', 'رفع منشئ اساسي')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'مط','رفع مطور')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تن','تنزيل الكل')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ر','الرابط')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'رر','الردود')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'،،','مسح المكتومين')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'رد','اضف رد')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'مس','مسح تعديلاتي')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'غ','غنيلي')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'رس','رسائلي')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ثانوي','رفع مطور ثانوي')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ن','نقاطي')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'س','اسالني')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ل','لغز')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'مع','مغاني')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ح','حزوره')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'رف','رفع القيود')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'الغ','الغاء حظر')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ث','تثبيت')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ك','كشف')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تت','تاك')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تك','تاك للكل')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تغ','تغيير الايدي')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تنزل','تنزيل جميع الرتب')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'قق','قفل الاشعارات')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'فف','فتح الاشعارات')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'مر','مسح رد')
+Redis:del(tuofe1.."Get:Reides:Commands:Group"..msg_chat_id..":"..'امر','اضف امر')
 return send(msg_chat_id,msg_id,[[*
  ⚡ تم استعاده الاوامر
 *]],"md")
@@ -11080,11 +11080,11 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 send(msg_chat_id,msg_id, "*⚡ تم رسترت البوت\n√*","md",true)
@@ -11128,11 +11128,11 @@ local testhms = {text:match("/start hms(.*)from_id(%d+)") }
 if msg_user_send_id ~= tonumber(testhms[2]) then
 send(msg_user_send_id,msg_id,' ⚡ هذا الامر لا يخصك',"md",true)  
 else
-Redis:set(Fast.."hms:"..msg_user_send_id, testhms[1])
+Redis:set(tuofe1.."hms:"..msg_user_send_id, testhms[1])
 return send(msg_user_send_id,msg_id,' ⚡ ارسل الهمسه الان',"md",true)  
 end
-elseif not text:match("(.*)start(.*)") and Redis:get(Fast.."hms:"..msg_user_send_id) then
-local testhms = Redis:get(Fast.."hms:"..msg_user_send_id)
+elseif not text:match("(.*)start(.*)") and Redis:get(tuofe1.."hms:"..msg_user_send_id) then
+local testhms = Redis:get(tuofe1.."hms:"..msg_user_send_id)
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -11141,17 +11141,17 @@ data = {
 },
 }
 }
-Redis:set(Fast.."hms:"..testhms.."text:", text)
+Redis:set(tuofe1.."hms:"..testhms.."text:", text)
 return send(msg_chat_id,msg_id," ⚡ هل انت متاكد من ارسال الهمسه ؟","md",true,false,false,false,reply_markup)
 end
 if text == '/start' or text == '• القائمه الرئيسيه ⏺' then
-local photo = bot.getUserProfilePhotos(Fast)
-local ban = bot.getUser(Fast)
+local photo = bot.getUserProfilePhotos(tuofe1)
+local ban = bot.getUser(tuofe1)
 local bain = bot.getUser(senderr)
-Usperos = (Redis:scard(Fast..'Num:User:Pv') or 0)
-Redis:sadd(Fast..'Num:User:Pv',senderr)  
+Usperos = (Redis:scard(tuofe1..'Num:User:Pv') or 0)
+Redis:sadd(tuofe1..'Num:User:Pv',senderr)  
 if not msg.Asasy then
-if not Redis:get(Fast.."Start:Bot") then
+if not Redis:get(tuofe1.."Start:Bot") then
 if bain.username then
 banusername = '[@'..bain.username..']'
 else
@@ -11162,7 +11162,7 @@ Text = '*['..bain.first_name..'](tg://user?id='..bain.id..')*'
 else
 Text = 'لا يوجد'
 end
-local CmdStart = '*\n╗• مرحبا بك يا ⇿ '..Text..'\n╣• انا روبت حمايه اسمي ⇿ '..(Redis:get(Fast.."Name:Bot") or "لـوفـاريـن *")..
+local CmdStart = '*\n╗• مرحبا بك يا ⇿ '..Text..'\n╣• انا روبت حمايه اسمي ⇿ '..(Redis:get(tuofe1.."Name:Bot") or "لـوفـاريـن *")..
 '\n╣• اختصاص البوت حماية المجموعات'..
 '\n╣• لتفعيل البوت عليك اتباع مايلي'..
 '\n╣• اضف البوت الى مجموعتك'..
@@ -11201,7 +11201,7 @@ data = {
 },
 }
 }
-return bot.sendText(msg_chat_id,msg_id,Redis:get(Fast.."Start:Bot"),"md",false, false, false, false, reply_markup)
+return bot.sendText(msg_chat_id,msg_id,Redis:get(tuofe1.."Start:Bot"),"md",false, false, false, false, reply_markup)
 end
 end
 else
@@ -11404,21 +11404,21 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي \n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local list = Redis:smembers(Fast.."Num:User:Pv")   
+local list = Redis:smembers(tuofe1.."Num:User:Pv")   
 local x = 0
 for k,v in pairs(list) do  
 local Get_Chat = bot.getChat(v)
 local ChatAction = bot.sendChatAction(v,'Typing')
 if ChatAction.luatele ~= "ok" then
 x = x + 1
-Redis:srem(Fast..'Num:User:Pv',v)
+Redis:srem(tuofe1..'Num:User:Pv',v)
 end
 end
 if x ~= 0 then
@@ -11432,24 +11432,24 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي \n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local list = Redis:smembers(Fast.."ChekBotAdd")   
+local list = Redis:smembers(tuofe1.."ChekBotAdd")   
 local x = 0
 for k,v in pairs(list) do  
 local Get_Chat = bot.getChat(v)
 if Get_Chat.id then
-local statusMem = bot.getChatMember(Get_Chat.id,Fast)
+local statusMem = bot.getChatMember(Get_Chat.id,tuofe1)
 if statusMem.status.luatele == "chatMemberStatusMember" then
 x = x + 1
 send(Get_Chat.id,0,'* ⚡ البوت عضو في الجروب سوف اغادر ويمكنك تفعيلي مره اخره\n√*',"md")
-Redis:srem(Fast..'ChekBotAdd',Get_Chat.id)
-local keys = Redis:keys(Fast..'*'..Get_Chat.id)
+Redis:srem(tuofe1..'ChekBotAdd',Get_Chat.id)
+local keys = Redis:keys(tuofe1..'*'..Get_Chat.id)
 for i = 1, #keys do
 Redis:del(keys[i])
 end
@@ -11457,11 +11457,11 @@ bot.leaveChat(Get_Chat.id)
 end
 else
 x = x + 1
-local keys = Redis:keys(Fast..'*'..v)
+local keys = Redis:keys(tuofe1..'*'..v)
 for i = 1, #keys do
 Redis:del(keys[i])
 end
-Redis:srem(Fast..'ChekBotAdd',v)
+Redis:srem(tuofe1..'ChekBotAdd',v)
 bot.leaveChat(v)
 end
 end
@@ -11475,14 +11475,14 @@ if text == "تفعيل الاذاعه 🔔" then
 if not msg.Asasy then 
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي \n√*',"md",true)  
 end
-Redis:del(Fast.."broadcast")
+Redis:del(tuofe1.."broadcast")
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي \n√*',"md",true)  
 end
 if text == "تعطيل الاذاعه 🔕" then
 if not msg.Asasy then 
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي \n√*',"md",true)  
 end
-Redis:set(Fast.."broadcast",true)
+Redis:set(tuofe1.."broadcast",true)
 send(msg.chat_id,msg.id,"⚡ تم تعطيل الاذاعه\n√")
 end
 if text == 'اضف كليشه ستارت 🌐' then 
@@ -11490,14 +11490,14 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:setex(Fast.."Change:Start:Bot"..senderr,300,true) 
+Redis:setex(tuofe1.."Change:Start:Bot"..senderr,300,true) 
 return send(msg_chat_id,msg_id,"* ⚡ ارسل لي كليشه Start الان\n√*","md",true)  
 end
 if text == "غنيلي ⚡ " then
@@ -11537,14 +11537,14 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."Start:Bot") 
+Redis:del(tuofe1.."Start:Bot") 
 return send(msg_chat_id,msg_id,"*⚡ تم مسح كليشه Start\n√*","md",true)   
 end
 if text and text:match("^تعيين عدد الاعضاء (%d+)$") then
@@ -11552,21 +11552,21 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast..'Num:Add:Bot',text:match("تعيين عدد الاعضاء (%d+)$") ) 
+Redis:set(tuofe1..'Num:Add:Bot',text:match("تعيين عدد الاعضاء (%d+)$") ) 
 send(msg_chat_id,msg_id,'* ⚡ تم تعيين عدد اعضاء تفعيل البوت اكثر من -> '..text:match("تعيين عدد الاعضاء (%d+)$")..' عضو \n√*',"md",true)  
 end
 if text == "الاحصائيات 🎭" then 
 if not msg.Asasy then 
 return send(msg_chat_id,msg_id,'\n*• انت لست المطور الاساسي\n√*',"md",true)  
 end
-local JABWA = "*• عدد الجروبات -> "..(Redis:scard(Fast..'ChekBotAdd') or 0).." 🥺❤️\n• عدد المشتركين -> "..(Redis:scard(Fast..'Num:User:Pv') or 0).." 🥺❤️\n√*"
+local JABWA = "*• عدد الجروبات -> "..(Redis:scard(tuofe1..'ChekBotAdd') or 0).." 🥺❤️\n• عدد المشتركين -> "..(Redis:scard(tuofe1..'Num:User:Pv') or 0).." 🥺❤️\n√*"
 send(msg_chat_id,msg_id, JABWA,"md",true)   
 end
 if text == 'اضف كليشه المطور 🧿' then
@@ -11574,14 +11574,14 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast..'GetTexting:DevFast'..msg_chat_id..':'..senderr,true)
+Redis:set(tuofe1..'GetTexting:Devtuofe1'..msg_chat_id..':'..senderr,true)
 return send(msg_chat_id,msg_id,' ⚡ ارسل لي الكليشه الان\n√')
 end
 if text == 'مسح كليشه المطور 🧿' then
@@ -11589,14 +11589,14 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast..'Texting:DevFast')
+Redis:del(tuofe1..'Texting:Devtuofe1')
 return send(msg_chat_id,msg_id,' ⚡ تم مسح كليشه المطور\n√')
 end
 if text == 'اضف رد عام 💬' then 
@@ -11604,14 +11604,14 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Set:Rd"..senderr..":"..msg_chat_id,true)
+Redis:set(tuofe1.."Set:Rd"..senderr..":"..msg_chat_id,true)
 return send(msg_chat_id,msg_id,"*⚡ ارسل الان الكلمه لاضافتها في الردود العامه\n√*","md",true)  
 end
 if text == 'حذف رد عام 🚫' then 
@@ -11619,14 +11619,14 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."Set:On"..senderr..":"..msg_chat_id,true)
+Redis:set(tuofe1.."Set:On"..senderr..":"..msg_chat_id,true)
 return send(msg_chat_id,msg_id,"*⚡ ارسل الان الكلمه لمسحها من الردود العامه\n√*","md",true)  
 end
 if text == ("الردود العامه 📝") then 
@@ -11634,33 +11634,33 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local list = Redis:smembers(Fast.."List:Rd:Sudo")
+local list = Redis:smembers(tuofe1.."List:Rd:Sudo")
 text = " ⚡ قائمة الردود العامه ↑↓\nꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ\n"
 for k,v in pairs(list) do
-if Redis:get(Fast.."Add:Rd:Sudo:Gif"..v) then
+if Redis:get(tuofe1.."Add:Rd:Sudo:Gif"..v) then
 db = "متحركه 🎭"
-elseif Redis:get(Fast.."Add:Rd:Sudo:vico"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Sudo:vico"..v) then
 db = "بصمه 📢"
-elseif Redis:get(Fast.."Add:Rd:Sudo:stekr"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Sudo:stekr"..v) then
 db = "ملصق 🧿"
-elseif Redis:get(Fast.."Add:Rd:Sudo:Text"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Sudo:Text"..v) then
 db = "رساله ✉"
-elseif Redis:get(Fast.."Add:Rd:Sudo:Photo"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Sudo:Photo"..v) then
 db = "صوره 🎇"
-elseif Redis:get(Fast.."Add:Rd:Sudo:Video"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Sudo:Video"..v) then
 db = "فيديو 📹"
-elseif Redis:get(Fast.."Add:Rd:Sudo:File"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Sudo:File"..v) then
 db = "ملف ⚡ "
-elseif Redis:get(Fast.."Add:Rd:Sudo:Audio"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Sudo:Audio"..v) then
 db = "اغنيه 🎵"
-elseif Redis:get(Fast.."Add:Rd:Sudo:video_note"..v) then
+elseif Redis:get(tuofe1.."Add:Rd:Sudo:video_note"..v) then
 db = "بصمه فيديو 🎥"
 end
 text = text..""..k.." ⇿『 "..v.."』⇿『 "..db.." 』\n"
@@ -11675,25 +11675,25 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local list = Redis:smembers(Fast.."List:Rd:Sudo")
+local list = Redis:smembers(tuofe1.."List:Rd:Sudo")
 for k,v in pairs(list) do
-Redis:del(Fast.."Add:Rd:Sudo:Gif"..v)   
-Redis:del(Fast.."Add:Rd:Sudo:vico"..v)   
-Redis:del(Fast.."Add:Rd:Sudo:stekr"..v)     
-Redis:del(Fast.."Add:Rd:Sudo:Text"..v)   
-Redis:del(Fast.."Add:Rd:Sudo:Photo"..v)
-Redis:del(Fast.."Add:Rd:Sudo:Video"..v)
-Redis:del(Fast.."Add:Rd:Sudo:File"..v)
-Redis:del(Fast.."Add:Rd:Sudo:Audio"..v)
-Redis:del(Fast.."Add:Rd:Sudo:video_note"..v)
-Redis:del(Fast.."List:Rd:Sudo")
+Redis:del(tuofe1.."Add:Rd:Sudo:Gif"..v)   
+Redis:del(tuofe1.."Add:Rd:Sudo:vico"..v)   
+Redis:del(tuofe1.."Add:Rd:Sudo:stekr"..v)     
+Redis:del(tuofe1.."Add:Rd:Sudo:Text"..v)   
+Redis:del(tuofe1.."Add:Rd:Sudo:Photo"..v)
+Redis:del(tuofe1.."Add:Rd:Sudo:Video"..v)
+Redis:del(tuofe1.."Add:Rd:Sudo:File"..v)
+Redis:del(tuofe1.."Add:Rd:Sudo:Audio"..v)
+Redis:del(tuofe1.."Add:Rd:Sudo:video_note"..v)
+Redis:del(tuofe1.."List:Rd:Sudo")
 end
 return send(msg_chat_id,msg_id,"*⚡ تم مسح الردود العامه\n√*","md",true)  
 end
@@ -11702,18 +11702,18 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local Info_Members = Redis:smembers(Fast.."Dev:Groups") 
+local Info_Members = Redis:smembers(tuofe1.."Dev:Groups") 
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"*⚡ لا يوجد مطورين حاليا\n√*","md",true)  
 end
-Redis:del(Fast.."Dev:Groups") 
+Redis:del(tuofe1.."Dev:Groups") 
 return send(msg_chat_id,msg_id,"* ⚡ تم مسح ( "..#Info_Members.." ) من المطورين\n√*","md",true)
 end
 if text == 'مسح الثانوين 📢' then
@@ -11721,18 +11721,18 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local Info_Members = Redis:smembers(Fast.."Devss:Groups") 
+local Info_Members = Redis:smembers(tuofe1.."Devss:Groups") 
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"*⚡ لا يوجد مطورين حاليا\n√*","md",true)  
 end
-Redis:del(Fast.."Devss:Groups") 
+Redis:del(tuofe1.."Devss:Groups") 
 return send(msg_chat_id,msg_id,"* ⚡ تم مسح ( "..#Info_Members.." ) من المطورين\n√*","md",true)
 end
 if text == 'مسح قائمه العام 🚧' then
@@ -11740,18 +11740,18 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local Info_Members = Redis:smembers(Fast.."BanAll:Groups") 
+local Info_Members = Redis:smembers(tuofe1.."BanAll:Groups") 
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"* ⚡ لا يوجد محظورين عام حاليا\n√*","md",true)  
 end
-Redis:del(Fast.."BanAll:Groups") 
+Redis:del(tuofe1.."BanAll:Groups") 
 return send(msg_chat_id,msg_id,"* ⚡ تم مسح ( "..#Info_Members.." ) من المحظورين عام *","md",true)
 end
 if text == 'تعطيل البوت الخدمي 🤖' then
@@ -11759,14 +11759,14 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."BotFree") 
+Redis:del(tuofe1.."BotFree") 
 return send(msg_chat_id,msg_id," ⚡ تم تعطيل البوت الخدمي ","md",true)
 end
 if text == 'تعطيل التواصل 🔰' then
@@ -11774,14 +11774,14 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Fast.."TwaslBot") 
+Redis:del(tuofe1.."TwaslBot") 
 return send(msg_chat_id,msg_id,"* ⚡ تم تعطيل التواصل داخل البوت\n√*","md",true)
 end
 if text == 'تفعيل البوت الخدمي 🤖' then
@@ -11789,14 +11789,14 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."BotFree",true) 
+Redis:set(tuofe1.."BotFree",true) 
 return send(msg_chat_id,msg_id," ⚡ تم تفعيل البوت الخدمي ","md",true)
 end
 if text == 'تفعيل التواصل ⚡️' then
@@ -11804,35 +11804,35 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Fast.."TwaslBot",true) 
+Redis:set(tuofe1.."TwaslBot",true) 
 return send(msg_chat_id,msg_id,"* ⚡ تم تفعيل التواصل داخل البوت\n√*","md",true)
 end
 if text == "تفعيل اليوتيوب ⚙️" then
 if not msg.Asasy then 
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
-Redis:del(Fast.."yt:lock")
+Redis:del(tuofe1.."yt:lock")
 send(msg_chat_id,msg_id,"* ⚡ تم تفعيل اليوتيوب عام\n√*","md",true)
 end
 if text == "تعطيل اليوتيوب 🛠" then
 if not msg.Asasy then 
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
-Redis:set(Fast.."yt:lock",true)
+Redis:set(tuofe1.."yt:lock",true)
 send(msg_chat_id,msg_id,"* ⚡ تم تعطيل اليوتيوب عام\n√*","md",true)
 end
 if text == 'قائمه الكتم العام 🛑' then
 if not msg.Devss then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الثانوي \n√*',"md",true)  
 end
-local Info_Members = Redis:smembers(Fast.."KtmAll:Groups") 
+local Info_Members = Redis:smembers(tuofe1.."KtmAll:Groups") 
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"*⚡ لا يوجد مكتومين عام حاليا\n√*","md",true)  
 end
@@ -11855,14 +11855,14 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end 
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local Info_Members = Redis:smembers(Fast.."BanAll:Groups") 
+local Info_Members = Redis:smembers(tuofe1.."BanAll:Groups") 
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"*⚡ لا يوجد محظورين عام حاليا\n√*","md",true)  
 end
@@ -11885,14 +11885,14 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local Info_Members = Redis:smembers(Fast.."Dev:Groups") 
+local Info_Members = Redis:smembers(tuofe1.."Dev:Groups") 
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"*⚡ لا يوجد مطورين حاليا\n√*","md",true)  
 end
@@ -11915,14 +11915,14 @@ if not msg.Asasy then
 return send(msg_chat_id,msg_id,'*• انت لست المطور الاساسي\n√*',"md",true)  
 end
 if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Fast..'Chat:Channel:Join'..msg.chat_id)}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(tuofe1..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
 if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Fast..'Channel:Join:Name'), url = 't.me/'..Redis:get(Fast..'Channel:Join')}, },}}
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(tuofe1..'Channel:Join:Name'), url = 't.me/'..Redis:get(tuofe1..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'* ⚡ عليك الاشتراك في قناة البوت لأستخدام الاوامر\n√*',"md",false, false, false, false, reply_markup)
 end
-local Info_Members = Redis:smembers(Fast.."Devss:Groups") 
+local Info_Members = Redis:smembers(tuofe1.."Devss:Groups") 
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"*⚡ لا يوجد مطورين حاليا\n√*","md",true)  
 end
@@ -11941,12 +11941,12 @@ data = {{{text = '• مسح المطورين', data = senderr..'/Dev'},},}}
 return send(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
 end
 if not msg.Asasy then
-if Redis:get(Fast.."TwaslBot") and not Redis:sismember(Fast.."BaN:In:Tuasl",senderr) then
+if Redis:get(tuofe1.."TwaslBot") and not Redis:sismember(tuofe1.."BaN:In:Tuasl",senderr) then
 local ListGet = {Sudo_Id,senderr}
 local IdSudo = bot.getChat(ListGet[1]).id
 local IdUser = bot.getChat(ListGet[2]).id
 local FedMsg = bot.sendForwarded(IdSudo, 0, IdUser, msg_id)
-Redis:setex(Fast.."Twasl:UserId"..msg.date,172800,IdUser)
+Redis:setex(tuofe1.."Twasl:UserId"..msg.date,172800,IdUser)
 if FedMsg.content.luatele == "messageSticker" then
 send(IdSudo,0,Reply_Status(IdUser,' ⚡ قام بارسال الملصق\n√').Reply,"md",true)  
 end
@@ -11956,13 +11956,13 @@ else
 if msg.reply_to_message_id ~= 0 then
 local Message_Get = bot.getMessage(msg_chat_id, msg.reply_to_message_id)
 if Message_Get.forward_info then
-local Info_User = Redis:get(Fast.."Twasl:UserId"..Message_Get.forward_info.date) or 46899864
+local Info_User = Redis:get(tuofe1.."Twasl:UserId"..Message_Get.forward_info.date) or 46899864
 if text == 'حظر' then
-Redis:sadd(Fast..'BaN:In:Tuasl',Info_User)  
+Redis:sadd(tuofe1..'BaN:In:Tuasl',Info_User)  
 return send(msg_chat_id,msg_id,Reply_Status(Info_User,' ⚡ تم حظره من تواصل البوت\n√').Reply,"md",true)  
 end 
 if text =='الغاء الحظر' or text =='الغاء حظر' then
-Redis:srem(Fast..'BaN:In:Tuasl',Info_User)  
+Redis:srem(tuofe1..'BaN:In:Tuasl',Info_User)  
 return send(msg_chat_id,msg_id,Reply_Status(Info_User,' ⚡ تم الغاء حظره من تواصل البوت\n√').Reply,"md",true)  
 end 
 local ChatAction = bot.sendChatAction(Info_User,'Typing')
@@ -12004,6 +12004,6 @@ end -- File_Bot_Run
 function CallBackLua(data) --- هذا الكالباك بي الابديت 
 RunCallBack(data)
 end
-Redis:sadd(Fast.."eza3a",Token.."&"..Fast)
-Redis:set("@"..UserBot,Fast.."&".."@"..UserBot.."$@"..UserSudo.."+"..Token)
-Fx.Fastbots.run(CallBackLua)
+Redis:sadd(tuofe1.."eza3a",Token.."&"..tuofe1)
+Redis:set("@"..UserBot,tuofe1.."&".."@"..UserBot.."$@"..UserSudo.."+"..Token)
+Fx.tuofe1bots.run(CallBackLua)
