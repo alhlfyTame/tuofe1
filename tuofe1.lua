@@ -31,7 +31,7 @@ end
 else
 print('\27[1;34mلم يتم حفظ التوكن جرب مره اخره \nToken not saved, try again')
 end 
-os.execute('lua5.2 tuofe1.lua')
+os.execute('lua tuofe1.lua')
 end
 if not Redis:get(SshId.."Info:Redis:User") then
 io.write('\27[1;31mارسل يوزر المطور الاساسي الان \nDeveloper UserName saved ↡\n\27[0;39;49m')
@@ -42,7 +42,7 @@ Redis:set(SshId.."Info:Redis:User",UserSudo)
 else
 print('\n\27[1;34mلم يتم حفظ يوزر المطور الاساسي \nDeveloper UserName not saved\n')
 end 
-os.execute('lua5.2 tuofe1.lua')
+os.execute('lua tuofe1.lua')
 end
 if not Redis:get(SshId.."Info:Redis:User:ID") then
 io.write('\27[1;31mارسل ايدي المطور الاساسي الان \nDeveloper ID saved ↡\n\27[0;39;49m')
@@ -53,7 +53,7 @@ Redis:set(SshId.."Info:Redis:User:ID",UserId)
 else
 print('\n\27[1;34mلم يتم حفظ ايدي المطور الاساسي \nDeveloper ID not saved\n')
 end 
-os.execute('lua5.2 tuofe1.lua')
+os.execute('lua tuofe1.lua')
 end
 local Informationlua = io.open("Information.lua", 'w')
 Informationlua:write([[
@@ -11114,7 +11114,7 @@ end
  echo ' ⚡ 〘 نظام التشغيل 〙 ⚡ \n* '"$linux_version"'*' 
 echo ' ꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ \n 🌐〘 الذاكره العشوائيه 〙  ⇦\n〘* '"$memUsedPrc"'*〙'
 echo ' ꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ \n 🌐〘 وحـده الـتـخـزيـن 〙  ⇦\n〘* '"$HardDisk"'*〙'
-echo ' ꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ \n ??〘 موقـع الـسـيـرفـر 〙 ⇦\n〘*‹-‹- '`curl http://th3boss.com/ip/location`'*〙'
+echo ' ꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ \n 🌐〘 موقـع الـسـيـرفـر 〙 ⇦\n〘*‹-‹- '`curl http://th3boss.com/ip/location`'*〙'
 echo ' ꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ \n 🌐〘 الـمــعــالــج 〙  ⇦\n〘* '"`grep -c processor /proc/cpuinfo`""Core ~ 〘$CPUPer%〙 "'*〙'
 echo ' ꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ \n 🌐〘 الــدخــول 〙  ⇦\n〘* '`whoami`'*〙'
 echo ' ꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ \n 🌐〘 مـده تـشغيـل الـسـيـرفـر 〙 ⇦\n〘* '"$uptime"'*〙'
