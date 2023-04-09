@@ -1,15 +1,16 @@
---[[
-MOHAMED HElAL
-]] 
-URL     = require("./libs/url")
-JSON    = require("./libs/dkjson")
+URL = require("./libs/url")
+JSON= require("./libs/dkjson")
 serpent = require("libs/serpent")
 json = require('libs/json')
 Redis = require('libs/redis').connect('127.0.0.1', 6379)
 http  = require("socket.http")
 https   = require("ssl.https")
+local Methods = io.open("./luatele.lua","r")
+if Methods then
+URL.tdlua_CallBack()
+end
 SshId = io.popen("echo $SSH_CLIENT ︙ awk '{ print $1}'"):read('*a')
-luaTele = require 'luatele'
+luatele = require 'luatele'
 local FileInformation = io.open("./Information.lua","r")
 if not FileInformation then
 if not Redis:get(SshId.."Info:Redis:Token") then
@@ -11113,7 +11114,7 @@ end
  echo ' ⚡ 〘 نظام التشغيل 〙 ⚡ \n* '"$linux_version"'*' 
 echo ' ꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ \n 🌐〘 الذاكره العشوائيه 〙  ⇦\n〘* '"$memUsedPrc"'*〙'
 echo ' ꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ \n 🌐〘 وحـده الـتـخـزيـن 〙  ⇦\n〘* '"$HardDisk"'*〙'
-echo ' ꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ \n 🌐〘 موقـع الـسـيـرفـر 〙 ⇦\n〘*‹-‹- '`curl http://th3boss.com/ip/location`'*〙'
+echo ' ꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ \n ??〘 موقـع الـسـيـرفـر 〙 ⇦\n〘*‹-‹- '`curl http://th3boss.com/ip/location`'*〙'
 echo ' ꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ \n 🌐〘 الـمــعــالــج 〙  ⇦\n〘* '"`grep -c processor /proc/cpuinfo`""Core ~ 〘$CPUPer%〙 "'*〙'
 echo ' ꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ \n 🌐〘 الــدخــول 〙  ⇦\n〘* '`whoami`'*〙'
 echo ' ꔹ━━━━━ꔹ𝐋𝐎𝐕𝐀𝐑𝐄𝐍ꔹ━━━━━ꔹ \n 🌐〘 مـده تـشغيـل الـسـيـرفـر 〙 ⇦\n〘* '"$uptime"'*〙'
